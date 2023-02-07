@@ -3,15 +3,15 @@ import React, { createContext, useContext, useState } from 'react';
 const StateContext = createContext();
 
 const initialState = {
-  chat: false,
-  cart: false,
+  // chat: false,
+  // cart: false,
   userProfile: false,
-  notification: false,
+  // notification: false,
 };
 
 export const ContextProvider = ({ children }) => {
   const [screenSize, setScreenSize] = useState(undefined);
-  const [currentColor, setCurrentColor] = useState('#8A2A32');
+  const [currentColor, setCurrentColor] = useState('#1B2E3D');
   const [currentMode, setCurrentMode] = useState('Dark');
   const [themeSettings, setThemeSettings] = useState(false);
   const [activeMenu, setActiveMenu] = useState(true);

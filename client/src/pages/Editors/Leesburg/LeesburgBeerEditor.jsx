@@ -84,9 +84,15 @@ const LeesburgBeerEditor = () => {
     return (
         <>
             <div className="mt-24 lg:mt-6">
-                <p className="text-center font-semibold text-4xl dark:text-gray-200 py-8">Beer Editor</p>
+                <div className="text-center font-semibold text-3xl mb-10">
+                    <p className="mb-10 text-gray-400">
+                        Leesburg
+                    </p>
+                    <p className="text-gray-200 italic">
+                        Beer Menu Editor
+                    </p>
+                </div>
                 <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
-                    <CurrentMenu menu={images.beer_menu_leesburg} />
                     <div className="flex flex-wrap justify-center">
                         <div className="">
                             <p
@@ -189,88 +195,7 @@ const LeesburgBeerEditor = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-wrap justify-center mx-3 mt-10 gap-6">
-                    <div className="w-350">
-                        <p
-                            className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
-                            style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                            Queue
-                        </p>
-                        <div className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2" style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                            <div className="flex justify-center p-4 gap-6">
-                                <img className="h-28" src={images.oyster_menu_leesburg} alt="" />
-                                <div className="flex flex-col justify-center p-2 gap-3">
-                                    <button
-                                        className="sm:text-xl xl:text-2xl"
-                                    ><FaDownload /></button>
-                                    <button
-                                        className="sm:text-xl xl:text-2xl"
-                                    ><AiFillEdit /></button>
-                                    <button
-                                        className="sm:text-xl xl:text-2xl"
-                                    ><AiFillDelete /></button>
-                                </div>
-                                <div className="flex justify-center items-center">
-                                    <div className="text-gray-400">
-                                        <p className="font-semibold text-gray-200 mb-2">Release Date: 11/30/22</p>
-                                        <p >Created: 11/22/22</p>
-                                        <p >By: John</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="w-350 h-250 overflow-auto">
-                        <p
-                            className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
-                            style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                            Recent
-                        </p>
-                        <div className="border-b border-gray-600 rounded-b-xl">
-                            <div className="text-gray-200 rounded-b-xl p-2" style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                <div className="flex justify-center p-4 gap-2">
-                                    <img className="h-28" src={images.beer_menu_leesburg} alt="" />
-                                    <div className="flex flex-col justify-center p-2 gap-2">
-                                        <button
-                                            className="sm:text-xl xl:text-2xl p-1"
-                                        ><FaDownload /></button>
-                                        <button
-                                            className="sm:text-xl xl:text-2xl p-1"
-                                        ><AiFillEdit /></button>
-                                    </div>
-                                    <div className="flex justify-center items-center">
-                                        <div className="text-sm text-gray-300">
-                                            <p >Release: 11/30/22</p>
-                                            <p >Live: 11 days</p>
-                                            <p >Created: 11/22/22</p>
-                                            <p >By: John</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="flex justify-center p-4 gap-2">
-                                    <img className="h-28" src={images.beer_menu_leesburg} alt="" />
-                                    <div className="flex flex-col justify-center p-2 gap-2">
-                                        <button
-                                            className="sm:text-xl xl:text-2xl p-1"
-                                        ><FaDownload /></button>
-                                        <button
-                                            className="sm:text-xl xl:text-2xl p-1"
-                                        ><AiFillEdit /></button>
-                                    </div>
-                                    <div className="flex justify-center items-center">
-                                        <div className="text-sm text-gray-300">
-                                            <p >Release: 11/30/22</p>
-                                            <p >Live: 11 days</p>
-                                            <p >Created: 11/22/22</p>
-                                            <p >By: John</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </>
     )

@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Calendar, Dashboard, Training, OysterMenus, BeerMenus, BrunchMenus, HappyHourMenus, CocktailMenus, DinnerMenus, Events, Features, LeesburgDashboard, LeesburgFeatureEditor, LeesburgOysterEditor, LeesburgBeerEditor, MiddleburgDashboard, MiddleburgFeatureEditor, MiddleburgOysterEditor, MiddleburgBeerEditor, NomaDashboard, NomaFeatureEditor, NomaOysterEditor, NomaBeerEditor, PotomacDashboard, PotomacFeatureEditor, PotomacOysterEditor, PotomacBeerEditor } from './pages';
+import { Main, Calendar, Dashboard, LeesburgMain, LeesburgFeatures, LeesburgEvents, LeesburgOysters, LeesburgBeer, LeesburgHappyHour, LeesburgDinner, LeesburgCocktail, LeesburgBrunch, MiddleburgMain, MiddleburgFeatures, MiddleburgEvents, MiddleburgOysters, MiddleburgBeer, MiddleburgHappyHour, MiddleburgDinner, MiddleburgCocktail, MiddleburgBrunch, NomaMain, NomaFeatures, NomaEvents, NomaOysters, NomaBeer, NomaHappyHour, NomaDinner, NomaCocktail, NomaBrunch, PotomacMain, PotomacFeatures, PotomacEvents, PotomacOysters, PotomacBeer, PotomacHappyHour, PotomacDinner, PotomacCocktail, PotomacBrunch, Training, OysterMenus, BeerMenus, BrunchMenus, HappyHourMenus, CocktailMenus, DinnerMenus, Events, Features, LeesburgDashboard, LeesburgFeatureEditor, LeesburgOysterEditor, LeesburgBeerEditor, MiddleburgDashboard, MiddleburgFeatureEditor, MiddleburgOysterEditor, MiddleburgBeerEditor, NomaDashboard, NomaFeatureEditor, NomaOysterEditor, NomaBeerEditor, PotomacDashboard, PotomacFeatureEditor, PotomacOysterEditor, PotomacBeerEditor } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -64,43 +64,82 @@ const App = () => {
               {themeSettings && (<ThemeSettings />)}
 
               <Routes>
-                {/* dashboard  */}
-                <Route path="/" element={(<Dashboard />)} />
-                <Route path="/dashboard" element={(<Dashboard />)} />
+                <Route path='/' element={(<Main />)} />
 
-                {/* pages  */}
-                <Route path="/features" element={<Features />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/oysters" element={<OysterMenus />} />
-                <Route path="/beer" element={<BeerMenus />} />
-                <Route path="/happy hour" element={<HappyHourMenus />} />
-                <Route path="/cocktail" element={<CocktailMenus />} />
-                <Route path="/dinner" element={<DinnerMenus />} />
-                <Route path="/brunch" element={<BrunchMenus />} />
-                
+                <Route path='/leesburgmain' element={(<LeesburgMain />)} />
+                <Route path='/leesburgfeatures' element={(<LeesburgFeatures />)} />
+                <Route path='/leesburgevents' element={(<LeesburgEvents />)} />
+                <Route path='/leesburgoysters' element={(<LeesburgOysters />)} />
+                <Route path='/leesburgbeer' element={(<LeesburgBeer />)} />
+                <Route path='/leesburghappyhour' element={(<LeesburgHappyHour />)} />
+                <Route path='/leesburgdinner' element={(<LeesburgDinner />)} />
+                <Route path='/leesburgcocktail' element={(<LeesburgCocktail />)} />
+                <Route path='/leesburgbrunch' element={(<LeesburgBrunch />)} />
+
+                <Route path='/middleburgmain' element={(<MiddleburgMain />)} />
+                <Route path='/middleburgfeatures' element={(<MiddleburgFeatures />)} />
+                <Route path='/middleburgevents' element={(<MiddleburgEvents />)} />
+                <Route path='/middleburgoysters' element={(<MiddleburgOysters />)} />
+                <Route path='/middleburgbeer' element={(<MiddleburgBeer />)} />
+                <Route path='/middleburghappyhour' element={(<MiddleburgHappyHour />)} />
+                <Route path='/middleburgdinner' element={(<MiddleburgDinner />)} />
+                <Route path='/middleburgcocktail' element={(<MiddleburgCocktail />)} />
+                <Route path='/middleburgbrunch' element={(<MiddleburgBrunch />)} />
+
+                <Route path='/nomamain' element={(<NomaMain />)} />
+                <Route path='/nomafeatures' element={(<NomaFeatures />)} />
+                <Route path='/nomaevents' element={(<NomaEvents />)} />
+                <Route path='/nomaoysters' element={(<NomaOysters />)} />
+                <Route path='/nomabeer' element={(<NomaBeer />)} />
+                <Route path='/nomahappyhour' element={(<NomaHappyHour />)} />
+                <Route path='/nomadinner' element={(<NomaDinner />)} />
+                <Route path='/nomacocktail' element={(<NomaCocktail />)} />
+                <Route path='/nomabrunch' element={(<NomaBrunch />)} />
+
+                <Route path='/potomacmain' element={(<PotomacMain />)} />
+                <Route path='/potomacfeatures' element={(<PotomacFeatures />)} />
+                <Route path='/potomacevents' element={(<PotomacEvents />)} />
+                <Route path='/potomacoysters' element={(<PotomacOysters />)} />
+                <Route path='/potomacbeer' element={(<PotomacBeer />)} />
+                <Route path='/potomachappyhour' element={(<PotomacHappyHour />)} />
+                <Route path='/potomacdinner' element={(<PotomacDinner />)} />
+                <Route path='/potomaccocktail' element={(<PotomacCocktail />)} />
+                <Route path='/potomacbrunch' element={(<PotomacBrunch />)} />
+
+                <Route path="/" element={(<Dashboard />)} />
+                <Route path="/dashboardmain" element={(<Dashboard />)} />
+
+                <Route path="/featuresmain" element={<Features />} />
+                <Route path="/eventsmain" element={<Events />} />
+                <Route path="/oystersmain" element={<OysterMenus />} />
+                <Route path="/beermain" element={<BeerMenus />} />
+                <Route path="/happy hourmain" element={<HappyHourMenus />} />
+                <Route path="/cocktailmain" element={<CocktailMenus />} />
+                <Route path="/dinnermain" element={<DinnerMenus />} />
+                <Route path="/brunchmain" element={<BrunchMenus />} />
+
                 <Route path="/leesburg" element={<LeesburgDashboard />} />
-                <Route path="/leesburgfeatureeditor" element={<LeesburgFeatureEditor/>} />
-                <Route path="/leesburgoystereditor" element={<LeesburgOysterEditor/>} />
-                <Route path="/leesburgbeereditor" element={<LeesburgBeerEditor/>} />
+                <Route path="/leesburgfeatureeditor" element={<LeesburgFeatureEditor />} />
+                <Route path="/leesburgoystereditor" element={<LeesburgOysterEditor />} />
+                <Route path="/leesburgbeereditor" element={<LeesburgBeerEditor />} />
 
                 <Route path="/middleburg" element={<MiddleburgDashboard />} />
-                <Route path="/middleburgfeatureeditor" element={<MiddleburgFeatureEditor/>} />
-                <Route path="/middleburgoystereditor" element={<MiddleburgOysterEditor/>} />
-                <Route path="/middleburgbeereditor" element={<MiddleburgBeerEditor/>} />
+                <Route path="/middleburgfeatureeditor" element={<MiddleburgFeatureEditor />} />
+                <Route path="/middleburgoystereditor" element={<MiddleburgOysterEditor />} />
+                <Route path="/middleburgbeereditor" element={<MiddleburgBeerEditor />} />
 
                 <Route path="/noma" element={<NomaDashboard />} />
-                <Route path="/nomafeatureeditor" element={<NomaFeatureEditor/>} />
-                <Route path="/nomaoystereditor" element={<NomaOysterEditor/>} />
-                <Route path="/nomabeereditor" element={<NomaBeerEditor/>} />
+                <Route path="/nomafeatureeditor" element={<NomaFeatureEditor />} />
+                <Route path="/nomaoystereditor" element={<NomaOysterEditor />} />
+                <Route path="/nomabeereditor" element={<NomaBeerEditor />} />
 
                 <Route path="/potomac" element={<PotomacDashboard />} />
-                <Route path="/potomacfeatureeditor" element={<PotomacFeatureEditor/>} />
-                <Route path="/potomacoystereditor" element={<PotomacOysterEditor/>} />
-                <Route path="/potomacbeereditor" element={<PotomacBeerEditor/>} />
+                <Route path="/potomacfeatureeditor" element={<PotomacFeatureEditor />} />
+                <Route path="/potomacoystereditor" element={<PotomacOysterEditor />} />
+                <Route path="/potomacbeereditor" element={<PotomacBeerEditor />} />
 
-                {/* apps  */}
                 <Route path="/training" element={<Training />} />
-                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/calendarmain" element={<Calendar />} />
 
               </Routes>
             </div>

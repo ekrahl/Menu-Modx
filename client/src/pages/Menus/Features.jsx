@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { images } from '../../data';
 import { locations, menus } from '../../data/dummy';
 import { FaEdit, FaDownload } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
 
 const Features = () => {
 
