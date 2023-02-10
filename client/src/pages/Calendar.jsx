@@ -29,7 +29,7 @@ const Scheduler = () => {
       <ScheduleComponent
         height="1000px"
         ref={(schedule) => setScheduleObj(schedule)}
-        selectedDate={new Date(2022, 9, 24)}
+        selectedDate={new Date(2023, 2, 24)}
         startHour='11:00'
         endHour='23:00'
         eventSettings={{ dataSource: scheduleData }}

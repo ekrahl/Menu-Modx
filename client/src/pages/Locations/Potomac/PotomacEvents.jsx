@@ -20,7 +20,7 @@ const PotomacEvents = () => {
                             Potomac
                         </p>
                         <p className="italic text-gray-200">
-                            Events Menus
+                            Event Menus
                         </p>
                     </div>
 

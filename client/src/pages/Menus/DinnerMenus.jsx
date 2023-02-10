@@ -17,8 +17,8 @@ const DinnerMenus = () => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="mt-24 mx-3 lg:mt-10 2xl:mx-8 max-w-1500">
-          <div className="flex justify-center bg-dinner1 bg-cover bg-center rounded-xl py-32 2xl:p-40" >
+        <div className="mt-24 mx-3 lg:mt-10 2xl:mx-8 max-w-1200">
+          <div className="flex justify-center bg-dinner1 bg-cover bg-center rounded-xl py-20 2xl:p-32" >
             <p className="font-semibold text-4xl 2xl:text-6xl text-gray-200 bg-black bg-opacity-50 rounded-xl p-2">DINNER</p>
           </div>
 

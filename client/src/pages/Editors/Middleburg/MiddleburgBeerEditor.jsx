@@ -70,7 +70,7 @@ const MiddleburgBeerEditor = () => {
         if (draftList.includes(beerObj)) {
             return;
         }
-        if (draftList.length > 12) {
+        if (draftList.length > 20) {
             return;
         }
         setDraftList(current => [...current, beerObj])
@@ -102,7 +102,7 @@ const MiddleburgBeerEditor = () => {
                             </p>
                             <div className="w-384 h-576 relative z-1" ref={ref} id="middleburgBeerMenu">
                                 <img src={images.beer_menu_template} alt="" className="absolute z-2" />
-                                <div className="text-center pt-16">
+                                <div className="text-center pt-12">
                                     {draftList.map((beer, index) => (
                                         <div key={beer.id} className="relative z-3 font-semibold">
                                             <div className="flex justify-center">

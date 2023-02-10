@@ -15,9 +15,9 @@ const Events = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="mt-24 mx-3 lg:mt-10 2xl:mx-8 max-w-1500">
-        <div className="flex justify-center bg-pdr bg-cover bg-center rounded-xl py-32 2xl:p-40" >
-          <p className="font-semibold text-4xl 2xl:text-6xl text-gray-200 bg-half-transparent rounded-xl p-2">Potomac</p>
+      <div className="mt-24 mx-3 lg:mt-10 2xl:mx-8 max-w-1200">
+        <div className="flex justify-center bg-pdr bg-cover bg-center rounded-xl py-20 2xl:p-32" >
+          <p className="font-semibold text-4xl 2xl:text-6xl text-gray-200 bg-half-transparent rounded-xl p-2">EVENTS</p>
         </div>
         <div className="flex flex-wrap lg:flex-nowrap gap-1">
 

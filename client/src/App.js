@@ -4,7 +4,72 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Main, Calendar, Dashboard, LeesburgMain, LeesburgFeatures, LeesburgEvents, LeesburgOysters, LeesburgBeer, LeesburgHappyHour, LeesburgDinner, LeesburgCocktail, LeesburgBrunch, MiddleburgMain, MiddleburgFeatures, MiddleburgEvents, MiddleburgOysters, MiddleburgBeer, MiddleburgHappyHour, MiddleburgDinner, MiddleburgCocktail, MiddleburgBrunch, NomaMain, NomaFeatures, NomaEvents, NomaOysters, NomaBeer, NomaHappyHour, NomaDinner, NomaCocktail, NomaBrunch, PotomacMain, PotomacFeatures, PotomacEvents, PotomacOysters, PotomacBeer, PotomacHappyHour, PotomacDinner, PotomacCocktail, PotomacBrunch, Training, OysterMenus, BeerMenus, BrunchMenus, HappyHourMenus, CocktailMenus, DinnerMenus, Events, Features, LeesburgDashboard, LeesburgFeatureEditor, LeesburgOysterEditor, LeesburgBeerEditor, MiddleburgDashboard, MiddleburgFeatureEditor, MiddleburgOysterEditor, MiddleburgBeerEditor, NomaDashboard, NomaFeatureEditor, NomaOysterEditor, NomaBeerEditor, PotomacDashboard, PotomacFeatureEditor, PotomacOysterEditor, PotomacBeerEditor } from './pages';
+import {
+  Main,
+  Calendar,
+  Dashboard,
+  LeesburgMain,
+  LeesburgFeatures,
+  LeesburgEvents,
+  LeesburgOysters,
+  LeesburgBeer,
+  LeesburgHappyHour,
+  LeesburgDinner,
+  LeesburgCocktail,
+  LeesburgBrunch,
+  MiddleburgMain,
+  MiddleburgFeatures,
+  MiddleburgEvents,
+  MiddleburgOysters,
+  MiddleburgBeer,
+  MiddleburgHappyHour,
+  MiddleburgDinner,
+  MiddleburgCocktail,
+  MiddleburgBrunch,
+  NomaMain,
+  NomaFeatures,
+  NomaEvents,
+  NomaOysters,
+  NomaBeer,
+  NomaHappyHour,
+  NomaDinner,
+  NomaCocktail,
+  NomaBrunch,
+  PotomacMain,
+  PotomacFeatures,
+  PotomacEvents,
+  PotomacOysters,
+  PotomacBeer,
+  PotomacHappyHour,
+  PotomacDinner,
+  PotomacCocktail,
+  PotomacBrunch,
+  Training,
+  OysterMenus,
+  BeerMenus,
+  BrunchMenus,
+  HappyHourMenus,
+  CocktailMenus,
+  DinnerMenus,
+  Events,
+  Features,
+  LeesburgDashboard,
+  LeesburgFeatureEditor,
+  LeesburgOysterEditor,
+  LeesburgBeerEditor,
+  MiddleburgDashboard,
+  MiddleburgFeatureEditor,
+  MiddleburgOysterEditor,
+  MiddleburgBeerEditor,
+  NomaDashboard,
+  NomaFeatureEditor,
+  NomaOysterEditor,
+  NomaBeerEditor,
+  PotomacDashboard,
+  PotomacFeatureEditor,
+  PotomacOysterEditor,
+  PotomacBeerEditor
+} from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -42,7 +107,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-60 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
+            <div className="w-60 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               <Sidebar />
             </div>
           ) : (
@@ -53,11 +118,11 @@ const App = () => {
           <div
             className={
               activeMenu
-                ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-60 w-full  '
-                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+                ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-60 w-full'
+                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2'
             }
           >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
               <Navbar />
             </div>
             <div>
@@ -66,7 +131,12 @@ const App = () => {
               <Routes>
                 <Route path='/' element={(<Main />)} />
 
+                <Route path="/" element={(<Dashboard />)} />
+                <Route path="/dashboardmain" element={(<Dashboard />)} />
+
+                {/* LEESBURG */}
                 <Route path='/leesburgmain' element={(<LeesburgMain />)} />
+                <Route path="/leesburg" element={<LeesburgDashboard />} />
                 <Route path='/leesburgfeatures' element={(<LeesburgFeatures />)} />
                 <Route path='/leesburgevents' element={(<LeesburgEvents />)} />
                 <Route path='/leesburgoysters' element={(<LeesburgOysters />)} />
@@ -75,8 +145,13 @@ const App = () => {
                 <Route path='/leesburgdinner' element={(<LeesburgDinner />)} />
                 <Route path='/leesburgcocktail' element={(<LeesburgCocktail />)} />
                 <Route path='/leesburgbrunch' element={(<LeesburgBrunch />)} />
+                <Route path="/leesburgfeatureeditor" element={<LeesburgFeatureEditor />} />
+                <Route path="/leesburgoystereditor" element={<LeesburgOysterEditor />} />
+                <Route path="/leesburgbeereditor" element={<LeesburgBeerEditor />} />
 
+                {/* MIDDLEBURG */}
                 <Route path='/middleburgmain' element={(<MiddleburgMain />)} />
+                <Route path="/middleburg" element={<MiddleburgDashboard />} />
                 <Route path='/middleburgfeatures' element={(<MiddleburgFeatures />)} />
                 <Route path='/middleburgevents' element={(<MiddleburgEvents />)} />
                 <Route path='/middleburgoysters' element={(<MiddleburgOysters />)} />
@@ -85,8 +160,13 @@ const App = () => {
                 <Route path='/middleburgdinner' element={(<MiddleburgDinner />)} />
                 <Route path='/middleburgcocktail' element={(<MiddleburgCocktail />)} />
                 <Route path='/middleburgbrunch' element={(<MiddleburgBrunch />)} />
+                <Route path="/middleburgfeatureeditor" element={<MiddleburgFeatureEditor />} />
+                <Route path="/middleburgoystereditor" element={<MiddleburgOysterEditor />} />
+                <Route path="/middleburgbeereditor" element={<MiddleburgBeerEditor />} />
 
+                {/* NOMA */}
                 <Route path='/nomamain' element={(<NomaMain />)} />
+                <Route path="/noma" element={<NomaDashboard />} />
                 <Route path='/nomafeatures' element={(<NomaFeatures />)} />
                 <Route path='/nomaevents' element={(<NomaEvents />)} />
                 <Route path='/nomaoysters' element={(<NomaOysters />)} />
@@ -95,8 +175,13 @@ const App = () => {
                 <Route path='/nomadinner' element={(<NomaDinner />)} />
                 <Route path='/nomacocktail' element={(<NomaCocktail />)} />
                 <Route path='/nomabrunch' element={(<NomaBrunch />)} />
+                <Route path="/nomafeatureeditor" element={<NomaFeatureEditor />} />
+                <Route path="/nomaoystereditor" element={<NomaOysterEditor />} />
+                <Route path="/nomabeereditor" element={<NomaBeerEditor />} />
 
+                {/* POTOMAC */}
                 <Route path='/potomacmain' element={(<PotomacMain />)} />
+                <Route path="/potomac" element={<PotomacDashboard />} />
                 <Route path='/potomacfeatures' element={(<PotomacFeatures />)} />
                 <Route path='/potomacevents' element={(<PotomacEvents />)} />
                 <Route path='/potomacoysters' element={(<PotomacOysters />)} />
@@ -105,10 +190,11 @@ const App = () => {
                 <Route path='/potomacdinner' element={(<PotomacDinner />)} />
                 <Route path='/potomaccocktail' element={(<PotomacCocktail />)} />
                 <Route path='/potomacbrunch' element={(<PotomacBrunch />)} />
+                <Route path="/potomacfeatureeditor" element={<PotomacFeatureEditor />} />
+                <Route path="/potomacoystereditor" element={<PotomacOysterEditor />} />
+                <Route path="/potomacbeereditor" element={<PotomacBeerEditor />} />
 
-                <Route path="/" element={(<Dashboard />)} />
-                <Route path="/dashboardmain" element={(<Dashboard />)} />
-
+                {/* MENUS */}
                 <Route path="/featuresmain" element={<Features />} />
                 <Route path="/eventsmain" element={<Events />} />
                 <Route path="/oystersmain" element={<OysterMenus />} />
@@ -118,25 +204,6 @@ const App = () => {
                 <Route path="/dinnermain" element={<DinnerMenus />} />
                 <Route path="/brunchmain" element={<BrunchMenus />} />
 
-                <Route path="/leesburg" element={<LeesburgDashboard />} />
-                <Route path="/leesburgfeatureeditor" element={<LeesburgFeatureEditor />} />
-                <Route path="/leesburgoystereditor" element={<LeesburgOysterEditor />} />
-                <Route path="/leesburgbeereditor" element={<LeesburgBeerEditor />} />
-
-                <Route path="/middleburg" element={<MiddleburgDashboard />} />
-                <Route path="/middleburgfeatureeditor" element={<MiddleburgFeatureEditor />} />
-                <Route path="/middleburgoystereditor" element={<MiddleburgOysterEditor />} />
-                <Route path="/middleburgbeereditor" element={<MiddleburgBeerEditor />} />
-
-                <Route path="/noma" element={<NomaDashboard />} />
-                <Route path="/nomafeatureeditor" element={<NomaFeatureEditor />} />
-                <Route path="/nomaoystereditor" element={<NomaOysterEditor />} />
-                <Route path="/nomabeereditor" element={<NomaBeerEditor />} />
-
-                <Route path="/potomac" element={<PotomacDashboard />} />
-                <Route path="/potomacfeatureeditor" element={<PotomacFeatureEditor />} />
-                <Route path="/potomacoystereditor" element={<PotomacOysterEditor />} />
-                <Route path="/potomacbeereditor" element={<PotomacBeerEditor />} />
 
                 <Route path="/training" element={<Training />} />
                 <Route path="/calendarmain" element={<Calendar />} />

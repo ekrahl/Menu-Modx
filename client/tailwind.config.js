@@ -16,6 +16,7 @@ module.exports = {
         'secondary-dark-bg': '#383838',
         'light-gray': '#F7F7F7',
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
+        'main-blue': '#1B2E3D',
       },
       borderWidth: {
         1: '1px',
@@ -136,6 +137,10 @@ module.exports = {
       backgroundImage: {
         'logo':
           "url('./data/images/logo.png')",
+        'logo2':
+          "url('./data/images/KSOB-Logo.png')",
+        'oyster':
+          "url('./data/images/oyster-image.png')",
         'oysters':
           "url('./data/images/ksoboysterdozen.jpg')",
         'oysters2':

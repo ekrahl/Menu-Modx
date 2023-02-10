@@ -92,6 +92,8 @@ import shuckit from './images/shuckit.jpg';
 import veggieprep from './images/veggieprep.jpg';
 import events from './images/events.jpg';
 import happyhour from './images/happyhour.jpg';
+import logo2 from './images/KSOB-Logo.png';
+import oyster from './images/oyster-image.png';
 
 //templates
 import oyster_menu_template from './images/menus/oyster_menu_template.png';
@@ -101,6 +103,7 @@ import feature_sheet_template from './images/menus/feature_sheet_template.png';
 import feature_sheet_template2 from './images/menus/feature_sheet_template2.png';
 
 export default {
+    oyster,
     oyster_menu_leesburg,
     beer_menu_leesburg,
     happy_hour_menu_leesburg,
@@ -160,6 +163,7 @@ export default {
     leesburg2,
     leesburgHeader,
     logo,
+    logo2,
     mainmenu,
     mango_tango,
     middleburg,

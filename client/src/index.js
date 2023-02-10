@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { legacy_createStore as createStore } from 'redux';
+import { applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+
+import {reducers} from './reducers';
+
 
 import './index.css';
 import App from './App';
 import { ContextProvider } from './contexts/ContextProvider';
 
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
+
 ReactDOM.render(
-    <ContextProvider>
-        <App />
-    </ContextProvider>,
+    <Provider store={store}>
+        <ContextProvider>
+            <App />
+        </ContextProvider>
+    </Provider>,
     document.getElementById('root'));

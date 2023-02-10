@@ -19,16 +19,18 @@ const Dashboard = () => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="mt-14 mx-3 lg:mt-4 2xl:mx-8 md:max-w-1000 lg:max-w-1500">
-
-          <div className="flex justify-center bg-main-dark-bg rounded-xl pt-10 pb-6 mx-6">
-            <img src={images.kingstoysterbar} alt="header" />
+        <div className="mt-24 mx-3 md:mt-4 md:max-w-1200">
+          
+          <div className="flex justify-center">
+            <div className="bg-main-dark-bg rounded-xl py-6 mb-1 px-2 md:px-40">
+              <img src={images.kingstoysterbar} alt="header" />
+            </div>
           </div>
 
           <div className="flex flex-wrap lg:flex-nowrap justify-center mt-1 gap-1">
             <div className="flex flex-col items-center justify-center bg-veggieprep bg-cover rounded-xl w-full lg:py-12 py-12">
               <p className="font-bold text-gray-200 text-3xl text-center bg-half-transparent rounded-xl p-2 m-4">DAILY FEATURES</p>
-              <Link to="/features" className="flex items-center text-gray-200 text-lg font-semibold px-1 rounded-lg bg-black bg-opacity-20">View Menus<MdDoubleArrow className='ml-2'/></Link>
+              <Link to="/featuresmain" className="flex items-center text-gray-200 text-lg font-semibold px-1 rounded-lg bg-black bg-opacity-20">View Menus<MdDoubleArrow className='ml-2' /></Link>
             </div>
             {locations.map((location) => (
               <div className="w-full">
@@ -44,14 +46,13 @@ const Dashboard = () => {
                       <div
                         className="border-b border-gray-600"
                         style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                        <p className="font-semibold text-xl text-gray-300 pl-4 pt-2">Fresh Fish</p>
-                        <img className="p-4" src={feat.img} alt="fish img" />
-                        <div className="h-28">
+                        <img className="p-3" src={feat.img} alt="fish img" />
+                        <div className="h-24">
                           <p className="font-semibold text-lg text-gray-300 pl-4">{feat.title}</p>
                           <p className="text-sm text-gray-400 px-4">{feat.ingredients}</p>
                         </div>
                         <div className="p-4">
-                          <p className="text-sm text-gray-600">Last Updated: <br/> {update}</p>
+                          <p className="text-sm text-gray-600 font-semibold">Last Updated: <br /> {update}</p>
                         </div>
                       </div>
                     )
@@ -63,14 +64,13 @@ const Dashboard = () => {
                       <div
                         className="border-b border-gray-600 rounded-b-xl"
                         style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                        <p className="font-semibold text-xl text-gray-300 pl-4 pt-2">Daily Cocktail</p>
-                        <img className="p-4" src={feat.img} alt="fish img" />
-                        <div className="h-28">
+                        <img className="p-3" src={feat.img} alt="fish img" />
+                        <div className="h-24">
                           <p className="font-semibold text-lg text-gray-300 pl-4">{feat.title}</p>
                           <p className="text-sm text-gray-400 px-4">{feat.ingredients}</p>
                         </div>
                         <div className="p-4">
-                          <p className="text-sm text-gray-600">Last Updated: <br/> {update}</p>
+                          <p className="text-sm text-gray-600 font-semibold">Last Updated: <br /> {update}</p>
                         </div>
                       </div>
                     )
@@ -85,7 +85,7 @@ const Dashboard = () => {
 
             <div className="flex flex-col items-center justify-center bg-pdr2 bg-cover bg-center rounded-xl w-full py-12">
               <p className="font-bold text-gray-200 text-4xl text-center bg-half-transparent rounded-xl p-4 m-8">EVENTS</p>
-              <Link to="/events" className="flex items-center text-gray-200 text-lg font-semibold px-1 rounded-lg bg-black bg-opacity-20">View Menus<MdDoubleArrow className='ml-2'/></Link>
+              <Link to="/eventsmain" className="flex items-center text-gray-200 text-lg font-semibold px-1 rounded-lg bg-black bg-opacity-20">View Menus<MdDoubleArrow className='ml-2' /></Link>
             </div>
 
             <div className="w-full">

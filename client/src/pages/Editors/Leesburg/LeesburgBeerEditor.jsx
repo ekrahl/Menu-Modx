@@ -70,7 +70,7 @@ const LeesburgBeerEditor = () => {
         if (draftList.includes(beerObj)) {
             return;
         }
-        if (draftList.length > 12) {
+        if (draftList.length > 20) {
             return;
         }
         setDraftList(current => [...current, beerObj])
@@ -80,6 +80,8 @@ const LeesburgBeerEditor = () => {
         const newList = draftList.filter((beer, i) => i !== index);
         setDraftList(newList);
     };
+
+    const [activeButton, setActiveButton] = useState(0);
 
     return (
         <>
@@ -102,7 +104,7 @@ const LeesburgBeerEditor = () => {
                             </p>
                             <div className="w-384 h-576 relative z-1" ref={ref} id="leesburgBeerMenu">
                                 <img src={images.beer_menu_template} alt="" className="absolute z-2" />
-                                <div className="text-center pt-16">
+                                <div className="text-center pt-12">
                                     {draftList.map((beer, index) => (
                                         <div key={beer.id} className="relative z-3 font-semibold">
                                             <div className="flex justify-center">
@@ -146,8 +148,8 @@ const LeesburgBeerEditor = () => {
                                     <div key={beer.id} className="flex text-lg text-gray-200 font-semibold">
                                         <div
                                             className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
-                                            onClick={() => { setBeerObj(beer) }}>
+                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)`}}
+                                            onClick={() => { setBeerObj(beer); setActiveButton(1); }}>
                                             <div className="w-60 flex justify-center">
                                                 <p className="">{beer.name}</p>
                                             </div>
