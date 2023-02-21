@@ -50,7 +50,7 @@ const Navbar = () => {
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative" >
       <div className="flex">
         <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
-        <h1 className="font-semibold text-lg dark:text-gray-200 pt-2 pl-2" >King Street Oyster Bar</h1>
+        <h1 className="font-semibold text-14 dark:text-gray-200 pt-3 pl-2" >King Street Oyster Bar</h1>
       </div>
     
       <div className="flex">

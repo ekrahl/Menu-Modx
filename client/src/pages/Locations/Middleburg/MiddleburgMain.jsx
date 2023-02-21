@@ -1,24 +1,22 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import { images } from '../../../data';
+import { Link } from 'react-router-dom'
+import { images } from '../../../data'
+import LocationHeader from '../../../components/Headers/LocationHeader'
 
 const MiddleburgMain = () => {
 
     return (
         <>
             <div className="flex justify-center">
-                <div className="bg-main-dark-bg rounded-xl mt-24 mx-3 py-6 mb-1 px-2 md:px-40">
+                <div className="bg-main-dark-bg rounded-xl mt-16 md:mt-0 mx-3 py-6 mb-4 px-2 md:px-40">
                     <img src={images.kingstoysterbar} alt="header" />
                 </div>
             </div>
 
-            <div className="mx-3 md:mx-30 mt-4">
+            <div className="mx-3 md:mx-30">
 
-                <p className="text-center font-semibold text-gray-800 dark:text-gray-300 text-4xl pb-12">
-                    Middleburg
-                </p>
+                <LocationHeader location={"MIDDLEBURG"} />
 
-                <div className="lg:flex lg:flex-wrap lg:justify-center">
+                <div className="lg:flex lg:flex-wrap lg:justify-center mt-6">
 
                     <Link to="/middleburg">
                         <div className="flex justify-center bg-middleburg bg-cover bg-center border border-gray-400 rounded-xl py-12 2xl:p-20 m-1 lg:min-w-450" >
@@ -27,7 +25,7 @@ const MiddleburgMain = () => {
                     </Link>
 
                     <Link to="/middleburgfeatures">
-                        <div className="flex justify-center bg-specials3 bg-cover bg-center border border-gray-400 rounded-xl py-12 2xl:p-20 m-1 lg:min-w-450" >
+                        <div className="flex justify-center bg-specials bg-cover bg-center border border-gray-400 rounded-xl py-12 2xl:p-20 m-1 lg:min-w-450" >
                             <p className="font-semibold text-2xl 2xl:text-4xl text-gray-200 bg-black bg-opacity-50 rounded-xl p-2">Daily Features</p>
                         </div>
                     </Link>

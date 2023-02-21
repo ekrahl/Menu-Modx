@@ -1,8 +1,9 @@
 {
   "name": "menu_modx",
+  "homepage": "http://menumodx.com",
   "version": "0.1.0",
+  "description": "Dynamic menu editing and management system",
   "private": true,
-  "proxy": "http://localhost:5000",
   "dependencies": {
     "@syncfusion/ej2": "^19.4.48",
     "@syncfusion/ej2-react-calendars": "^19.4.48",

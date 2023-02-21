@@ -29,9 +29,9 @@ const BeerMenu = (props) => {
 
 
     return (
-        <div>
+        <div className="w-full">
             <p
-                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8 mt-1"
+                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6 mt-1"
                 style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
                 Beer
             </p>

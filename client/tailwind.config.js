@@ -114,6 +114,8 @@ module.exports = {
         400: '400px',
         450: '450px',
         500: '500px',
+        700: '700px',
+        1000: '1000px',
       },
       maxWidth: {
         100: '100px',
@@ -127,6 +129,8 @@ module.exports = {
         500: '500px',
         600: '600px',
         1000: '1000px',
+        1100: '1100px',
+        1175: '1175px',
         1200: '1200px',
         1400: '1400px',
         1500: '1500px',
@@ -138,11 +142,9 @@ module.exports = {
         'logo':
           "url('./data/images/logo.png')",
         'logo2':
-          "url('./data/images/KSOB-Logo.png')",
+          "url('./data/images/oysterCard.png')",
         'oyster':
           "url('./data/images/oyster-image.png')",
-        'oysters':
-          "url('./data/images/ksoboysterdozen.jpg')",
         'oysters2':
           "url('./data/images/oysters2.jpg')",
         'shuckit':
@@ -167,8 +169,6 @@ module.exports = {
           "url('./data/images/nomanight.jpg')",
         'dc3':
           "url('./data/images/dc3.jpg')",
-        'dc4':
-          "url('./data/images/dc4.jpg')",
         'dc5':
           "url('./data/images/ksobdc2.jpg')",
         'potomac':
@@ -179,12 +179,8 @@ module.exports = {
           "url('./data/images/pdr2.jpg')",
         'happyhour1':
           "url('./data/images/happyhour1.jpg')",
-        'specials1':
-          "url('./data/images/specials1.jpg')",
-        'specials2':
-          "url('./data/images/specials2.jpg')",
-        'specials3':
-          "url('./data/images/specials3.jpg')",
+        'specials':
+          "url('./data/images/specials.jpg')",
         'brunch1':
           "url('./data/images/brunch1.jpg')",
         'dinner1':

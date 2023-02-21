@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { IoIosHappy, IoMdSchool } from 'react-icons/io';
 import { RiTodoLine } from 'react-icons/ri';
@@ -7,54 +8,42 @@ import { MdLocationOn, MdStars, MdDinnerDining, MdBrunchDining, MdSpaceDashboard
 import { GiPartyPopper, GiMartini, GiBeerStein, GiOyster, GiChefToque } from 'react-icons/gi';
 import { images } from './';
 
+const today = moment().format('MMM Do')
+const today2 = moment().add(2, 'days').format('MMM Do')
+const today4 = moment().add(4, 'days').format('MMM Do')
+const today5 = moment().add(5, 'days').format('MMM Do')
+const today7 = moment().add(7, 'days').format('MMM Do')
+const today8 = moment().add(8, 'days').format('MMM Do')
+const today10 = moment().add(10, 'days').format('MMM Do')
+const today12 = moment().add(12, 'days').format('MMM Do')
+const today15 = moment().add(15, 'days').format('MMM Do')
+const today16 = moment().add(16, 'days').format('MMM Do')
+
+
 export const locations = [
   {
     id: 1,
     title: "Leesburg",
     path: '/leesburg',
     pathOysterMenu: "/leesburgoystermenu",
-    dinnerMenu: images.leesburg_dinner_menu,
-    brunchMenu: images.leesburg_brunch_menu,
-    cocktailMenu: images.leesburg_cocktail_menu,
-    oysterMenu: images.oyster_menu_tent,
-    beerMenu: images.beer_menu_tent,
-    happyhourMenu: images.happyhour_menu_tent
   },
   {
     id: 2,
     title: "Middleburg",
     path: '/middleburg',
     pathOysterMenu: "/middleburgoystermenu",
-    dinnerMenu: images.middleburg_dinner_menu,
-    brunchMenu: images.middleburg_brunch_menu,
-    cocktailMenu: images.middleburg_cocktail_menu,
-    oysterMenu: images.oyster_menu_tent,
-    beerMenu: images.beer_menu_tent,
-    happyhourMenu: images.happyhour_menu_tent
   },
   {
     id: 3,
     title: "NoMa",
     path: '/noma',
     pathOysterMenu: "/nomaoystermenu",
-    dinnerMenu: images.noma_dinner_menu,
-    brunchMenu: images.noma_brunch_menu,
-    cocktailMenu: images.noma_cocktail_menu,
-    oysterMenu: images.oyster_menu_tent,
-    beerMenu: images.beer_menu_tent,
-    happyhourMenu: images.happyhour_menu_tent
   },
   {
     id: 4,
     title: "Potomac",
     path: '/potomac',
     pathOysterMenu: "/potomacoystermenu",
-    dinnerMenu: images.potomac_dinner_menu,
-    brunchMenu: images.potomac_brunch_menu,
-    cocktailMenu: images.potomac_cocktail_menu,
-    oysterMenu: images.oyster_menu_tent,
-    beerMenu: images.beer_menu_tent,
-    happyhourMenu: images.happyhour_menu_tent
   }];
 
 export const foodFeatures = [
@@ -197,8 +186,8 @@ export const drinkFeatures = [
   {
     id: 1,
     location_id: 1,
-    title: "Tay Bay Bay",
-    ingredients: "tequila, tayberry, lemon, simple",
+    title: "Three Crazy Cat Ladies",
+    ingredients: "angels envy bourbon, spiced pear liquor, blackberry, lemon and earl grey tea",
     allergies: "",
     notes: "rocks glass, small ice, lemon wheel garnish",
     img: images.taybaybay
@@ -240,7 +229,7 @@ export const events = [
     details: "Back Patio",
     guests: "25",
     menu: images.birthdaymenu,
-    date: "Mar 1",
+    date: today,
     time: "7:00 pm",
     contact: "Lisa Smith",
     phone: "571-209-5588",
@@ -253,7 +242,7 @@ export const events = [
     details: "Upstairs",
     guests: "45",
     menu: images.weddingmenu,
-    date: "Mar 5",
+    date: today2,
     time: "5:30 pm",
     contact: "Henry Davis",
     phone: "703-984-2851",
@@ -266,7 +255,7 @@ export const events = [
     details: "PDR",
     guests: "40",
     menu: images.holidaymenu,
-    date: "Mar 10",
+    date: today4,
     time: "6:00 pm",
     contact: "Michael Lee",
     phone: "202-587-2645",
@@ -279,7 +268,7 @@ export const events = [
     details: "31-33",
     guests: "35",
     menu: images.pridemenu,
-    date: "Mar 11",
+    date: today5,
     time: "12:00 pm",
     contact: "Andrew Martinez",
     phone: "202-695-3458",
@@ -292,7 +281,7 @@ export const events = [
     details: "PDR",
     guests: "30",
     menu: images.birthdaymenu,
-    date: "Mar 16",
+    date: today7,
     time: "7:00 pm",
     contact: "Erin Taylor",
     phone: "240-597-8225",
@@ -305,7 +294,7 @@ export const events = [
     details: "11-18, 21-23",
     guests: "25",
     menu: images.birthdaymenu,
-    date: "Mar 21",
+    date: today8,
     time: "11:00 am",
     contact: "Marc Lopez",
     phone: "202-478-6514",
@@ -318,7 +307,7 @@ export const events = [
     details: "31-33",
     guests: "45",
     menu: images.birthdaymenu,
-    date: "Mar 25",
+    date: today10,
     time: "3:00 pm",
     contact: "Kristi Moore",
     phone: "202-618-9345",
@@ -331,7 +320,7 @@ export const events = [
     details: "Patio/Bar",
     guests: "50",
     menu: images.birthdaymenu,
-    date: "Mar 28",
+    date: today12,
     time: "6:00 pm",
     contact: "Amber Wilson",
     phone: "240-937-8845",
@@ -344,7 +333,7 @@ export const events = [
     details: "31-33, 11-18, 21-23",
     guests: "80",
     menu: images.birthdaymenu,
-    date: "Mar 28",
+    date: today15,
     time: "1:00 pm",
     contact: "Tanisha Harris",
     phone: "202-324-1486",
@@ -357,7 +346,7 @@ export const events = [
     details: "Upstairs",
     guests: "35",
     menu: images.birthdaymenu,
-    date: "Mar 30",
+    date: today16,
     time: "7:00 pm",
     contact: "Lindsay Allen",
     phone: "540-956-9115",

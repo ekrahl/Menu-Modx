@@ -22,3 +22,4 @@ export { default as OysterForm } from './Editors/OysterForm';
 export { default as BeerForm } from './Editors/BeerForm';
 export { default as FeatureForm } from './Editors/FeatureForm';
 export { default as CurrentMenu } from './Editors/CurrentMenu';
+export { default as LocationHeader } from './Headers/LocationHeader'

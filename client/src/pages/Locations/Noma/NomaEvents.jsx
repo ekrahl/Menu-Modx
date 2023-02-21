@@ -1,28 +1,28 @@
-import React from 'react';
-import { images } from '../../../data';
-import { events } from '../../../data/dummy';
-import { BsFillPeopleFill, BsFillTelephoneFill, BsClockFill } from 'react-icons/bs';
-import { MdLocationPin } from 'react-icons/md';
-import { RiContactsFill } from 'react-icons/ri';
-import { GiPartyPopper } from 'react-icons/gi';
+import { images } from '../../../data'
+import { events } from '../../../data/dummy'
+import { BsFillPeopleFill, BsFillTelephoneFill, BsClockFill } from 'react-icons/bs'
+import { MdLocationPin } from 'react-icons/md'
+import { RiContactsFill } from 'react-icons/ri'
+import { GiPartyPopper } from 'react-icons/gi'
+import LocationHeader from '../../../components/Headers/LocationHeader'
 
 const NomaEvents = () => {
     return (
         <>
             <div className="flex justify-center">
-                <div className="mx-3 mt-24">
-                    <div className="flex justify-center bg-main-dark-bg rounded-xl pt-10 pb-6 mx-6">
-                        <img src={images.kingstoysterbar} alt="header" />
-                    </div>
+                <div className="bg-main-dark-bg rounded-xl mt-16 md:mt-0 mx-3 py-6 mb-4 px-2 md:px-40">
+                    <img src={images.kingstoysterbar} alt="header" />
+                </div>
+            </div>
 
-                    <div className="text-center font-semibold text-3xl mb-10">
-                        <p className="mb-10  text-gray-400">
-                            NoMa
-                        </p>
-                        <p className="italic text-gray-200">
-                            Event Menus
-                        </p>
-                    </div>
+            <div className="flex justify-center">
+                <div className="mx-3">
+
+                    <LocationHeader location="NOMA" />
+
+                    <p className="text-center font-semibold text-3xl italic text-gray-800 dark:text-gray-200 my-6">
+                        Event Menus
+                    </p>
 
                     {events.map((event) => (
                         <div key={event.id} className="flex">
@@ -47,9 +47,6 @@ const NomaEvents = () => {
                             </div>
                         </div>
                     ))}
-
-
-
                 </div>
             </div>
         </>

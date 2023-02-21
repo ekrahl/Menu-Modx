@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import { useStateContext } from '../../../contexts/ContextProvider';
-import { FaEdit, FaDownload } from 'react-icons/fa';
-import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
-import { images } from '../../../data';
+import { Link } from 'react-router-dom'
+import { useStateContext } from '../../../contexts/ContextProvider'
+import { FaEdit, FaDownload } from 'react-icons/fa'
+import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
+import { images } from '../../../data'
+import LocationHeader from '../../../components/Headers/LocationHeader'
 
 const MiddleburgFeatures = () => {
 
@@ -12,27 +12,21 @@ const MiddleburgFeatures = () => {
     return (
         <>
             <div className="flex justify-center">
-                <div className="mx-3 mt-24">
+                <div className="bg-main-dark-bg rounded-xl mt-16 md:mt-0 mx-3 py-6 mb-4 px-2 md:px-40">
+                    <img src={images.kingstoysterbar} alt="header" />
+                </div>
+            </div>
 
-                    <div className="flex justify-center bg-main-dark-bg rounded-xl pt-10 pb-6 mx-6">
-                        <img src={images.kingstoysterbar} alt="header" />
-                    </div>
+            <div className="flex justify-center">
+                <div className="mx-3">
 
-                    <div className="text-center font-semibold text-3xl mb-10">
-                        <p className="mb-10 text-gray-400">
-                            Middleburg
-                        </p>
-                        <p className="text-gray-200 italic">
-                            Daily Features Menu
-                        </p>
-                    </div>
+                    <LocationHeader location={"MIDDLEBURG"} />
 
-
-                    <div className="flex flex-wrap lg:flex-nowrap">
+                    <div className="flex flex-wrap lg:flex-nowrap mt-6">
                         <div className="lg:max-w-500 m-1">
                             <p
-                                className="font-semibold text-3xl text-gray-200 border-b border-gray-600 rounded-t-xl text-center p-8"
-                                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>Current
+                                className="font-semibold text-2xl text-gray-200 border-b border-gray-600 rounded-t-xl text-center p-6"
+                                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>Daily Features Menu
                             </p>
 
                             <img className="border-b border-gray-600" src={images.menu_features_middleburg} alt="Leesburg Features Menu" title="Leesburg Features Menu" />
@@ -51,14 +45,14 @@ const MiddleburgFeatures = () => {
                         <div className="lg:max-w-500 m-1 w-full">
                             <div className="mb-1">
                                 <Link to="/leesburgfeatureeditor">
-                                    <p className="font-semibold text-3xl text-gray-200 border-b border-gray-600 rounded-xl text-center p-8"
+                                    <p className="font-semibold text-2xl text-gray-200 border-b border-gray-600 rounded-xl text-center p-6"
                                         style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>+ CREATE NEW MENU</p>
 
                                 </Link>
                             </div>
                             <div className="mt-2">
                                 <p
-                                    className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+                                    className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
                                     style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
                                     Queue
                                 </p>
@@ -89,7 +83,7 @@ const MiddleburgFeatures = () => {
                             </div>
                             <div className="mt-2">
                                 <p
-                                    className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+                                    className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
                                     style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
                                     Recent
                                 </p>
@@ -120,8 +114,6 @@ const MiddleburgFeatures = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </>

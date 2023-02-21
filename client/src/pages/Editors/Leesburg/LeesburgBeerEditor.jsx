@@ -81,8 +81,6 @@ const LeesburgBeerEditor = () => {
         setDraftList(newList);
     };
 
-    const [activeButton, setActiveButton] = useState(0);
-
     return (
         <>
             <div className="mt-24 lg:mt-6">
@@ -148,8 +146,8 @@ const LeesburgBeerEditor = () => {
                                     <div key={beer.id} className="flex text-lg text-gray-200 font-semibold">
                                         <div
                                             className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)`}}
-                                            onClick={() => { setBeerObj(beer); setActiveButton(1); }}>
+                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
+                                            onClick={() => { setBeerObj(beer) }}>
                                             <div className="w-60 flex justify-center">
                                                 <p className="">{beer.name}</p>
                                             </div>
