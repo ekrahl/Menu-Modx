@@ -72,6 +72,7 @@ import {
 } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -87,7 +88,9 @@ const App = () => {
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
+
       <BrowserRouter>
+        <ScrollToTop />
         <div className='flex relative dark:bg-main-dark-bg'>
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent
@@ -128,6 +131,7 @@ const App = () => {
               {themeSettings && (<ThemeSettings />)}
 
               <Routes>
+
                 <Route path='/' element={(<Main />)} />
 
                 <Route path="/" element={(<Dashboard />)} />

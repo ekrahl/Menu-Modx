@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useStateContext } from '../../../contexts/ContextProvider';
-import { CurrentMenu, FeatureForm } from '../../../components';
-import { images } from '../../../data';
-import { foodFeatures, drinkFeatures, menus } from '../../../data/dummy';
-import * as htmlToImage from 'html-to-image';
-import { toPng } from 'html-to-image';
-import moment from 'moment';
-import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
-import { FaDownload } from 'react-icons/fa';
-import { BiAddToQueue } from 'react-icons/bi';
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { useStateContext } from '../../../contexts/ContextProvider'
+import { LocationHeader, FeatureForm } from '../../../components'
+import { images } from '../../../data'
+import { foodFeatures, drinkFeatures, menus } from '../../../data/dummy'
+import * as htmlToImage from 'html-to-image'
+import { toPng } from 'html-to-image'
+import { FaDownload, FaEdit, FaDelete } from 'react-icons/fa'
+import { BiAddToQueue } from 'react-icons/bi'
 
-var node = document.getElementById('potomacFeatureMenu');
+var node = document.getElementById('potomacFeatureMenu')
 
 htmlToImage.toPng(node)
   .then(function (dataUrl) {
@@ -25,7 +23,6 @@ htmlToImage.toPng(node)
 const PotomacFeatureEditor = () => {
   const { currentColor, currentMode } = useStateContext();
 
-  const date = moment().format('l');
   const ref = useRef(null);
 
   const onButtonClick = useCallback(() => {
@@ -70,25 +67,15 @@ const PotomacFeatureEditor = () => {
   };
 
   return (
-    <div className="mt-24 lg:mt-6">
-      <div className="text-center font-semibold text-3xl mb-10">
-        <p className="mb-10 text-gray-400">
-          Potomac
-        </p>
-        <p className="text-gray-200 italic">
-          Features Menu Editor
-        </p>
-      </div>
+    <div className="mt-24 md:mt-4">
+      <LocationHeader location={"POTOMAC"} />
       <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
-        <div className="flex flex-col items-center">
-
-        </div>
         <div className="flex flex-wrap justify-center">
-          <div className="">
+          <div>
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-              Build Menu
+              Build Features Menu
             </p>
             <div className="w-816 h-1056 relative z-1" ref={ref} id="potomacFeatureMenu">
               <img src={images.feature_sheet_template2} alt="feature menu template" className="absolute z-2" />
@@ -98,23 +85,62 @@ const PotomacFeatureEditor = () => {
                     <div className="cursor-pointer" onClick={() => { handleDelete(index) }}>
                       <div className="flex" >
                         <div className="flex justify-center items-center w-96">
-                          <p className="text-center w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '30px', color: '#1B2E3D', lineHeight: '40px' }}>{`${feat.title}`.toUpperCase()}</p>
+                          <p className="text-center w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '30px',
+                            color: '#1B2E3D',
+                            lineHeight: '40px'
+                          }}>{`${feat.title}`.toUpperCase()}</p>
                         </div>
                         <img className="w-96 rounded-t-2xl" src={feat.img} alt="" />
                       </div>
                       <div className="w-full h-2" style={{ backgroundColor: '#1B2E3D' }}></div>
                       <div className="">
                         <div className="flex justify-left m-2">
-                          <p className="flex" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36', lineHeight: '20px' }}>INGREDIENTS</p>
-                          <p className="flex ml-4 w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '12px', lineHeight: '20px' }}>{feat.ingredients}</p>
+                          <p className="flex" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '16px',
+                            color: '#8A5C36',
+                            lineHeight: '20px'
+                          }}>INGREDIENTS</p>
+                          <p className="flex ml-4 w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '12px',
+                            lineHeight: '20px'
+                          }}>{feat.ingredients}</p>
                         </div>
                         <div className="flex justify-left m-2">
-                          <p className="flex" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36', lineHeight: '20px' }}>ALLERGIES</p>
-                          <p className="flex ml-4 w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '12px', lineHeight: '20px' }}>{feat.allergies}</p>
+                          <p className="flex" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '16px',
+                            color: '#8A5C36',
+                            lineHeight: '20px'
+                          }}>ALLERGIES</p>
+                          <p className="flex ml-4 w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '12px',
+                            lineHeight: '20px'
+                          }}>{feat.allergies}</p>
                         </div>
                         <div className="flex justify-left m-2">
-                          <p className="flex" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36', lineHeight: '20px' }}>NOTES</p>
-                          <p className="flex ml-4 w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '12px', lineHeight: '20px' }}>{feat.notes}</p>
+                          <p className="flex" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '16px',
+                            color: '#8A5C36',
+                            lineHeight: '20px'
+                          }}>NOTES</p>
+                          <p className="flex ml-4 w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '12px',
+                            lineHeight: '20px'
+                          }}>{feat.notes}</p>
                         </div>
                       </div>
                     </div>
@@ -143,7 +169,7 @@ const PotomacFeatureEditor = () => {
         <div className="mx-3">
           <div className="">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Food Catalog
             </p>
@@ -151,7 +177,7 @@ const PotomacFeatureEditor = () => {
               className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {foodFeatures.map((feat, index) => (
-                <div key={feat.id} className="flex text-lg text-gray-200 font-semibold">
+                <div key={feat.id} className="flex text-lg text-gray-200 gap-2">
                   <div
                     className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
@@ -161,7 +187,7 @@ const PotomacFeatureEditor = () => {
                     </div>
                   </div>
                   <button type="button" onClick="" >
-                    <AiFillEdit size="1.5rem" />
+                    <FaEdit size="1.5rem" />
                   </button>
                 </div>
               ))}
@@ -170,7 +196,7 @@ const PotomacFeatureEditor = () => {
 
           <div className="mt-6">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Beverage Catalog
             </p>
@@ -178,7 +204,7 @@ const PotomacFeatureEditor = () => {
               className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {drinkFeatures.map((feat, index) => (
-                <div key={feat.id} className="flex text-lg text-gray-200 font-semibold">
+                <div key={feat.id} className="flex text-lg text-gray-200 gap-2">
                   <div
                     className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
@@ -188,7 +214,7 @@ const PotomacFeatureEditor = () => {
                     </div>
                   </div>
                   <button type="button" onClick="" >
-                    <AiFillEdit size="1.5rem" />
+                    <FaEdit size="1.5rem" />
                   </button>
                 </div>
               ))}
@@ -197,7 +223,7 @@ const PotomacFeatureEditor = () => {
 
           <div className="flex flex-col text-gray-200 mt-6">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Add Item to Catalog
             </p>

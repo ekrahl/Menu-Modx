@@ -2,7 +2,7 @@
   "name": "menu_modx",
   "homepage": "http://menumodx.com",
   "version": "0.1.0",
-  "description": "Dynamic menu editing and management system",
+  "description": "App for creating and managing dynamic menus",
   "private": true,
   "dependencies": {
     "@syncfusion/ej2": "^19.4.48",

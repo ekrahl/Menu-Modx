@@ -9,21 +9,12 @@ import LocationHeader from '../../../components/Headers/LocationHeader'
 const PotomacEvents = () => {
     return (
         <>
-            <div className="flex justify-center">
-                <div className="bg-main-dark-bg rounded-xl mt-16 md:mt-0 mx-3 py-6 mb-4 px-2 md:px-40">
-                    <img src={images.kingstoysterbar} alt="header" />
-                </div>
-            </div>
-
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-24 md:mt-4">
                 <div className="mx-3">
-
                     <LocationHeader location="POTOMAC" />
-
                     <p className="text-center font-semibold text-3xl italic text-gray-800 dark:text-gray-200 my-6">
                         Event Menus
                     </p>
-
                     {events.map((event) => (
                         <div key={event.id} className="flex">
                             <div className="flex items-center justify-center rounded-xl p-8 text-gray-200 text-3xl lg:min-w-200 m-1" style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
@@ -47,9 +38,6 @@ const PotomacEvents = () => {
                             </div>
                         </div>
                     ))}
-
-
-
                 </div>
             </div>
         </>

@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useStateContext } from '../../../contexts/ContextProvider';
-import { CurrentMenu, FeatureForm } from '../../../components';
-import { images } from '../../../data';
-import { foodFeatures, drinkFeatures, menus } from '../../../data/dummy';
-import * as htmlToImage from 'html-to-image';
-import { toPng } from 'html-to-image';
-import moment from 'moment';
-import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
-import { FaDownload } from 'react-icons/fa';
-import { BiAddToQueue } from 'react-icons/bi';
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { useStateContext } from '../../../contexts/ContextProvider'
+import { FeatureForm, LocationHeader } from '../../../components'
+import { images } from '../../../data'
+import { foodFeatures, drinkFeatures, menus } from '../../../data/dummy'
+import * as htmlToImage from 'html-to-image'
+import { toPng } from 'html-to-image'
+import { FaDownload, FaEdit, FaDelete } from 'react-icons/fa'
+import { BiAddToQueue } from 'react-icons/bi'
 
-var node = document.getElementById('middleburgFeatureMenu');
+var node = document.getElementById('middleburgFeatureMenu')
+
 
 htmlToImage.toPng(node)
   .then(function (dataUrl) {
@@ -25,7 +24,6 @@ htmlToImage.toPng(node)
 const MiddleburgFeatureEditor = () => {
   const { currentColor, currentMode } = useStateContext();
 
-  const date = moment().format('l');
   const ref = useRef(null);
 
   const onButtonClick = useCallback(() => {
@@ -70,100 +68,15 @@ const MiddleburgFeatureEditor = () => {
   };
 
   return (
-    <div className="mt-24 lg:mt-6">
-      <p className="text-center font-semibold text-4xl dark:text-gray-200 py-8">Features Editor</p>
+    <div className="mt-24 md:mt-4">
+      <LocationHeader location={"MIDDLEBURG"} />
       <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
-        <div className="flex flex-col items-center">
-          <CurrentMenu menu={menus[1].featureMenu} />
-
-          <div className="w-350 mt-6">
-            <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
-              style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-              Queue
-            </p>
-            <div
-              className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
-              style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-              <div className="flex justify-center p-4 gap-6">
-                <img className="h-28" src={menus[1].featureMenu} alt="" />
-                <div className="flex flex-col justify-center p-2 gap-3">
-                  <button
-                    className="sm:text-xl xl:text-2xl"
-                  ><FaDownload /></button>
-                  <button
-                    className="sm:text-xl xl:text-2xl"
-                  ><AiFillEdit /></button>
-                  <button
-                    className="sm:text-xl xl:text-2xl"
-                  ><AiFillDelete /></button>
-                </div>
-                <div className="flex justify-center items-center">
-                  <div className="text-gray-400">
-                    <p className="font-semibold text-gray-200 mb-2">Release Date: 11/30/22</p>
-                    <p >Created: 11/22/22</p>
-                    <p >By: John</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-350 h-250 mt-6 overflow-auto">
-            <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
-              style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-              Recent
-            </p>
-            <div className="border-b border-gray-600 rounded-b-xl">
-              <div className="text-gray-200 rounded-b-xl p-2" style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                <div className="flex justify-center p-4 gap-2">
-                  <img className="h-28" src={menus[1].featureMenu} alt="" />
-                  <div className="flex flex-col justify-center p-2 gap-2">
-                    <button
-                      className="sm:text-xl xl:text-2xl p-1"
-                    ><FaDownload /></button>
-                    <button
-                      className="sm:text-xl xl:text-2xl p-1"
-                    ><AiFillEdit /></button>
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <div className="text-sm text-gray-300">
-                      <p >Release: 11/30/22</p>
-                      <p >Live: 11 days</p>
-                      <p >Created: 11/22/22</p>
-                      <p >By: John</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-center p-4 gap-2">
-                  <img className="h-28" src={menus[2].featureMenu} alt="" />
-                  <div className="flex flex-col justify-center p-2 gap-2">
-                    <button
-                      className="sm:text-xl xl:text-2xl p-1"
-                    ><FaDownload /></button>
-                    <button
-                      className="sm:text-xl xl:text-2xl p-1"
-                    ><AiFillEdit /></button>
-                  </div>
-                  <div className="flex justify-center items-center">
-                    <div className="text-sm text-gray-300">
-                      <p >Release: 11/30/22</p>
-                      <p >Live: 11 days</p>
-                      <p >Created: 11/22/22</p>
-                      <p >By: John</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="flex flex-wrap justify-center">
           <div className="">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-              Build Menu
+              Build Features Menu
             </p>
             <div className="w-816 h-1056 relative z-1" ref={ref} id="middleburgFeatureMenu">
               <img src={images.feature_sheet_template2} alt="feature menu template" className="absolute z-2" />
@@ -173,23 +86,57 @@ const MiddleburgFeatureEditor = () => {
                     <div className="cursor-pointer" onClick={() => { handleDelete(index) }}>
                       <div className="flex" >
                         <div className="flex justify-center items-center w-96">
-                          <p className="text-center w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '30px', color: '#1B2E3D', lineHeight: '40px' }}>{`${feat.title}`.toUpperCase()}</p>
+                          <p className="text-center w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '30px',
+                            color: '#1B2E3D',
+                            lineHeight: '40px'
+                          }}>{`${feat.title}`.toUpperCase()}</p>
                         </div>
                         <img className="w-96 rounded-t-2xl" src={feat.img} alt="" />
                       </div>
                       <div className="w-full h-2" style={{ backgroundColor: '#1B2E3D' }}></div>
                       <div className="">
                         <div className="flex justify-left m-2">
-                          <p className="flex" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36', lineHeight: '20px' }}>INGREDIENTS</p>
-                          <p className="flex ml-4 w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '12px', lineHeight: '20px' }}>{feat.ingredients}</p>
+                          <p className="flex" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '16px',
+                            color: '#8A5C36',
+                            lineHeight: '20px'
+                          }}>INGREDIENTS</p>
+                          <p className="flex ml-4 w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '12px',
+                            lineHeight: '20px'
+                          }}>{feat.ingredients}</p>
                         </div>
                         <div className="flex justify-left m-2">
-                          <p className="flex" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36', lineHeight: '20px' }}>ALLERGIES</p>
-                          <p className="flex ml-4 w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '12px', lineHeight: '20px' }}>{feat.allergies}</p>
+                          <p className="flex" style={{
+                            fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36',
+                            lineHeight: '20px'
+                          }}>ALLERGIES</p>
+                          <p className="flex ml-4 w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '12px', lineHeight: '20px'
+                          }}>{feat.allergies}</p>
                         </div>
                         <div className="flex justify-left m-2">
-                          <p className="flex" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '16px', color: '#8A5C36', lineHeight: '20px' }}>NOTES</p>
-                          <p className="flex ml-4 w-full" style={{ fontFamily: 'montserrat', fontWeight: '700', fontSize: '12px', lineHeight: '20px' }}>{feat.notes}</p>
+                          <p className="flex" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '16px',
+                            color: '#8A5C36',
+                            lineHeight: '20px'
+                          }}>NOTES</p>
+                          <p className="flex ml-4 w-full" style={{
+                            fontFamily: 'montserrat',
+                            fontWeight: '700',
+                            fontSize: '12px', lineHeight: '20px'
+                          }}>{feat.notes}</p>
                         </div>
                       </div>
                     </div>
@@ -218,7 +165,7 @@ const MiddleburgFeatureEditor = () => {
         <div className="mx-3">
           <div className="">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Food Catalog
             </p>
@@ -226,7 +173,7 @@ const MiddleburgFeatureEditor = () => {
               className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {foodFeatures.map((feat, index) => (
-                <div key={feat.id} className="flex text-lg text-gray-200 font-semibold">
+                <div key={feat.id} className="flex text-lg text-gray-200 gap-2">
                   <div
                     className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
@@ -236,7 +183,7 @@ const MiddleburgFeatureEditor = () => {
                     </div>
                   </div>
                   <button type="button" onClick="" >
-                    <AiFillEdit size="1.5rem" />
+                    <FaEdit size="1.5rem" />
                   </button>
                 </div>
               ))}
@@ -245,7 +192,7 @@ const MiddleburgFeatureEditor = () => {
 
           <div className="mt-6">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Beverage Catalog
             </p>
@@ -253,7 +200,7 @@ const MiddleburgFeatureEditor = () => {
               className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {drinkFeatures.map((feat, index) => (
-                <div key={feat.id} className="flex text-lg text-gray-200 font-semibold">
+                <div key={feat.id} className="flex text-lg text-gray-200 gap-2">
                   <div
                     className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
@@ -263,7 +210,7 @@ const MiddleburgFeatureEditor = () => {
                     </div>
                   </div>
                   <button type="button" onClick="" >
-                    <AiFillEdit size="1.5rem" />
+                    <FaEdit size="1.5rem" />
                   </button>
                 </div>
               ))}
@@ -272,7 +219,7 @@ const MiddleburgFeatureEditor = () => {
 
           <div className="flex flex-col text-gray-200 mt-6">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-8"
+              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Add Item to Catalog
             </p>
@@ -292,4 +239,5 @@ const MiddleburgFeatureEditor = () => {
     </div>
   )
 }
+
 export default MiddleburgFeatureEditor

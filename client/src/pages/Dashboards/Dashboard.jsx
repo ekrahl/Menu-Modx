@@ -1,16 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import moment from 'moment';
-import { images } from '../../data';
-import { locations, foodFeatures, drinkFeatures, events, menus } from '../../data/dummy';
-import { useStateContext } from '../../contexts/ContextProvider';
-import { BsClockFill, BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs';
-import { MdLocationPin, MdDoubleArrow } from 'react-icons/md';
-import { GiPartyPopper } from 'react-icons/gi';
-import { RiContactsFill } from 'react-icons/ri';
-import { ScrollButton } from '../../components';
+import { Link } from 'react-router-dom'
+import moment from 'moment'
+import { locations, foodFeatures, drinkFeatures, events, menus } from '../../data/dummy'
+import { useStateContext } from '../../contexts/ContextProvider'
+import { BsClockFill, BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs'
+import { MdLocationPin, MdDoubleArrow } from 'react-icons/md'
+import { GiPartyPopper } from 'react-icons/gi'
+import { RiContactsFill } from 'react-icons/ri'
+import { ScrollButton, LogoHeader } from '../../components'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'
 
 const Dashboard = () => {
   const update = moment().subtract(1, 'days').calendar();
@@ -18,12 +16,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex justify-center">
-        <div className="bg-main-dark-bg rounded-xl mt-16 md:mt-0 mx-2 px-2 py-4 md:px-36">
-          <img src={images.kingstoysterbar} alt="header" />
-        </div>
-      </div>
-
+      <LogoHeader />
       <div className="flex flex-col justify-center mx-auto px-3 md:mt-2 md:max-w-1200">
         <div className="flex flex-wrap lg:flex-nowrap justify-center mt-1 gap-1">
           <div className="flex flex-col items-center justify-center bg-veggieprep bg-cover rounded-xl w-full py-12">

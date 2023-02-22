@@ -3,7 +3,6 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { images } from '../../data';
-import { locations } from '../../data/dummy';
 import { FaEdit, FaDownload } from 'react-icons/fa';
 
 // import { Link } from 'react-router-dom';
