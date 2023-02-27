@@ -5,10 +5,10 @@ import menu_features_noma from './images/menus/Noma/menu_features_noma.png'
 import menu_features_potomac from './images/menus/Potomac/menu_features_potomac.png'
 
 // event menus
-import weddingmenu from './images/menus/weddingmenu.png'
-import holidaymenu from './images/menus/holidaymenu.png'
-import birthdaymenu from './images/menus/birthdaymenu.png'
-import pridemenu from './images/menus/pridemenu.png'
+import weddingmenu from './images/menus/events/weddingmenu.png'
+import holidaymenu from './images/menus/events/holidaymenu.png'
+import birthdaymenu from './images/menus/events/birthdaymenu.png'
+import pridemenu from './images/menus/events/pridemenu.png'
 
 // table tents
 import oyster_menu_leesburg from './images/menus/Leesburg/oyster_menu_leesburg.png'
@@ -39,52 +39,45 @@ import potomac_cocktail_menu from './images/menus/Potomac/potomac_cocktail_menu.
 import potomac_dinner_menu from './images/menus/Potomac/potomac_dinner_menu.jpg'
 
 // fish feature images
-import bronzino_tomato_salad from './images/bronzino_tomato_salad.jpg'
-import halibut_risotto from './images/halibut_risotto.jpg'
-import halibut_risotto_full from './images/halibut_risotto_full.jpg'
-import swordfish_shrimp_grits from './images/swordfish_shrimp_grits.jpg'
-import swordfish_risotto from './images/swordfish_risotto.jpg'
-import rockfish_jasmine_rice from './images/rockfish_jasmine_rice.jpg'
-import rockfish_jambalaya from './images/rockfish_jambalaya.jpg'
+import bronzino_tomato_salad from './images/specials/food/bronzino_tomato_salad.jpg'
+import halibut_risotto from './images/specials/food/halibut_risotto.jpg'
+import halibut_risotto_full from './images/specials/food/halibut_risotto_full.jpg'
+import swordfish_shrimp_grits from './images/specials/food/swordfish_shrimp_grits.jpg'
+import swordfish_risotto from './images/specials/food/swordfish_risotto.jpg'
+import rockfish_jasmine_rice from './images/specials/food/rockfish_jasmine_rice.jpg'
+import rockfish_jambalaya from './images/specials/food/rockfish_jambalaya.jpg'
 
 // cocktail feature images
-import julep from './images/julep.jpg'
-import mango_tango from './images/mango_tango.jpg'
-import taybaybay from './images/taybaybay.jpg'
-import tikitac from './images/tikitac.jpg'
-
-// adobe designs
-import middleburgHeader from './images/middleburgHeader.png'
-import kingstoysterbar from './images/kingstoysterbar.png'
-import nomaHeader from './images/nomaHeader.png'
-import leesburgHeader from './images/leesburgHeader.png'
-import logo from './images/logo.png'
-import potomacHeader from './images/potomacHeader.png'
+import julep from './images/specials/drink/julep.jpg'
+import mango_tango from './images/specials/drink/mango_tango.jpg'
+import taybaybay from './images/specials/drink/taybaybay.jpg'
+import tikitac from './images/specials/drink/tikitac.jpg'
 
 // header images
-import ksobdc2 from './images/ksobdc2.jpg'
-import leesburg from './images/leesburg.jpeg'
-import middleburg from './images/middleburg.jpg'
-import potomac from './images/potomac.jpg'
-import dc3 from './images/dc3.jpg'
-import pdr from './images/pdr.jpg'
+import kingstoysterbar from './images/headers/kingstoysterbar.png'
+import logo from './images/headers/logo.png'
+import ksobdc2 from './images/headers/ksobdc2.jpg'
+import leesburg from './images/headers/leesburg.jpeg'
+import middleburg from './images/headers/middleburg.jpg'
+import potomac from './images/headers/potomac.jpg'
+import dc3 from './images/headers/dc3.jpg'
+import pdr from './images/headers/pdr.jpg'
+import ksobfood from './images/headers/ksobfood.jpg'
+import shuckit from './images/headers/shuckit.jpg'
+import veggieprep from './images/headers/veggieprep.jpg'
+import oyster from './images/headers/oyster-image.png'
+import oysterCard from './images/headers/oysterCard.png'
 
-// other images
-import ksobfood from './images/ksobfood.jpg'
-import shuckit from './images/shuckit.jpg'
-import veggieprep from './images/veggieprep.jpg'
-import happyhour from './images/happyhour.jpg'
-import oyster from './images/oyster-image.png'
-import oysterCard from './images/oysterCard.png'
-import comingSoonImg from './images/coming-soon-img.png'
-import comingSoonImgSm from './images/coming-soon-img-mobile.png'
+// coming soon
+import comingSoonImg from './images/comingSoon/coming-soon-img.jpg'
+import comingSoonImgSm from './images/comingSoon/coming-soon-img-mobile.jpg'
 
 //templates
-import oyster_menu_template from './images/menus/oyster_menu_template.png'
-import oyster_menu_template_noma from './images/menus/oyster_menu_template_noma.png'
-import beer_menu_template from './images/menus/beer_menu_template.png'
-import feature_sheet_template2 from './images/menus/feature_sheet_template2.png'
-import feature_menu_template from './images/menus/feature_menu_template.png'
+import oyster_menu_template from './images/menus/templates/oyster_menu_template.png'
+import oyster_menu_template_noma from './images/menus/templates/oyster_menu_template_noma.png'
+import beer_menu_template from './images/menus/templates/beer_menu_template.png'
+import feature_sheet_template2 from './images/menus/templates/feature_sheet_template2.png'
+import feature_menu_template from './images/menus/templates/feature_menu_template.png'
 
 export default {
     beer_menu_leesburg,
@@ -101,7 +94,6 @@ export default {
     feature_sheet_template2,
     halibut_risotto,
     halibut_risotto_full,
-    happyhour,
     happy_hour_menu_leesburg,
     happy_hour_menu_middleburg,
     happy_hour_menu_noma,
@@ -112,7 +104,6 @@ export default {
     ksobdc2,
     ksobfood,
     leesburg,
-    leesburgHeader,
     logo,
     leesburg_brunch_menu,
     leesburg_cocktail_menu,
@@ -126,8 +117,6 @@ export default {
     menu_features_potomac,
     mango_tango,
     middleburg,
-    middleburgHeader,
-    nomaHeader,
     noma_brunch_menu,
     noma_cocktail_menu,
     noma_dinner_menu,
@@ -144,7 +133,6 @@ export default {
     potomac_dinner_menu,
     pdr,
     potomac,
-    potomacHeader,
     pridemenu,
     rockfish_jasmine_rice,
     rockfish_jambalaya,

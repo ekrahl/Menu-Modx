@@ -9,7 +9,7 @@ const BeerMenus = () => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center md:mx-24">
         <div className="mt-16 mx-3 md:mt-0 md:mx-8">
           <MenuPageHeader img="bg-beer" title="BEER" position="bg-center" />
           <div className="flex flex-wrap md:flex-nowrap justify-center gap-1 mt-1">

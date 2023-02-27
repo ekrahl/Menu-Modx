@@ -54,21 +54,21 @@ const Noma = () => {
                     </div>
                     <div className="md:w-1/2">
                         <Link to='/nomadinner'>
-                            <div className="flex justify-center bg-dinner1 bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >
+                            <div className="flex justify-center bg-dinner bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >
                                 <p className="bg-half-transparent rounded-xl p-2">DINNER</p>
                             </div>
                         </Link>
                     </div>
                     <div className="md:w-1/2">
                         <Link to='/nomacocktail'>
-                            <div className="flex justify-center bg-cocktail4 bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >
+                            <div className="flex justify-center bg-cocktail bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >
                                 <p className="bg-half-transparent rounded-xl p-2">COCKTAIL</p>
                             </div>
                         </Link>
                     </div>
                     <div className="md:w-1/2">
                         <Link to='/nomabrunch'>
-                            <div className="flex justify-center bg-brunch1 bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >
+                            <div className="flex justify-center bg-brunch bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >
                                 <p className="bg-half-transparent rounded-xl p-2">BRUNCH</p>
                             </div>
                         </Link>

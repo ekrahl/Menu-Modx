@@ -135,15 +135,16 @@ const MiddleburgBeerEditor = () => {
                     <div className="flex flex-wrap justify-center mx-3">
                         <div>
                             <ContainerHeader title="Catalog" />
-                            <div className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
+                            <div
+                                className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                <p
-                                    className="text-xl dark:text-gray-200 font-semibold pb-2 pt-2 text-center">Draft Beer</p>
+                                <p className="text-xl dark:text-gray-200 font-semibold pb-2 pt-2 text-center">Draft Beer</p>
                                 {draft.map((beer, index) => (
-                                    <div key={beer.id} className="flex text-lg text-gray-200 gap-2">
+                                    <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
                                         <div
-                                            className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }} onClick={() => { setBeerObj(beer) }}>
+                                            className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
+                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
+                                            onClick={() => { setBeerObj(beer) }}>
                                             <div className="w-60 flex justify-center">
                                                 <p>{beer.name}</p>
                                             </div>
@@ -155,11 +156,10 @@ const MiddleburgBeerEditor = () => {
                                 ))}
                                 <p className="text-xl dark:text-gray-200 font-semibold pb-2 pt-2 text-center">Bottled Beer</p>
                                 {bottles.map((beer, index) => (
-                                    <div key={beer.id} className="flex text-lg text-gray-200 gap-2">
+                                    <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
                                         <div
-                                            className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
-                                            onClick={() => { setBeerObj(beer) }}>
+                                            className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
+                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }} onClick={() => { setBeerObj(beer) }}>
                                             <div className="w-60 flex justify-center">
                                                 <p>{beer.name}</p>
                                             </div>

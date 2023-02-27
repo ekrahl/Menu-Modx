@@ -156,57 +156,43 @@ module.exports = {
 
       backgroundImage: {
         'logo':
-          "url('./data/images/logo.png')",
+          "url('./data/images/headers/logo.png')",
         'logo2':
-          "url('./data/images/oysterCard.png')",
+          "url('./data/images/headers/oysterCard.png')",
         'oyster':
-          "url('./data/images/oyster-image.png')",
+          "url('./data/images/headers/oyster-image.png')",
         'oysters2':
-          "url('./data/images/oysters2.jpg')",
+          "url('./data/images/headers/oysters2.jpg')",
         'shuckit':
-          "url('./data/images/shuckit.jpg')",
+          "url('./data/images/headers/shuckit.jpg')",
         'veggieprep':
-          "url('./data/images/veggieprep.jpg')",
-        'events':
-          "url('./data/images/events.jpg')",
+          "url('./data/images/headers/veggieprep.jpg')",
         'leesburg':
-          "url('./data/images/leesburg.jpeg')",
+          "url('./data/images/headers/leesburg.jpeg')",
         'middleburg':
-          "url('./data/images/middleburg.jpg')",
-        'noma':
-          "url('./data/images/noma.jpg')",
-        'noma2':
-          "url('./data/images/noma2.jpg')",
-        'noma3':
-          "url('./data/images/noma3.jpg')",
-        'cocktail4':
-          "url('./data/images/cocktail4.jpg')",
-        'comingSoon':
-          "url('./data/images/coming-soon-img.png')",
-        'nomanight':
-          "url('./data/images/nomanight.jpg')",
+          "url('./data/images/headers/middleburg.jpg')",
+        'cocktail':
+          "url('./data/images/headers/cocktail.jpg')",
         'dc3':
-          "url('./data/images/dc3.jpg')",
+          "url('./data/images/headers/dc3.jpg')",
         'dc5':
-          "url('./data/images/ksobdc2.jpg')",
+          "url('./data/images/headers/ksobdc2.jpg')",
         'potomac':
-          "url('./data/images/potomac.jpg')",
+          "url('./data/images/headers/potomac.jpg')",
         'pdr':
-          "url('./data/images/pdr.jpg')",
+          "url('./data/images/headers/pdr.jpg')",
         'pdr2':
-          "url('./data/images/pdr2.jpg')",
-        'happyhour1':
-          "url('./data/images/happyhour1.jpg')",
+          "url('./data/images/headers/pdr2.jpg')",
         'specials':
-          "url('./data/images/specials.jpg')",
-        'brunch1':
-          "url('./data/images/brunch1.jpg')",
-        'dinner1':
-          "url('./data/images/dinner1.jpg')",
+          "url('./data/images/headers/specials.jpg')",
+        'brunch':
+          "url('./data/images/headers/brunch.jpg')",
+        'dinner':
+          "url('./data/images/headers/dinner.jpg')",
         'beer':
-          "url('./data/images/beer.jpg')",
+          "url('./data/images/headers/beer.jpg')",
         'hh':
-          "url('./data/images/ksobfood.jpg')",
+          "url('./data/images/headers/ksobfood.jpg')",
       },
     },
   },

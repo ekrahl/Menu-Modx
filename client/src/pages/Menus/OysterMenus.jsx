@@ -9,7 +9,7 @@ const OysterMenus = () => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center md:mx-24">
         <div className="mt-16 mx-3 md:mt-0 md:mx-8">
           <MenuPageHeader img="bg-oysters2" title="OYSTERS" position="bg-bottom" />
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-1 mt-1">

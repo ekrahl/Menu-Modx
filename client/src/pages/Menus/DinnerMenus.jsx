@@ -9,9 +9,9 @@ const DinnerMenus = () => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center md:mx-24">
         <div className="mt-16 mx-3 md:mt-0 md:mx-8">
-          <MenuPageHeader img="bg-dinner1" title="DINNER" position="bg-center" />
+          <MenuPageHeader img="bg-dinner" title="DINNER" position="bg-center" />
           <div className="flex flex-wrap md:flex-nowrap justify-center gap-1 mt-1">
             <MenuView img={images.leesburg_dinner_menu} headerTitle="Leesburg" editLink='/leesburgdinner' downloadLink='leesburg-dinner-menu.png' />
             <MenuView img={images.middleburg_dinner_menu} headerTitle="Middleburg" editLink='/middleburgdinner' downloadLink='middleburg-dinner-menu.png' />

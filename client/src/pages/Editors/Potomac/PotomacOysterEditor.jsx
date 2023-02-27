@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { oysters } from '../../../data/dummy'
-import { OysterForm, LocationHeader, ContainerHeader } from '../../../components'
+import { OysterForm, LocationHeader, ContainerHeader, AddItemBtn } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaDownload, FaEdit, FaDelete } from 'react-icons/fa'
@@ -135,9 +135,9 @@ const PotomacOysterEditor = () => {
                                 className="h-270 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 {oysters.map((oyster, index) => (
-                                    <div key={oyster.id} className="flex text-lg text-gray-200 gap-2">
+                                    <div key={oyster.id} className="flex justify-center text-gray-200 gap-3">
                                         <div
-                                            className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
+                                            className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
                                             style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
                                             onClick={() => { setOysterObj(oyster) }}>
                                             <div className="w-60 flex justify-center">
@@ -153,13 +153,11 @@ const PotomacOysterEditor = () => {
                             <div className="flex flex-col text-gray-200 mt-2">
                                 <ContainerHeader title="Add Item Catalog" />
                                 <div
-                                    className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
+                                    className="text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
                                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                     <OysterForm />
                                     <div className="flex justify-center">
-                                        <button
-                                            className="font-semibold rounded-md border border-gray-600 w-36 p-2 m-3 "
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>Add Item</button>
+                                        <AddItemBtn />
                                     </div>
                                 </div>
                             </div>

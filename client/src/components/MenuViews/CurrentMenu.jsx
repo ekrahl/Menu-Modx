@@ -9,7 +9,7 @@ const CurrentMenu = (props) => {
         <>
             <div className="md:max-w-500 m-1">
                 <ContainerHeader title={props.title}/>
-                <img className="border-b border-gray-600" src={props.img} alt="Leesburg Features Menu" title={props.imgTitle} />
+                <img className="border-b border-gray-600" src={props.img} alt="" title={props.imgTitle} />
                 <div
                     className="flex flex-wrap lg:flex-nowrap justify-center space-x-2 text-gray-400 border-b border-gray-600 rounded-b-xl p-4"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
-import { FeatureForm, LocationHeader, MenuQueue } from '../../../components'
+import { ContainerHeader, LocationHeader, AddFeatureItem } from '../../../components'
 import { images } from '../../../data'
 import { foodFeatures, drinkFeatures } from '../../../data/dummy'
 import * as htmlToImage from 'html-to-image'
@@ -11,18 +11,17 @@ import { BiAddToQueue } from 'react-icons/bi'
 var node = document.getElementById('leesburgFeatureMenu')
 
 htmlToImage.toPng(node)
-  .then(function (dataUrl) {
+  .then((dataUrl) => {
     var img = new Image();
     img.src = dataUrl;
     document.body.appendChild(img);
   })
-  .catch(function (error) {
+  .catch((error) => {
     console.error('oops, something went wrong!', error);
   });
 
 const LeesburgFeatureEditor = () => {
   const { currentColor, currentMode } = useStateContext();
-
   const gradientColor = { backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }
 
   const ref = useRef(null);
@@ -49,6 +48,7 @@ const LeesburgFeatureEditor = () => {
   const [featureObj, setFeatureObj] = useState({});
 
   const isFirstRun = useRef(true);
+  
   useEffect(() => {
     if (isFirstRun.current) {
       isFirstRun.current = false;
@@ -74,22 +74,13 @@ const LeesburgFeatureEditor = () => {
       <div className="flex flex-wrap md:flex-nowrap justify-center mt-6 gap-1">
         <div className="flex flex-wrap justify-center">
           <div>
-
-            <p
-              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
-              style={gradientColor}>
-              Build Features Menu
-            </p>
-
+            <ContainerHeader title="Build Features Menu" />
             <div className="w-384 h-576 relative z-1" ref={ref} id="leesburgFeatureMenu">
-
               <img src={images.feature_menu_template} alt="feature menu template" className="absolute z-2" />
-
               <div className="pt-16">
                 {feature.map((feat, index) => (
                   <div key={feat.id} className="flex justify-center relative z-3 font-semibold mt-6">
                     <div className="w-384 cursor-pointer" onClick={() => { handleDelete(index) }}>
-
                       <div className="flex justify-between">
                         <div className="flex justify-center items-center w-full">
                           <p
@@ -104,7 +95,6 @@ const LeesburgFeatureEditor = () => {
                         </div>
                         <img className="flex justify-end w-44 rounded-t-xl mx-2" src={feat.img} alt="" />
                       </div>
-
                       <div className="h-1 mx-2" style={{ backgroundColor: '#1B2E3D' }}></div>
 
                       <div className="mb-10">
@@ -175,11 +165,7 @@ const LeesburgFeatureEditor = () => {
 
         <div className="mx-3 w-full md:max-w-384">
           <div className="">
-            <p
-              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
-              style={gradientColor}>
-              Food Catalog
-            </p>
+            <ContainerHeader title="Food Catalog" />
             <div
               className="h-200 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
@@ -205,11 +191,7 @@ const LeesburgFeatureEditor = () => {
           </div>
 
           <div className="mt-2">
-            <p
-              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
-              style={gradientColor}>
-              Beverage Catalog
-            </p>
+            <ContainerHeader title="Beverage Catalog" />
             <div
               className="h-200 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
@@ -234,23 +216,7 @@ const LeesburgFeatureEditor = () => {
             </div>
           </div>
 
-          <div className="flex flex-col text-gray-200 mt-2">
-            <p
-              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
-              style={gradientColor}>
-              Add Item to Catalog
-            </p>
-            <div
-              className="text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
-              style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-              <FeatureForm />
-              <div className="flex justify-center">
-                <button
-                  className="font-semibold text-sm rounded-md border border-gray-600 p-2 m-3"
-                  style={gradientColor}>Add Item</button>
-              </div>
-            </div>
-          </div>
+          <AddFeatureItem />
 
         </div>
       </div>
