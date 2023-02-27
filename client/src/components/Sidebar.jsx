@@ -1,30 +1,28 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { BiFoodMenu } from 'react-icons/bi';
-import { MdOutlineCancel } from 'react-icons/md';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
-import { links } from '../data/dummy';
-import { useStateContext } from '../contexts/ContextProvider';
+import { Link, NavLink } from 'react-router-dom'
+import { BiFoodMenu } from 'react-icons/bi'
+import { MdOutlineCancel } from 'react-icons/md'
+import { TooltipComponent } from '@syncfusion/ej2-react-popups'
+import { links } from '../data/dummy'
+import { useStateContext } from '../contexts/ContextProvider'
 
 const Sidebar = () => {
-  const { currentColor, activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, screenSize } = useStateContext()
 
   const handleCloseSideBar = () => {
     if (activeMenu !== undefined && screenSize <= 900) {
-      setActiveMenu(false);
+      setActiveMenu(false)
     }
   };
 
-  const activeLink = 'flex items-center gap-5 pl-4 pt-2 pb-2 rounded-lg text-white text-md';
-  const normalLink = 'flex items-center gap-5 pl-4 pt-2 pb-2 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray';
+  const activeLink = 'flex items-center gap-5 pl-2 py-1 rounded-lg text-white text-md'
+  const normalLink = 'flex items-center gap-5 pl-2 py-1 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray'
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+    <div className="ml-2 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
-            <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+            <Link to="/main" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
               <BiFoodMenu /> <span>MenuModx</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">

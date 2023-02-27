@@ -1,14 +1,12 @@
-import React, { useCallback, useRef } from 'react';
-import { useStateContext } from '../../contexts/ContextProvider';
-import { Link } from 'react-router-dom';
-import moment from 'moment';
-import { FaEdit, FaDownload } from 'react-icons/fa';
-import { toPng } from 'html-to-image';
+import { useCallback, useRef } from 'react'
+import { ContainerHeader, EditBtn, DownloadBtn } from '../'
+import { Link } from 'react-router-dom'
+import moment from 'moment'
+import { toPng } from 'html-to-image'
 
 
 const HappyHourMenu = (props) => {
     const update = moment().subtract(1, 'days').calendar();
-    const { currentColor, currentMode } = useStateContext();
     const ref = useRef(null);
 
     const onButtonClick = useCallback(() => {
@@ -19,7 +17,7 @@ const HappyHourMenu = (props) => {
         toPng(ref.current, { cacheBust: true, })
             .then((dataUrl) => {
                 const link = document.createElement('a')
-                link.download = "leesburg-happyhour-menu.png"
+                link.download = props.downloadLink
                 link.href = dataUrl
                 link.click()
             })
@@ -30,29 +28,19 @@ const HappyHourMenu = (props) => {
 
 
     return (
-        <div className="w-full">
-            <p
-                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6 mt-1"
-                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                Happy Hour
-            </p>
+        <div className="w-full mt-1">
+            <ContainerHeader title="Happy Hour Menu" />
             <div className="border-b border-gray-600">
-                <img className="" src={props.hhImg} alt="" ref={ref} />
+                <img src={props.hhImg} alt="" ref={ref} />
             </div>
-            <div className="" style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
+            <div style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                 <p className="text-sm text-gray-500 text-center p-2">last updated: {update}</p>
                 <div
                     className="flex flex-wrap lg:flex-nowrap justify-center space-x-2 text-gray-400 border-b border-gray-600 rounded-b-xl p-4">
-                    <button
-                        className="sm:text-lg xl:text-2xl border border-gray-600 rounded-md px-8 py-2"
-                        style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}
-                        title="Edit"><FaEdit /></button>
-                    <button
-                        type="button"
-                        onClick={onButtonClick}
-                        className="sm:text-lg xl:text-2xl border border-gray-600 rounded-md px-8 py-2"
-                        style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}
-                        title="Download"><FaDownload /></button>
+                <Link to="">
+                    <EditBtn />
+                </Link>
+                <DownloadBtn type="button" onClick={onButtonClick} />
                 </div>
             </div>
         </div>

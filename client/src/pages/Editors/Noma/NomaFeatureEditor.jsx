@@ -73,7 +73,7 @@ const NomaFeatureEditor = () => {
         <div className="flex flex-wrap justify-center">
           <div>
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
+              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Build Features Menu
             </p>
@@ -167,9 +167,9 @@ const NomaFeatureEditor = () => {
         </div>
 
         <div className="mx-3">
-          <div className="">
+          <div>
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
+              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Food Catalog
             </p>
@@ -194,9 +194,9 @@ const NomaFeatureEditor = () => {
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-2">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
+              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Beverage Catalog
             </p>
@@ -221,9 +221,9 @@ const NomaFeatureEditor = () => {
             </div>
           </div>
 
-          <div className="flex flex-col text-gray-200 mt-6">
+          <div className="flex flex-col text-gray-200 mt-2">
             <p
-              className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
+              className="font-semibold text-xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-4"
               style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
               Add Item to Catalog
             </p>

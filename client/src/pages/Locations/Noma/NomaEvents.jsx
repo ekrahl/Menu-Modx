@@ -1,8 +1,6 @@
 import { images } from '../../../data'
 import { events } from '../../../data/dummy'
-import { BsFillPeopleFill, BsFillTelephoneFill, BsClockFill } from 'react-icons/bs'
-import { MdLocationPin } from 'react-icons/md'
-import { RiContactsFill } from 'react-icons/ri'
+import { BsFillPeopleFill, BsFillTelephoneFill, BsClockFill, BsFillGeoAltFill, BsFillPersonLinesFill } from 'react-icons/bs'
 import { GiPartyPopper } from 'react-icons/gi'
 import LocationHeader from '../../../components/Headers/LocationHeader'
 
@@ -24,13 +22,13 @@ const NomaEvents = () => {
                             <div className="flex flex-wrap rounded-xl m-1 p-8 text-gray-200 items-center w-full space-x-4" style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 <div className="lg:min-w-200 ">
                                     <p className="flex gap-4 items-center p-2"><GiPartyPopper />{event.title}</p>
-                                    <p className="flex gap-4 items-center p-2"><RiContactsFill />{event.contact}</p>
+                                    <p className="flex gap-4 items-center p-2"><BsFillPersonLinesFill />{event.contact}</p>
                                     <p className="flex gap-4 items-center p-2"><BsFillTelephoneFill />{event.phone}</p>
                                 </div>
                                 <div className="lg:min-w-200">
                                     <p className="flex gap-4 items-center p-2"><BsClockFill />{event.time}</p>
                                     <p className="flex gap-4 items-center p-2"><BsFillPeopleFill />{event.guests}</p>
-                                    <p className="flex gap-4 items-center p-2"><MdLocationPin />{event.location}</p>
+                                    <p className="flex gap-4 items-center p-2"><BsFillGeoAltFill />{event.location}</p>
                                 </div>
                                 <div className="max-w-100 m-4">
                                     <img src={event.menu} alt="" />

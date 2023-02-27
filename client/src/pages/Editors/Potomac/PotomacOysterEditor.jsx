@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { oysters } from '../../../data/dummy'
-import { OysterForm, LocationHeader } from '../../../components'
+import { OysterForm, LocationHeader, ContainerHeader } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaDownload, FaEdit, FaDelete } from 'react-icons/fa'
@@ -82,12 +82,8 @@ const PotomacOysterEditor = () => {
                 <LocationHeader location={"POTOMAC"} />
                 <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
                     <div className="flex flex-wrap justify-center">
-                        <div className="">
-                            <p
-                                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
-                                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                                Build Oyster Menu
-                            </p>
+                        <div>
+                            <ContainerHeader title="Build Oyster Menu" />
                             <div className="w-384 h-576 relative z-1" ref={ref} id="potomacOysterMenu">
                                 <img src={images.oyster_menu_template} alt="" className="absolute z-2" />
                                 <div className="text-center pt-16">
@@ -134,11 +130,7 @@ const PotomacOysterEditor = () => {
 
                     <div className="flex flex-wrap justify-center mx-3">
                         <div>
-                            <p
-                                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
-                                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                                Catalog
-                            </p>
+                            <ContainerHeader title="Catalog" />
                             <div
                                 className="h-270 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
@@ -149,7 +141,7 @@ const PotomacOysterEditor = () => {
                                             style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
                                             onClick={() => { setOysterObj(oyster) }}>
                                             <div className="w-60 flex justify-center">
-                                                <p className="">{oyster.name}</p>
+                                                <p>{oyster.name}</p>
                                             </div>
                                         </div>
                                         <button type="button" onClick="" >
@@ -159,11 +151,7 @@ const PotomacOysterEditor = () => {
                                 ))}
                             </div>
                             <div className="flex flex-col text-gray-200 mt-2">
-                                <p
-                                    className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                                    Add Item to Catalog
-                                </p>
+                                <ContainerHeader title="Add Item Catalog" />
                                 <div
                                     className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
                                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>

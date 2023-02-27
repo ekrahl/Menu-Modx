@@ -9,7 +9,7 @@ const NomaBrunch = () => {
                 <div className="mx-3">
                     <LocationHeader location={"NOMA"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Brunch Menu"} img={images.noma_brunch_menu} imgTitle={"NoMa Brunch Menu"} />
+                        <CurrentMenu title="Brunch Menu" img={images.noma_brunch_menu} imgTitle="NoMa Brunch Menu" />
                         <div className="lg:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={""} />
                             <MenuQueue img={images.noma_brunch_menu} />

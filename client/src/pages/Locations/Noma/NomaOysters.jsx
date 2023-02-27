@@ -9,7 +9,7 @@ const NomaOysters = () => {
                 <div className="mx-3">
                     <LocationHeader location={"NOMA"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Oyster Menu"} img={images.oyster_menu_noma} imgTitle={"NoMa Oyster Menu"} />
+                        <CurrentMenu title="Oyster Menu" img={images.oyster_menu_noma} imgTitle="NoMa Oyster Menu" />
                         <div className="lg:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={"/nomaoystereditor"} />
                             <MenuQueue img={images.oyster_menu_noma} />

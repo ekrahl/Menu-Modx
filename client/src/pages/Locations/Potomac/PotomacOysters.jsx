@@ -9,7 +9,7 @@ const PotomacOysters = () => {
                 <div className="mx-3">
                     <LocationHeader location={"POTOMAC"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Oyster Menu"} img={images.oyster_menu_potomac} imgTitle={"Potomac Oyster Menu"} />
+                        <CurrentMenu title="Oyster Menu" img={images.oyster_menu_potomac} imgTitle="Potomac Oyster Menu" />
                         <div className="lg:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={"/potomacoystereditor"} />
                             <MenuQueue img={images.oyster_menu_potomac} />

@@ -76,12 +76,15 @@ import veggieprep from './images/veggieprep.jpg'
 import happyhour from './images/happyhour.jpg'
 import oyster from './images/oyster-image.png'
 import oysterCard from './images/oysterCard.png'
+import comingSoonImg from './images/coming-soon-img.png'
+import comingSoonImgSm from './images/coming-soon-img-mobile.png'
 
 //templates
 import oyster_menu_template from './images/menus/oyster_menu_template.png'
 import oyster_menu_template_noma from './images/menus/oyster_menu_template_noma.png'
 import beer_menu_template from './images/menus/beer_menu_template.png'
 import feature_sheet_template2 from './images/menus/feature_sheet_template2.png'
+import feature_menu_template from './images/menus/feature_menu_template.png'
 
 export default {
     beer_menu_leesburg,
@@ -91,7 +94,10 @@ export default {
     beer_menu_template,
     birthdaymenu,
     bronzino_tomato_salad,
+    comingSoonImg,
+    comingSoonImgSm,
     dc3,
+    feature_menu_template,
     feature_sheet_template2,
     halibut_risotto,
     halibut_risotto_full,

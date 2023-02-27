@@ -8,6 +8,7 @@ module.exports = {
     },
     extend: {
       fontSize: {
+        12: '12px',
         14: '14px',
       },
       backgroundColor: {
@@ -29,10 +30,6 @@ module.exports = {
         '200': '2.00',
       },
       width: {
-        11: '11rem',
-        12: '12rem',
-        13: '13rem',
-        14: '14rem',
         15: '15rem',
         17: '17rem',
         18: '18rem',
@@ -48,13 +45,13 @@ module.exports = {
         250: '250px',
         275: '275px',
         300: '300px',
+        325: '325px',
         350: '350px',
         375: '375px',
+        384: '384px',
         400: '400px',
         450: '450px',
         500: '500px',
-        325: '325px',
-        384: '384px',
         525: '525px',
         550: '550px',
         600: '600px',
@@ -76,6 +73,9 @@ module.exports = {
       },
       height: {
         80: '80px',
+        150: '150px',
+        165: '165px',
+        190: '190px',
         200: '200px',
         225: '225px',
         250: '250px',
@@ -102,6 +102,14 @@ module.exports = {
       },
       minHeight: {
         590: '590px',
+      },
+      maxHeight: {
+        150: '150px',
+        165: '165px',
+        190: '190px',
+        200: '200px',
+        225: '225px',
+        250: '250px'
       },
       minWidth: {
         50: '50px',
@@ -133,6 +141,9 @@ module.exports = {
         450: '450px',
         500: '500px',
         600: '600px',
+        700: '700px',
+        800: '800px',
+        900: '900px',
         1000: '1000px',
         1100: '1100px',
         1175: '1175px',
@@ -170,6 +181,8 @@ module.exports = {
           "url('./data/images/noma3.jpg')",
         'cocktail4':
           "url('./data/images/cocktail4.jpg')",
+        'comingSoon':
+          "url('./data/images/coming-soon-img.png')",
         'nomanight':
           "url('./data/images/nomanight.jpg')",
         'dc3':

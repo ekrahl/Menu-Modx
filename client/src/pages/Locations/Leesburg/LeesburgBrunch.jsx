@@ -9,8 +9,8 @@ const LeesburgBrunch = () => {
                 <div className="mx-3">
                     <LocationHeader location={"LEESBURG"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Brunch Menu"} img={images.leesburg_brunch_menu} imgTitle={"Leesburg Brunch Menu"} />
-                        <div className="lg:max-w-500 m-1 w-full">
+                        <CurrentMenu title="Brunch Menu" img={images.leesburg_brunch_menu} imgTitle="Leesburg Brunch Menu" />
+                        <div className="md:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={""} />
                             <MenuQueue img={images.leesburg_brunch_menu} />
                             <RecentMenus img={images.leesburg_brunch_menu} />

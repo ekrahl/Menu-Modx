@@ -1,56 +1,58 @@
 import React from 'react';
-import { ScrollButton, Features, Events, OysterMenu, BeerMenu, HappyHourMenu, DinnerMenu, CocktailMenu, BrunchMenu } from '../../components';
+import { ScrollButton, DashboardHeader, Features, Events, OysterMenu, BeerMenu, HappyHourMenu, DinnerMenu, CocktailMenu, BrunchMenu } from '../../components';
 import { menus } from '../../data/dummy';
 
 const LeesburgDashboard = () => {
 
   return (
     <>
-      <div className="flex justify-center">
-        <div className="flex justify-center bg-leesburg bg-cover bg-center rounded-xl w-full mx-3 mt-16 md:mt-2 py-16 md:py-28 md:max-w-1175" >
-          <p className="flex justify-center font-semibold text-4xl md:text-6xl text-gray-200 bg-half-transparent rounded-xl p-2">Leesburg</p>
-        </div>
-      </div>
-
-      <div className="flex flex-col justify-center mx-auto px-3 md:mt-2 max-w-1200">
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-1">
-            <div>
+      <div className="md:mx-24">
+        <DashboardHeader img="bg-leesburg" title="Leesburg" position="bg-center" />
+        <div className="flex flex-col mx-auto px-3 mt-1 md">
+          <div className="flex flex-wrap md:flex-nowrap gap-1">
+            <div className="flex w-full">
               <Features
                 id={1}
                 featureEditPath={'/leesburgfeatureeditor'} />
             </div>
-            <div className='w-full'>
+            <div className="w-full">
               <Events
+                id={0}
                 location={'Leesburg'} />
             </div>
           </div>
           <div>
-            <div className="flex flex-wrap lg:flex-nowrap justify-center gap-1">
+            <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <OysterMenu
                 oysterImg={menus[0].oysterMenu}
-                oysterEditPath={'/leesburgoystereditor'}
-                downloadLink={'leesburg-oyster-menu'} />
+                oysterEditPath='/leesburgoystereditor'
+                downloadLink='leesburg-oyster-menu.png' />
               <BeerMenu
                 beerImg={menus[0].beerMenu}
-                beerEditPath={'/leesburgbeereditor'}
-                downloadLink={'leesburg-beer-menu'}
+                beerEditPath='/leesburgbeereditor'
+                downloadLink='leesburg-beer-menu.png'
               />
               <HappyHourMenu
                 hhImg={menus[0].happyHourMenu}
-                hhEditPath={'/leesburghheditor'} />
+                hhEditPath='/leesburghheditor'
+                downloadLink='leesburg-happyhour-menu.png' />
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap justify-center gap-1">
+            <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <DinnerMenu
                 dinnerMenu={menus[0].dinnerMenu}
+                downloadLink='leesburg-dinner-menu.png'
               />
               <CocktailMenu
                 cocktailMenu={menus[0].cocktailMenu}
+                downloadLink='leesburg-cocktail-menu.png'
               />
               <BrunchMenu
                 brunchMenu={menus[0].brunchMenu}
+                downloadLink='leesburg-brunch-menu.png'
               />
             </div>
           </div>
+        </div>
       </div>
       <ScrollButton />
     </>

@@ -9,7 +9,7 @@ const PotomacHappyHour = () => {
                 <div className="mx-3">
                     <LocationHeader location={"POTOMAC"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Happy Hour Menu"} img={images.happy_hour_menu_potomac} imgTitle={"Potomac Happy Hour Menu"} />
+                        <CurrentMenu title="Happy Hour Menu" img={images.happy_hour_menu_potomac} imgTitle="Potomac Happy Hour Menu" />
                         <div className="lg:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={""} />
                             <MenuQueue img={images.happy_hour_menu_potomac} />

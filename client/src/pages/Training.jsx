@@ -1,8 +1,19 @@
-import React from 'react'
+import { images } from '../data'
 
 const Training = () => {
+  const imageUrl = window.innerWidth >= 650 ? images.comingSoonImg : images.comingSoonImgSm
+
   return (
-    <div>Training</div>
+    <div style={{
+      backgroundImage: `url(${imageUrl})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: "100vh",
+      width: "100%"
+    }}>
+
+    </div>
   )
 }
 

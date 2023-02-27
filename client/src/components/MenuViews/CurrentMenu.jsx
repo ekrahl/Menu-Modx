@@ -1,4 +1,5 @@
 import { useStateContext } from '../../contexts/ContextProvider'
+import { ContainerHeader } from '../'
 import { FaDownload } from 'react-icons/fa'
 
 const CurrentMenu = (props) => {
@@ -6,11 +7,8 @@ const CurrentMenu = (props) => {
 
     return (
         <>
-            <div className="lg:max-w-500 m-1">
-                <p
-                    className="font-semibold text-2xl text-gray-200 border-b border-gray-600 rounded-t-xl text-center p-6"
-                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>{props.title}
-                </p>
+            <div className="md:max-w-500 m-1">
+                <ContainerHeader title={props.title}/>
                 <img className="border-b border-gray-600" src={props.img} alt="Leesburg Features Menu" title={props.imgTitle} />
                 <div
                     className="flex flex-wrap lg:flex-nowrap justify-center space-x-2 text-gray-400 border-b border-gray-600 rounded-b-xl p-4"

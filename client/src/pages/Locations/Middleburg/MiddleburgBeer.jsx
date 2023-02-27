@@ -9,7 +9,7 @@ const MiddleburgBeer = () => {
                 <div className="mx-3">
                     <LocationHeader location={"MIDDLEBURG"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Beer Menu"} img={images.beer_menu_middleburg} imgTitle={"Middleburg Beer Menu"} />
+                        <CurrentMenu title="Beer Menu" img={images.beer_menu_middleburg} imgTitle="Middleburg Beer Menu" />
                         <div className="lg:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={"/middleburgbeereditor"} />
                             <MenuQueue img={images.beer_menu_middleburg} />

@@ -45,6 +45,7 @@ import {
   PotomacCocktail,
   PotomacBrunch,
   Training,
+  Catering,
   OysterMenus,
   BeerMenus,
   BrunchMenus,
@@ -109,7 +110,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-60 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+            <div className="w-48 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               <Sidebar />
             </div>
           ) : (
@@ -120,7 +121,7 @@ const App = () => {
           <div
             className={
               activeMenu
-                ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-60 w-full'
+                ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-48 w-full'
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2'
             }
           >
@@ -132,7 +133,7 @@ const App = () => {
 
               <Routes>
 
-                <Route path='/' element={(<Main />)} />
+                <Route path='/main' element={(<Main />)} />
 
                 <Route path="/" element={(<Dashboard />)} />
                 <Route path="/dashboardmain" element={(<Dashboard />)} />
@@ -206,9 +207,9 @@ const App = () => {
                 <Route path="/cocktailmain" element={<CocktailMenus />} />
                 <Route path="/dinnermain" element={<DinnerMenus />} />
                 <Route path="/brunchmain" element={<BrunchMenus />} />
+                <Route path="/cateringmain" element={<Catering />} />
 
-
-                <Route path="/training" element={<Training />} />
+                <Route path="/trainingmain" element={<Training />} />
                 <Route path="/calendarmain" element={<Calendar />} />
 
               </Routes>

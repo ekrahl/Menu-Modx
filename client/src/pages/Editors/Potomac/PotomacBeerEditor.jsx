@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { draft, bottles } from '../../../data/dummy'
-import { BeerForm, LocationHeader } from '../../../components'
+import { BeerForm, LocationHeader, ContainerHeader } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaDownload, FaEdit, FaDelete } from 'react-icons/fa'
@@ -85,11 +85,7 @@ const PotomacBeerEditor = () => {
                 <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
                     <div className="flex flex-wrap justify-center">
                         <div>
-                            <p
-                                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
-                                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                                Build Menu
-                            </p>
+                            <ContainerHeader title="Build Beer Menu" />
                             <div className="w-384 h-576 relative z-1" ref={ref} id="potomacBeerMenu">
                                 <img src={images.beer_menu_template} alt="" className="absolute z-2" />
                                 <div className="text-center pt-12">
@@ -137,12 +133,8 @@ const PotomacBeerEditor = () => {
                     </div>
 
                     <div className="flex flex-wrap justify-center mx-3">
-                        <div className="">
-                            <p
-                                className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
-                                style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                                Catalog
-                            </p>
+                        <div>
+                            <ContainerHeader title="Catalog" />
                             <div className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 <p
@@ -152,10 +144,10 @@ const PotomacBeerEditor = () => {
                                     <div key={beer.id} className="flex text-lg text-gray-200 gap-2">
                                         <div
                                             className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }} 
+                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
                                             onClick={() => { setBeerObj(beer) }}>
                                             <div className="w-60 flex justify-center">
-                                                <p className="">{beer.name}</p>
+                                                <p>{beer.name}</p>
                                             </div>
                                         </div>
                                         <button type="button" onClick="" >
@@ -169,10 +161,10 @@ const PotomacBeerEditor = () => {
                                     <div key={beer.id} className="flex text-lg text-gray-200 gap-2">
                                         <div
                                             className="flex border border-gray-400 rounded-2xl m-1 p-1 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }} 
+                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
                                             onClick={() => { setBeerObj(beer) }}>
                                             <div className="w-60 flex justify-center">
-                                                <p className="">{beer.name}</p>
+                                                <p>{beer.name}</p>
                                             </div>
                                         </div>
                                         <button type="button" onClick="" >
@@ -183,11 +175,7 @@ const PotomacBeerEditor = () => {
                             </div>
 
                             <div className="flex flex-col text-gray-200 mt-2">
-                                <p
-                                    className="font-semibold text-2xl text-gray-200 text-center border-b border-gray-600 rounded-t-xl p-6"
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>
-                                    Add Item to Catalog
-                                </p>
+                                <ContainerHeader title="Add Item Catalog" />
                                 <div
                                     className="text-gray-200 border-b border-gray-600 rounded-b-xl pt-1"
                                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>

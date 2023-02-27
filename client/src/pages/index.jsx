@@ -8,6 +8,8 @@ export { default as HappyHourMenus } from './Menus/HappyHourMenus';
 export { default as DinnerMenus } from './Menus/DinnerMenus';
 export { default as Events } from './Menus/Events';
 export { default as Features } from './Menus/Features';
+export { default as Catering } from './Menus/Catering';
+
 export { default as LeesburgDashboard } from './Dashboards/LeesburgDashboard';
 export { default as LeesburgFeatureEditor } from './Editors/Leesburg/LeesburgFeatureEditor';
 export { default as LeesburgOysterEditor } from './Editors/Leesburg/LeesburgOysterEditor';

@@ -9,7 +9,7 @@ const LeesburgOysters = () => {
                 <div className="mx-3">
                     <LocationHeader location={"LEESBURG"} />
                     <div className="flex flex-wrap lg:flex-nowrap mt-6">
-                        <CurrentMenu title={"Oyster Menu"} img={images.oyster_menu_leesburg} imgTitle={"Leesburg Oyster Menu"} />
+                        <CurrentMenu title="Oyster Menu" img={images.oyster_menu_leesburg} imgTitle="Leesburg Oyster Menu" />
                         <div className="lg:max-w-500 m-1 w-full">
                             <CreateNewMenuBtn path={"/leesburgoystereditor"} />
                             <MenuQueue img={images.oyster_menu_leesburg} />
