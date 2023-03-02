@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { draft, bottles } from '../../../data/dummy'
-import { BeerForm, LocationHeader, ContainerHeader } from '../../../components'
+import { AddBeer, LocationHeader, ContainerHeader } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
-import { FaDownload, FaEdit, FaDelete } from 'react-icons/fa'
+import { FaDownload, FaEdit, FaTrash } from 'react-icons/fa'
 import { BiAddToQueue } from 'react-icons/bi'
 
 var node = document.getElementById('middleburgBeerMenu');
@@ -152,6 +152,9 @@ const MiddleburgBeerEditor = () => {
                                         <button type="button" onClick="" >
                                             <FaEdit size="1.5rem" />
                                         </button>
+                                        <button type="button" onClick="" >
+                                            <FaTrash size="1.2rem" />
+                                        </button>
                                     </div>
                                 ))}
                                 <p className="text-xl dark:text-gray-200 font-semibold pb-2 pt-2 text-center">Bottled Beer</p>
@@ -167,22 +170,13 @@ const MiddleburgBeerEditor = () => {
                                         <button type="button" onClick="" >
                                             <FaEdit size="1.5rem" />
                                         </button>
+                                        <button type="button" onClick="" >
+                                            <FaTrash size="1.2rem" />
+                                        </button>
                                     </div>
                                 ))}
                             </div>
-                            <div className="flex flex-col text-gray-200 mt-2">
-                                <ContainerHeader title="Add Item Catalog" />
-                                <div
-                                    className="text-gray-200 border-b border-gray-600 rounded-b-xl pt-1"
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                    <BeerForm />
-                                    <div className="flex justify-center">
-                                        <button
-                                            className="font-semibold rounded-md border border-gray-600 w-36 p-2 m-3 "
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}>Add Item</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <AddBeer />
                         </div>
                     </div>
                 </div>

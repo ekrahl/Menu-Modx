@@ -215,9 +215,7 @@ const LeesburgFeatureEditor = () => {
               ))}
             </div>
           </div>
-
           <AddFeatureItem />
-
         </div>
       </div>
     </div>

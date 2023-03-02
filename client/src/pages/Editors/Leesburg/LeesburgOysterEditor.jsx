@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { oysters } from '../../../data/dummy'
-import { OysterForm, LocationHeader, ContainerHeader, AddItemBtn } from '../../../components'
+import { AddOyster, LocationHeader, ContainerHeader } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaDownload, FaEdit, FaTrash } from 'react-icons/fa'
@@ -148,23 +148,16 @@ const LeesburgOysterEditor = () => {
                                         <button type="button" onClick="" >
                                             <FaEdit size="1.5rem" />
                                         </button>
+                                        <button type="button" onClick="" >
+                                            <FaTrash size="1.2rem" />
+                                        </button>
                                     </div>
                                 ))}
                             </div>
-                            <div className="flex flex-col text-gray-200 mt-2">
-                                <ContainerHeader title="Add Item Catalog" />
-                                <div
-                                    className="text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                    <OysterForm />
-                                    <div className="flex justify-center">
-                                        <AddItemBtn />
-                                    </div>
-                                </div>
-                            </div>
+                            <AddOyster />
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </>
