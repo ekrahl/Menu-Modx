@@ -13,7 +13,7 @@ const MiddleburgDashboard = () => {
             <div className="flex w-full">
               <Features
                 id={2}
-                featureEditPath={'/middleburgfeatureeditor'} />
+                path={'/middleburgfeatureeditor'} />
             </div>
             <div className='w-full'>
               <Events
@@ -24,30 +24,39 @@ const MiddleburgDashboard = () => {
           <div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <OysterMenu
-                oysterImg={menus[1].oysterMenu}
-                oysterEditPath='/middleburgoystereditor'
+                img={menus[1].oysterMenu}
+                alt="Middleburg Oyster Menu"
+                path='/middleburgoystereditor'
                 downloadLink='middleburg-oyster-menu.png' />
               <BeerMenu
-                beerImg={menus[1].beerMenu}
-                beerEditPath='/middleburgbeereditor'
+                img={menus[1].beerMenu}
+                alt="Middleburg Beer Menu"
+                path='/middleburgbeereditor'
                 downloadLink='middleburg-beer-menu.png'
               />
               <HappyHourMenu
-                hhImg={menus[1].happyHourMenu}
-                hhEditPath='/middleburghheditor'
+                img={menus[1].happyHourMenu}
+                alt="Middleburg Happy Hour Menu"
+                path='/middleburghappyhoureditor'
                 downloadLink='middleburg-happyhour-menu.png' />
             </div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <DinnerMenu
-                dinnerMenu={menus[1].dinnerMenu}
+                img={menus[1].dinnerMenu}
+                alt="Middleburg Dinner Menu"
+                path='/middleburgdinnereditor'
                 downloadLink='middleburg-dinner-menu.png'
               />
               <CocktailMenu
-                cocktailMenu={menus[1].cocktailMenu}
+                img={menus[1].cocktailMenu}
+                alt="Middleburg Cocktail Menu"
+                path='/middleburgcocktaileditor'
                 downloadLink='middleburg-cocktail-menu.png'
               />
               <BrunchMenu
-                brunchMenu={menus[1].brunchMenu}
+                img={menus[1].brunchMenu}
+                alt="Middleburg Brunch Menu"
+                path='/middleburgbruncheditor'
                 downloadLink='middleburg-brunch-menu.png'
               />
             </div>

@@ -13,7 +13,7 @@ const PotomacDashboard = () => {
             <div className="flex w-full">
               <Features
                 id={4}
-                featureEditPath={'/potomacfeatureeditor'} />
+                path={'/potomacfeatureeditor'} />
             </div>
             <div className='w-full'>
               <Events
@@ -24,31 +24,40 @@ const PotomacDashboard = () => {
           <div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <OysterMenu
-                oysterImg={menus[3].oysterMenu}
-                oysterEditPath='/potomacoystereditor'
+                img={menus[3].oysterMenu}
+                alt="Potomac Oyster Menu"
+                path='/potomacoystereditor'
                 downloadLink='potomac-oyster-menu.png'
               />
               <BeerMenu
-                beerImg={menus[3].beerMenu}
-                beerEditPath='/potomacbeereditor'
+                img={menus[3].beerMenu}
+                alt="Potomac Beer Menu"
+                path='/potomacbeereditor'
                 downloadLink='potomac-beer-menu.png'
               />
               <HappyHourMenu
-                hhImg={menus[3].happyHourMenu}
-                hhEditPath='/potomachheditor'
+                img={menus[3].happyHourMenu}
+                alt="Potomac Happy Hour Menu"
+                path='/potomachappyhoureditor'
                 downloadLink='potomac-happyhour-menu.png' />
             </div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <DinnerMenu
-                dinnerMenu={menus[3].dinnerMenu}
+                img={menus[3].dinnerMenu}
+                alt="Potomac Dinner Menu"
+                path='/potomacdinnereditor'
                 downloadLink='potomac-dinner-menu.png'
               />
               <CocktailMenu
-                cocktailMenu={menus[3].cocktailMenu}
+                img={menus[3].cocktailMenu}
+                alt="Potomac Cocktail Menu"
+                path='/potomaccocktaileditor'
                 downloadLink='potomac-cocktail-menu.png'
               />
               <BrunchMenu
-                brunchMenu={menus[3].brunchMenu}
+                img={menus[3].brunchMenu}
+                alt="Potomac Brunch Menu"
+                path='/potomacbruncheditor'
                 downloadLink='potomac-brunch-menu.png'
               />
             </div>

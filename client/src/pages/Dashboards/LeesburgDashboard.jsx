@@ -13,7 +13,7 @@ const LeesburgDashboard = () => {
             <div className="flex w-full">
               <Features
                 id={1}
-                featureEditPath={'/leesburgfeatureeditor'} />
+                path={'/leesburgfeatureeditor'} />
             </div>
             <div className="w-full">
               <Events
@@ -24,30 +24,39 @@ const LeesburgDashboard = () => {
           <div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <OysterMenu
-                oysterImg={menus[0].oysterMenu}
-                oysterEditPath='/leesburgoystereditor'
+                img={menus[0].oysterMenu}
+                alt="Leesburg Oyster Menu"
+                path='/leesburgoystereditor'
                 downloadLink='leesburg-oyster-menu.png' />
               <BeerMenu
-                beerImg={menus[0].beerMenu}
-                beerEditPath='/leesburgbeereditor'
+                img={menus[0].beerMenu}
+                alt="Leesburg Beer Menu"
+                path='/leesburgbeereditor'
                 downloadLink='leesburg-beer-menu.png'
               />
               <HappyHourMenu
-                hhImg={menus[0].happyHourMenu}
-                hhEditPath='/leesburghheditor'
+                img={menus[0].happyHourMenu}
+                alt="Leesburg Happy Hour Menu"
+                path='/leesburghappyhoureditor'
                 downloadLink='leesburg-happyhour-menu.png' />
             </div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <DinnerMenu
-                dinnerMenu={menus[0].dinnerMenu}
+                img={menus[0].dinnerMenu}
+                alt="Leesburg Dinner Menu"
+                path='/leesburgdinnereditor'
                 downloadLink='leesburg-dinner-menu.png'
               />
               <CocktailMenu
-                cocktailMenu={menus[0].cocktailMenu}
+                img={menus[0].cocktailMenu}
+                alt="Leesburg Cocktail Menu"
+                path='/leesburgcocktaileditor'
                 downloadLink='leesburg-cocktail-menu.png'
               />
               <BrunchMenu
-                brunchMenu={menus[0].brunchMenu}
+                img={menus[0].brunchMenu}
+                alt="Leesburg Brunch Menu"
+                path='/leesburgbruncheditor'
                 downloadLink='leesburg-brunch-menu.png'
               />
             </div>

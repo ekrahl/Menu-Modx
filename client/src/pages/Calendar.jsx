@@ -29,7 +29,7 @@ const Scheduler = () => {
       <ScheduleComponent
         height="1000px"
         ref={(schedule) => setScheduleObj(schedule)}
-        selectedDate={new Date(2023, 2, 24)}
+        selectedDate={new Date(2023, 3, 24)}
         startHour='11:00'
         endHour='23:00'
         eventSettings={{ dataSource: scheduleData }}
@@ -49,7 +49,7 @@ const Scheduler = () => {
             <tr style={{ height: '50px' }}>
               <td style={{ width: '100%' }}>
                 <DatePickerComponent
-                  value={new Date(2022, 9, 24)}
+                  value={new Date(2023, 3, 24)}
                   showClearButton={false}
                   placeholder="Current Date"
                   floatLabelType="Always"

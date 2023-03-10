@@ -1,14 +1,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { oysters } from '../../../data/dummy'
-import { AddOyster, LocationHeader, ContainerHeader } from '../../../components'
+import { AddOyster, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
-import { FaDownload, FaEdit, FaTrash } from 'react-icons/fa'
-import { BiAddToQueue } from 'react-icons/bi'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
-var node = document.getElementById('leesburgOysterMenu')
+var node = document.getElementById('menu')
 
 htmlToImage.toPng(node)
     .then(function (dataUrl) {
@@ -21,7 +19,6 @@ htmlToImage.toPng(node)
     });
 
 const LeesburgOysterEditor = () => {
-    const { currentColor, currentMode } = useStateContext();
 
     const ref = useRef(null);
 
@@ -33,7 +30,7 @@ const LeesburgOysterEditor = () => {
         toPng(ref.current, { cacheBust: true, pixelRatio: 10, width: 384, height: 576 })
             .then((dataUrl) => {
                 const link = document.createElement('a')
-                link.download = "leesburg-oyster-menu.png"
+                link.download = "oyster_menu_leesburg.png"
                 link.href = dataUrl
                 link.click()
             })
@@ -46,9 +43,9 @@ const LeesburgOysterEditor = () => {
         [
             {
                 id: 1,
-                name: "KSOB OYSTER",
+                name: "KSOB OYSTER*",
                 location: "Chincoteague, VA",
-                size: "(s/m)",
+                size: "(sm/md)",
                 description: "clean brine with a mild, earthy finish",
             },
         ]
@@ -66,7 +63,7 @@ const LeesburgOysterEditor = () => {
         if (oysterList.includes(oysterObj)) {
             return;
         }
-        if (oysterList.length > 10) {
+        if (oysterList.length > 14) {
             return;
         }
         setOysterList(current => [...current, oysterObj])
@@ -85,47 +82,46 @@ const LeesburgOysterEditor = () => {
                     <div className="flex flex-wrap justify-center">
                         <div>
                             <ContainerHeader title="Build Oyster Menu" />
-                            <div className="w-384 h-576 relative z-1" ref={ref} id="leesburgOysterMenu">
-                                <img src={images.oyster_menu_template} alt="oyster menu template" className="absolute z-2" />
-                                <div className="text-center pt-16">
-                                    {oysterList.map((oyster, index) => (
-                                        <div key={oyster.id} className="flex justify-center relative z-3 font-semibold">
-                                            <div className="w-300 cursor-pointer" onClick={() => { handleDelete(index) }}>
-                                                <p style={{
-                                                    fontFamily: 'montserrat',
-                                                    fontWeight: '900',
-                                                    fontSize: '12px',
-                                                    color: '#8A5C36',
-                                                    lineHeight: '14px'
-                                                }}>{oyster.name}</p>
-                                                <p style={{
-                                                    fontFamily: 'montserrat',
-                                                    fontWeight: '700',
-                                                    fontSize: '10px',
-                                                    color: '#182E3D',
-                                                    lineHeight: '10px'
-                                                }}>{oyster.location} • {oyster.size}</p>
-                                                <p style={{
-                                                    fontFamily: 'montserrat',
-                                                    fontWeight: '600',
-                                                    fontSize: '10px',
-                                                    paddingBottom: '4px'
-                                                }}>{oyster.description}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+                            <div className="w-384 h-576 relative" ref={ref} id="menu">
+                                <img src={images.oyster_menu_template} alt="oyster menu template" className="absolute" />
+                                <div className="flex flex-col justify-between text-center pt-16 h-full pb-10 max-h-576">
+                                    {oysterList.map((oyster, index) => {
+                                        if (Object.keys(oyster).length !== 0) {
+                                            return (
+                                                <div key={oyster.id} className="flex justify-center relative z-3 font-semibold">
+                                                    <div
+                                                        className="w-275 cursor-pointer"
+                                                        onClick={() => { handleDelete(index) }}
+                                                        style={{ fontFamily: 'montserrat', }}>
+                                                        <p style={{
+                                                            fontWeight: '700',
+                                                            fontSize: '12px',
+                                                            color: '#8A5C36',
+                                                            lineHeight: '12px'
+                                                        }}>{oyster.name}</p>
+                                                        <p style={{
+                                                            fontWeight: '700',
+                                                            fontSize: '10px',
+                                                            color: '#182E3D',
+                                                            lineHeight: '10px'
+                                                        }}>{oyster.location} • {oyster.size}</p>
+                                                        <p style={{
+                                                            fontWeight: '600',
+                                                            fontSize: '10px',
+                                                            lineHeight: '10px'
+                                                        }}>{oyster.description}</p>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+                                    })}
                                 </div>
                             </div>
                             <div
                                 className="flex justify-center dark:text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                <button
-                                    className="flex justify-center font-semibold rounded-md border border-gray-600 w-20 p-2 m-2"
-                                    onClick={onButtonClick}
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}><FaDownload /></button>
-                                <button
-                                    className="flex justify-center font-semibold rounded-md border border-gray-600 w-20 p-2 m-2"
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}><BiAddToQueue /></button>
+                                <DownloadBtn onClick={onButtonClick} />
+                                <AddToQueueBtn />
                             </div>
                         </div>
                     </div>
@@ -137,16 +133,9 @@ const LeesburgOysterEditor = () => {
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 {oysters.map((oyster, index) => (
                                     <div key={oyster.id} className="flex justify-center text-gray-200 gap-3">
-                                        <div
-                                            className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
-                                            onClick={() => { setOysterObj(oyster) }}>
-                                            <div className="w-60 flex justify-center">
-                                                <p>{oyster.name}</p>
-                                            </div>
-                                        </div>
+                                        <CatalogBtn onClick={() => { setOysterObj(oyster) }} info={oyster.name} />
                                         <button type="button" onClick="" >
-                                            <FaEdit size="1.5rem" />
+                                            <FaEdit size="1.2rem" />
                                         </button>
                                         <button type="button" onClick="" >
                                             <FaTrash size="1.2rem" />

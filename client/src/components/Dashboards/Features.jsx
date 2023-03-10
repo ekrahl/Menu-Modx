@@ -2,14 +2,14 @@ import { ContainerHeader, EditBtn, DownloadBtn } from '../'
 import { Link } from 'react-router-dom'
 import { foodFeatures, drinkFeatures } from '../../data/dummy'
 
-const Features = (props) => {
+const Features = ({ id, path }) => {
 
     return (
-        <div className="">
+        <div>
             <ContainerHeader title="Features" />
             <div className="flex flex-wrap">
                 <div className='flex md:flex-1'>
-                    {foodFeatures.filter(feat => feat.location_id === props.id).map((feat) => {
+                    {foodFeatures.filter(feat => feat.location_id === id).map((feat) => {
                         return (
                             <div
                                 className="border-b border-gray-600 py-2 pl-2 md:pb-12"
@@ -24,7 +24,7 @@ const Features = (props) => {
                     })}
                 </div>
                 <div className='flex md:flex-1'>
-                    {drinkFeatures.filter(feat => feat.location_id === props.id).map((feat) => {
+                    {drinkFeatures.filter(feat => feat.location_id === id).map((feat) => {
                         return (
                             <div
                                 className="border-b border-gray-600 py-2 pr-2"
@@ -42,12 +42,12 @@ const Features = (props) => {
             </div>
 
             <div
-                className="flex flex-wrap justify-center text-gray-400 border-b border-gray-600 rounded-b-xl gap-10 p-4"
+                className="flex flex-wrap justify-center text-gray-400 border-b border-gray-600 rounded-b-xl gap-4 p-4"
                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                <Link to={props.featureEditPath}>
+                <DownloadBtn />
+                <Link to={path}>
                     <EditBtn />
                 </Link>
-                <DownloadBtn />
             </div>
         </div>
     )

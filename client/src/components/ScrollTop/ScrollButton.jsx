@@ -4,7 +4,7 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import { Button } from './Styles';
 
 const ScrollButton = () => {
-    const { currentColor, currentMode } = useStateContext();
+    const { currentColor } = useStateContext();
 
     const [visible, setVisible] = useState(false)
 

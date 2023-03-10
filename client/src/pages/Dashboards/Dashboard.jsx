@@ -182,7 +182,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex flex-col mt-1">
-            <div className="flex items-center justify-center bg-dinner1 bg-cover bg-center rounded-xl border-b border-gray-600 py-12">
+            <div className="flex items-center justify-center bg-dinner bg-cover bg-center rounded-xl border-b border-gray-600 py-12">
               <p className="font-bold text-gray-200 text-3xl md:text-4xl text-center bg-half-transparent rounded-xl p-4 m-8">MAIN MENUS</p>
             </div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1  mt-1">

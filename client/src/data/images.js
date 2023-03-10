@@ -46,12 +46,20 @@ import swordfish_shrimp_grits from './images/specials/food/swordfish_shrimp_grit
 import swordfish_risotto from './images/specials/food/swordfish_risotto.jpg'
 import rockfish_jasmine_rice from './images/specials/food/rockfish_jasmine_rice.jpg'
 import rockfish_jambalaya from './images/specials/food/rockfish_jambalaya.jpg'
+import rainbowTrout from './images/specials/food/rainbowTrout.jpg'
+import mahiMahi from './images/specials/food/mahiMahi.jpg'
+import stuffedFlounder from './images/specials/food/stuffedFlounder.jpg'
+import babyBackRibs from './images/specials/food/babyBackRibs.jpg'
 
 // cocktail feature images
 import julep from './images/specials/drink/julep.jpg'
 import mango_tango from './images/specials/drink/mango_tango.jpg'
 import taybaybay from './images/specials/drink/taybaybay.jpg'
 import tikitac from './images/specials/drink/tikitac.jpg'
+import taiOneOn from './images/specials/drink/taiOneOn.jpg'
+import penicillin from './images/specials/drink/penicillin.jpg'
+import beesknees from './images/specials/drink/beesknees.jpg'
+import loveLetter from './images/specials/drink/loveLetter.jpg'
 
 // header images
 import kingstoysterbar from './images/headers/kingstoysterbar.png'
@@ -78,26 +86,44 @@ import oyster_menu_template_noma from './images/menus/templates/oyster_menu_temp
 import beer_menu_template from './images/menus/templates/beer_menu_template.png'
 import feature_sheet_template2 from './images/menus/templates/feature_sheet_template2.png'
 import feature_menu_template from './images/menus/templates/feature_menu_template.png'
+import happy_hour_menu_leesburg_template from './images/menus/templates/happy_hour_menu_leesburg_template.png'
+import happy_hour_menu_middleburg_template from './images/menus/templates/happy_hour_menu_middleburg_template.png'
+import happy_hour_menu_noma_template from './images/menus/templates/happy_hour_menu_noma_template.png'
+import happy_hour_menu_potomac_template from './images/menus/templates/happy_hour_menu_potomac_template.png'
+import allergyOyster from './images/menus/templates/allergyOyster.png'
+import food from './images/menus/templates/food.png'
+import beer_wine from './images/menus/templates/beer_wine.png'
+import bottles from './images/menus/templates/cans&bottles.png'
 
 export default {
+    allergyOyster,
+    babyBackRibs,
     beer_menu_leesburg,
     beer_menu_middleburg,
     beer_menu_noma,
     beer_menu_potomac,
     beer_menu_template,
+    beer_wine,
+    beesknees,
     birthdaymenu,
+    bottles,
     bronzino_tomato_salad,
     comingSoonImg,
     comingSoonImgSm,
     dc3,
     feature_menu_template,
     feature_sheet_template2,
+    food,
     halibut_risotto,
     halibut_risotto_full,
     happy_hour_menu_leesburg,
+    happy_hour_menu_leesburg_template,
     happy_hour_menu_middleburg,
+    happy_hour_menu_middleburg_template,
     happy_hour_menu_noma,
+    happy_hour_menu_noma_template,
     happy_hour_menu_potomac,
+    happy_hour_menu_potomac_template,
     holidaymenu,
     julep,
     kingstoysterbar,
@@ -105,9 +131,11 @@ export default {
     ksobfood,
     leesburg,
     logo,
+    loveLetter,
     leesburg_brunch_menu,
     leesburg_cocktail_menu,
     leesburg_dinner_menu,
+    mahiMahi,
     middleburg_brunch_menu,
     middleburg_cocktail_menu,
     middleburg_dinner_menu,
@@ -128,17 +156,21 @@ export default {
     oyster_menu_middleburg,
     oyster_menu_noma,
     oyster_menu_potomac,
+    penicillin,
     potomac_brunch_menu,
     potomac_cocktail_menu,
     potomac_dinner_menu,
     pdr,
     potomac,
     pridemenu,
+    rainbowTrout,
     rockfish_jasmine_rice,
     rockfish_jambalaya,
     shuckit,
+    stuffedFlounder,
     swordfish_shrimp_grits,
     swordfish_risotto,
+    taiOneOn,
     taybaybay,
     tikitac,
     veggieprep,

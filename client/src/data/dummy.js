@@ -1,12 +1,10 @@
-import React from 'react';
 import moment from 'moment'
-import { AiOutlineCalendar } from 'react-icons/ai';
-import { IoIosHappy, IoMdSchool } from 'react-icons/io';
-import { RiTodoLine } from 'react-icons/ri';
-import { BsMailbox } from 'react-icons/bs';
-import { MdLocationOn, MdStars, MdDinnerDining, MdBrunchDining, MdSpaceDashboard, MdOutlineSettingsApplications } from 'react-icons/md';
-import { GiPartyPopper, GiMartini, GiBeerStein, GiOyster, GiChefToque } from 'react-icons/gi';
-import { images } from './';
+import { AiOutlineCalendar } from 'react-icons/ai'
+import { IoIosHappy, IoMdSchool } from 'react-icons/io'
+import { RiTodoLine, RiMailLine, RiSettings5Line } from 'react-icons/ri'
+import { MdLocationOn, MdStars, MdDinnerDining, MdBrunchDining, MdSpaceDashboard } from 'react-icons/md'
+import { GiPartyPopper, GiMartini, GiBeerStein, GiOyster, GiChefToque, GiAnchor } from 'react-icons/gi'
+import { images } from './'
 
 const today = moment().format('MMM Do')
 const today2 = moment().add(2, 'days').format('MMM Do')
@@ -27,138 +25,97 @@ export const locations = [
     id: 1,
     title: "Leesburg",
     path: '/leesburg',
-    pathOysterMenu: "/leesburgoystermenu",
   },
   {
     id: 2,
     title: "Middleburg",
     path: '/middleburg',
-    pathOysterMenu: "/middleburgoystermenu",
   },
   {
     id: 3,
     title: "NoMa",
     path: '/noma',
-    pathOysterMenu: "/nomaoystermenu",
   },
   {
     id: 4,
     title: "Potomac",
     path: '/potomac',
-    pathOysterMenu: "/potomacoystermenu",
-  }];
+  }]
 
 export const foodFeatures = [
   {
-    id: 1,
-    location_id: 1,
-    title: "Pan Seared Halibut",
-    ingredients: "seafood risotto, mediterranean tomato sauce, fried fennel garnish",
-    allergies: "shellfish, dairy",
-    notes: "risotto cannot be modified",
-    img: images.halibut_risotto,
-
-  },
-  {
-    id: 2,
-    location_id: 2,
-    title: "Grilled Swordfish",
-    ingredients: "parmesan risotto cake, sauteed collard greens, bacon",
-    allergies: "dairy, gluten",
-    notes: "risotto cannot be modified",
-    img: images.swordfish_risotto,
-  },
-  {
-    id: 3,
     location_id: 3,
     title: "Grilled Bronzino",
+    subtitle: "caprese salad",
     ingredients: "heirloom caprese salad, balsamic dressing, balsamic glaze, lemon",
     allergies: "dairy",
     notes: "",
     img: images.bronzino_tomato_salad,
   },
   {
-    id: 4,
     location_id: 4,
     title: "Grilled Rockfish",
+    subtitle: "jasmine rice, grilled veggies",
     ingredients: "jasmine rice, grilled vegetables, citrus ponzu, mango relish, balsamic glaze",
     allergies: "",
     notes: "vegetable medley cannot be modified",
     img: images.rockfish_jasmine_rice,
-  }
+  },
+  {
+    location_id: 2,
+    title: "Grilled Swordfish",
+    subtitle: "parmesan risotto cake",
+    ingredients: "parmesan risotto cake, sauteed collard greens, bacon",
+    allergies: "dairy, gluten",
+    notes: "risotto cannot be modified",
+    img: images.swordfish_risotto,
+  },
+  {
+    location_id: 1,
+    title: "Pan Seared Halibut",
+    subtitle: "seafood risotto",
+    ingredients: "seafood risotto, mediterranean tomato sauce, fried fennel garnish",
+    allergies: "shellfish, dairy",
+    notes: "risotto cannot be modified",
+    img: images.halibut_risotto,
+  },
+  {
+    title: "Grilled Rainbow Trout",
+    subtitle: "seasonal vegetables",
+    ingredients: "seasonal vegetables, chimichurri sauce, grilled corn relish",
+    allergies: "dairy",
+    notes: "",
+    img: images.rainbowTrout,
+  },
+  {
+    title: "Grilled Mahi Mahi",
+    subtitle: "three pepper polenta",
+    ingredients: "banana leaf wrapped mahi mahi, three pepper polenta, creamy poblano sauce",
+    allergies: "dairy",
+    notes: "polenta cannot be modified",
+    img: images.mahiMahi,
+  },
+  {
+    title: "Crab & Shrimp Stuffed Flounder",
+    subtitle: "cauliflower mash",
+    ingredients: "cauliflower mash, broccolini, lemon butter sauce",
+    allergies: "shellfish, dairy",
+    notes: "",
+    img: images.stuffedFlounder,
+  },
+  {
+    title: "Baby Back Ribs",
+    subtitle: "coleslaw, fries",
+    ingredients: "coleslaw, fries",
+    allergies: "",
+    notes: "",
+    img: images.ribs,
+  },
 ]
 
-export const menus = [
-  {
-    id: "1",
-    location: "Leesburg",
-    featureMenu: images.menu_features_leesburg,
-    featureEditPath: '/leesburgfeatures',
-    oysterMenu: images.oyster_menu_leesburg,
-    oysterEditPath: '/leesburgoysters',
-    beerMenu: images.beer_menu_leesburg,
-    beerEditPath: '/leesburgbeer',
-    happyHourMenu: images.happy_hour_menu_leesburg,
-    dinnerMenu: images.leesburg_dinner_menu,
-    cocktailMenu: images.leesburg_cocktail_menu,
-    brunchMenu: images.leesburg_brunch_menu,
-  },
-  {
-    id: "2",
-    location: "Middleburg",
-    featureMenu: images.menu_features_middleburg,
-    featureEditPath: '/middleburgfeatures',
-    oysterMenu: images.oyster_menu_middleburg,
-    oysterEditPath: '/middleburgoysters',
-    beerMenu: images.beer_menu_middleburg,
-    beerEditPath: '/middleburgbeer',
-    happyHourMenu: images.happy_hour_menu_middleburg,
-    dinnerMenu: images.middleburg_dinner_menu,
-    cocktailMenu: images.middleburg_cocktail_menu,
-    brunchMenu: images.middleburg_brunch_menu,
-  },
-  {
-    id: "3",
-    location: "Noma",
-    featureMenu: images.menu_features_noma,
-    featureEditPath: '/nomafeatures',
-    oysterMenu: images.oyster_menu_noma,
-    oysterEditPath: '/nomaoystereditor',
-    beerMenu: images.beer_menu_noma,
-    beerEditPath: '/nomabeereditor',
-    happyHourMenu: images.happy_hour_menu_noma,
-    dinnerMenu: images.noma_dinner_menu,
-    cocktailMenu: images.noma_cocktail_menu,
-    brunchMenu: images.noma_brunch_menu,
-  },
-  {
-    id: "4",
-    location: "Potomac",
-    featureMenu: images.menu_features_potomac,
-    featureEditPath: '/potomacfeatures',
-    oysterMenu: images.oyster_menu_potomac,
-    oysterEditPath: '/potomacoysters',
-    beerMenu: images.beer_menu_potomac,
-    beerEditPath: '/potomacbeer',
-    happyHourMenu: images.happy_hour_menu_potomac,
-    dinnerMenu: images.potomac_dinner_menu,
-    cocktailMenu: images.potomac_cocktail_menu,
-    brunchMenu: images.potomac_brunch_menu,
-  },
-]
 
 export const drinkFeatures = [
   {
-    id: 1,
-    location_id: 1,
-    title: "Three Crazy Cat Ladies",
-    ingredients: "angels envy bourbon, spiced pear liquor, blackberry, lemon, earl grey tea",
-    allergies: "",
-    notes: "rocks glass, small ice, lemon wheel garnish",
-    img: images.taybaybay
-  },
-  {
-    id: 2,
     location_id: 2,
     title: "Peach Mint Julep",
     ingredients: "bourbon, peach, mint",
@@ -167,7 +124,22 @@ export const drinkFeatures = [
     img: images.julep
   },
   {
-    id: 3,
+    location_id: 4,
+    title: "Mango Tango",
+    ingredients: "chacho, tequila, lime, mango, agave, tajin",
+    allergies: "",
+    notes: "",
+    img: images.mango_tango
+  },
+  {
+    location_id: 1,
+    title: "Three Crazy Cat Ladies",
+    ingredients: "angels envy bourbon, spiced pear liquor, blackberry, lemon, earl grey tea",
+    allergies: "",
+    notes: "rocks glass, small ice, lemon wheel garnish",
+    img: images.taybaybay
+  },
+  {
     location_id: 3,
     title: "Tiki-Tac",
     ingredients: "dry vermouth, apricot liquor, pineapple, falernum, lemon",
@@ -176,19 +148,225 @@ export const drinkFeatures = [
     img: images.tikitac
   },
   {
-    id: 4,
-    location_id: 4,
-    title: "Mango Tango",
-    ingredients: "chacho, tequila, lime, mango, agave, tajin",
+    title: "Tai One On",
+    ingredients: "Don Q Cristal, Don Q Reserva 7, Wray and Nephew, sunflower orgeat, curacao, lime",
     allergies: "",
     notes: "",
-    img: images.mango_tango
-  }
+    img: images.taiOneOn
+  },
+  {
+    title: "Penicillin",
+    ingredients: "whiskey, scotch, ginger, honey, lemon",
+    allergies: "",
+    notes: "",
+    img: images.penicillin
+  },
+  {
+    title: "Bees Knees",
+    ingredients: "Bombay Sapphire, chamomile, lemon, honey",
+    allergies: "",
+    notes: "",
+    img: images.beesknees
+  },
+  {
+    title: "Love Letter",
+    ingredients: "strawberry-infused Martell VS, St. Germain, passionfruit, lemon",
+    allergies: "",
+    notes: "",
+    img: images.loveLetter
+  },
 ]
 
+export const cocktails = [
+  {
+    title: "DAILY SPECIAL",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "RAIL DRINKS + 1 MIXER",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "KING STREET COLLINS",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "HOUSE MULE",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "HOUSE PUNCH",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "SEASONAL SANGRIA",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "SNOWBIRD",
+    subTitle: "",
+    price: "$7"
+  },
+  {
+    title: "FROZÉ",
+    subTitle: "",
+    price: "$7"
+  },
+]
+
+export const beerWine = [
+  {
+    title: "ALL HOUSE WINE",
+    subTitle: "",
+    price: "$2 OFF"
+  },
+  {
+    title: "ALL HOUSE BEER",
+    subTitle: "",
+    price: "$2 OFF"
+  },
+]
+
+export const food = [
+  {
+    title: "KSOB HOUSE OYSTERS",
+    subTitle: "increments of 3",
+    price: "$7",
+    icon: <GiOyster />
+  },
+  {
+    title: "CRISPY CALAMARI",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "PERUVIAN STYLE CEVICHE",
+    subTitle: "",
+    price: "$7",
+    icon: <GiOyster />
+  },
+  {
+    title: "TUNA TACOS",
+    subTitle: "",
+    price: "$7",
+    icon: <GiOyster />
+  },
+  {
+    title: "BLEU CHEESE CHIPS",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "SPINACH DIP",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "HOMEMADE CHICKEN TENDERS",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "CRABCAKE SLIDERS",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "PASTRAMI SLIDERS",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "SALMON BLT SLIDERS",
+    subTitle: "",
+    price: "$7",
+    icon: <GiOyster />
+  },
+  {
+    title: "KING STREET WINGS",
+    subTitle: "",
+    price: "$7",
+    icon: ""
+  },
+  {
+    title: "CHOP HOUSE BURGER",
+    subTitle: "beef, ham, bbq sauce, cheddar cheese, lettuce, tomato, fries",
+    price: "$7",
+    icon: <GiOyster />
+  },
+]
+
+export const rules = [
+  {
+    rule: "90 minute time limit per table",
+  },
+  {
+    rule: "20% added to parties of 6 or more",
+  },
+  {
+    rule: "20% added to all dine-in checks",
+  },
+  {
+    rule: "No more than 3-way split on any check",
+  },
+]
+
+export const menus = [
+  {
+    location: "Leesburg",
+    featureMenu: images.menu_features_leesburg,
+    oysterMenu: images.oyster_menu_leesburg,
+    beerMenu: images.beer_menu_leesburg,
+    happyHourMenu: images.happy_hour_menu_leesburg,
+    dinnerMenu: images.leesburg_dinner_menu,
+    cocktailMenu: images.leesburg_cocktail_menu,
+    brunchMenu: images.leesburg_brunch_menu,
+  },
+  {
+    location: "Middleburg",
+    featureMenu: images.menu_features_middleburg,
+    oysterMenu: images.oyster_menu_middleburg,
+    beerMenu: images.beer_menu_middleburg,
+    happyHourMenu: images.happy_hour_menu_middleburg,
+    dinnerMenu: images.middleburg_dinner_menu,
+    cocktailMenu: images.middleburg_cocktail_menu,
+    brunchMenu: images.middleburg_brunch_menu,
+  },
+  {
+    location: "Noma",
+    featureMenu: images.menu_features_noma,
+    oysterMenu: images.oyster_menu_noma,
+    beerMenu: images.beer_menu_noma,
+    happyHourMenu: images.happy_hour_menu_noma,
+    dinnerMenu: images.noma_dinner_menu,
+    cocktailMenu: images.noma_cocktail_menu,
+    brunchMenu: images.noma_brunch_menu,
+  },
+  {
+    location: "Potomac",
+    featureMenu: images.menu_features_potomac,
+    oysterMenu: images.oyster_menu_potomac,
+    beerMenu: images.beer_menu_potomac,
+    happyHourMenu: images.happy_hour_menu_potomac,
+    dinnerMenu: images.potomac_dinner_menu,
+    cocktailMenu: images.potomac_cocktail_menu,
+    brunchMenu: images.potomac_brunch_menu,
+  },
+]
 export const events = [
   {
-    id: "1",
     title: "Birthday Party",
     location: "Leesburg",
     details: "Back Patio",
@@ -200,7 +378,6 @@ export const events = [
     phone: "571-209-5588",
   },
   {
-    id: "2",
     title: "Wedding Rehearsal",
     location: "Middleburg",
     details: "Upstairs",
@@ -212,7 +389,6 @@ export const events = [
     phone: "703-984-2851",
   },
   {
-    id: "3",
     title: "Holiday Party",
     location: "Potomac",
     details: "PDR",
@@ -224,7 +400,6 @@ export const events = [
     phone: "202-587-2645",
   },
   {
-    id: "4",
     title: "Pride Event",
     location: "Noma",
     details: "Tbl 31-33",
@@ -236,7 +411,6 @@ export const events = [
     phone: "202-695-3458",
   },
   {
-    id: "5",
     title: "Company Party",
     location: "Potomac",
     details: "PDR",
@@ -248,7 +422,6 @@ export const events = [
     phone: "240-597-8225",
   },
   {
-    id: "6",
     title: "Private Party",
     location: "NoMa",
     details: "Tbl 11-18, 21-23",
@@ -260,7 +433,6 @@ export const events = [
     phone: "202-478-6514",
   },
   {
-    id: "7",
     title: "Charity Dinner",
     location: "NoMa",
     details: "Tbl 31-33",
@@ -272,7 +444,6 @@ export const events = [
     phone: "202-618-9345",
   },
   {
-    id: "8",
     title: "Birthday Party",
     location: "Potomac",
     details: "Patio/Bar",
@@ -284,7 +455,6 @@ export const events = [
     phone: "240-937-8845",
   },
   {
-    id: "9",
     title: "Drag Brunch",
     location: "NoMa",
     details: "Tbl 20s, 30s, 40s",
@@ -296,7 +466,6 @@ export const events = [
     phone: "202-324-1486",
   },
   {
-    id: "10",
     title: "Baby Shower",
     location: "Middleburg",
     details: "Upstairs",
@@ -308,7 +477,6 @@ export const events = [
     phone: "540-956-9115",
   },
   {
-    id: "11",
     title: "Baby Shower",
     location: "Leesburg",
     details: "Tbl 21, 22, 23 ",
@@ -320,7 +488,6 @@ export const events = [
     phone: "540-258-9182",
   },
   {
-    id: "1",
     title: "Birthday Party",
     location: "Noma",
     details: "Tbl 32-33",
@@ -332,7 +499,6 @@ export const events = [
     phone: "202-594-8462",
   },
   {
-    id: "1",
     title: "Birthday Party",
     location: "Leesburg",
     details: "Back Patio",
@@ -347,440 +513,921 @@ export const events = [
 
 export const oysters = [
   {
-    id: 1,
-    name: "KSOB OYSTER",
+    name: "KSOB OYSTER*",
     location: "Chincoteague, VA",
-    size: "(s/m)",
+    size: "(sm/md)",
     description: "clean brine with a mild, earthy finish",
+    icon: <GiOyster />
   },
   {
-    id: 2,
-    name: "FOXLEY",
+    name: "BARSTOOL*",
     location: "PEI, Canada",
-    size: "(s/m)",
-    description: "plump, light brine with a sweet finish",
-  },
-  {
-    id: 3,
-    name: "WELLFLEET",
-    location: "Cape Cod, MA",
-    size: "(sm)",
-    description: "sharp brine with plump meat and a seaweed finish",
-  },
-  {
-    id: 4,
-    name: "SALTY SALLY",
-    location: "Chincoteague, VA",
-    size: "(md)",
-    description: "plump with a strong briny finish",
-  },
-  {
-    id: 5,
-    name: "RASPBERRY POINT",
-    location: "PEI, Canada",
-    size: "(sm)",
-    description: "high brininess, clean flavor with a sweet finish",
-  },
-  {
-    id: 6,
-    name: "SWEET ISLAND KISS",
-    location: "PEI, Canada",
-    size: "(sm)",
-    description: "salty punch with a grassy but crisp, fresh finish",
-  },
-  {
-    id: 7,
-    name: "SWEET JESUS",
-    location: "Chincoteague",
-    size: "(s/m)",
-    description: "milder oyster with a clean and sweet finish",
-  },
-  {
-    id: 8,
-    name: "BARSTOOL",
-    location: "PEI, Canada",
-    size: "(s/m)",
+    size: "(sm/md)",
     description: "briny goodness with a sweet clean finish",
+    icon: <GiOyster />
   },
   {
-    id: 9,
-    name: "BLACKBERRY",
+    name: "BLACKBERRY*",
     location: "Chincoteague",
     size: "(md)",
     description: "meaty, mild sweetness, balanced brine finish",
+    icon: <GiOyster />
   },
   {
-    id: 10,
-    name: "GREAT WHITE",
+    name: "BLUE POINT*",
+    location: "Westport, CT",
+    size: "(sm/md)",
+    description: "plump, light brine with a sweet finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "CAPE MAY SALTS*",
+    location: "Delaware Bay, NJ",
+    size: "(md/lg)",
+    description: "plump oyster with mild brine and sweet finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "COTUIT*",
+    location: "Cotuit Bay, MA",
+    size: "(sm/md)",
+    description: "clean flavor, briny with a sweet finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "COROMANDEL*  $3",
+    location: "Coromandel Peninsula, NZ",
+    size: "(md/lg)",
+    description: "rich, buttery, slight cucumber finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "GREAT WHITE*",
     location: "Cape Cod, MA",
     size: "(md)",
     description: "high salinity, creamy texture, strong mineral finish",
+    icon: <GiOyster />
   },
   {
-    id: 11,
-    name: "QUEENS CUP",
-    location: "PEI, Canada",
-    size: "(sm)",
-    description: "plump, silky, light brine, earthy mineral finish",
-  },
-  {
-    id: 12,
-    name: "BLUE POINT",
-    location: "Westport, CT",
-    size: "(s/m)",
+    name: "FAT BABY*",
+    location: "Long Island, NY",
+    size: "(md)",
     description: "plump, light brine with a sweet finish",
+    icon: <GiOyster />
   },
   {
-    id: 13,
-    name: "MOONDANCER",
+    name: "FOXLEY*",
+    location: "PEI, Canada",
+    size: "(sm/md)",
+    description: "plump, light brine with a sweet finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "LITTLE BEACHES*",
+    location: "Chesapeake Bay, VA",
+    size: "(sm)",
+    description: "great salt and brine, hints of mint and cucumber",
+    icon: <GiOyster />
+  },
+  {
+    name: "MOONDANCER*",
     location: "Damariscotta, ME",
     size: "(md)",
     description: "briny start with a sweet finish",
+    icon: <GiOyster />
   },
   {
-    id: 14,
-    name: "TANGIER ISLAND",
+    name: "QUEENS CUP*",
+    location: "PEI, Canada",
+    size: "(sm)",
+    description: "plump, silky, light brine, earthy mineral finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "RASPBERRY POINT*",
+    location: "PEI, Canada",
+    size: "(sm)",
+    description: "high brininess, clean flavor with a sweet finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "SALT SHAKER*",
+    location: "Chincoteague, MD",
+    size: "(sm/md)",
+    description: "full-bodied with a salt-brine finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "SALTY SALLY*",
+    location: "Chincoteague, VA",
+    size: "(md)",
+    description: "plump with a strong briny finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "STORMY BAY*",
+    location: "Delaware Bay, DE",
+    size: "(md)",
+    description: "full-bodied with a salt-brine finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "SWEET ISLAND KISS*",
+    location: "PEI, Canada",
+    size: "(sm)",
+    description: "salty punch with a grassy but crisp, fresh finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "SWEET JESUS*",
+    location: "Chincoteague",
+    size: "(sm/md)",
+    description: "milder oyster with a clean and sweet finish",
+    icon: <GiOyster />
+  },
+  {
+    name: "TANGIER ISLAND*",
     location: "Chesapeake Bay, VA",
-    size: "(s/m)",
+    size: "(sm/md)",
     description: "firm, meaty texture, medium brine, elemental finish",
+    icon: <GiOyster />
   },
   {
-    id: 15,
-    name: "WATCH HILL",
+    name: "WATCH HILL*",
     location: "Westerly, RI",
     size: "(sm)",
     description: "full-bodied, mild salinity, sweet and buttery",
+    icon: <GiOyster />
   },
   {
-    id: 16,
-    name: "COTUIT BAY",
-    location: "PEI, Canada",
-    size: "(md)",
-    description: "plump and tender meat with creamy sweetness",
-  },
-  {
-    id: 17,
-    name: "SALT SHAKER",
-    location: "Chincoteague, MD",
-    size: "(s/m)",
-    description: "full-bodied with a salt-brine finish",
+    name: "WELLFLEET*",
+    location: "Cape Cod, MA",
+    size: "(sm)",
+    description: "sharp brine with plump meat and a seaweed finish",
+    icon: <GiOyster />
   },
 ]
 
 export const draft = [
   {
-    id: "1",
     name: "KSOB",
     type: "IPA",
     brewery: "Lost Rhino",
     location: "VA",
     abv: "6.8%",
-    price: "$9"
+    price: 8,
+    size: ""
   },
   {
-    id: "2",
-    name: "OLD TIME",
-    type: "LAGER",
-    brewery: "DC Brau",
-    location: "DC",
-    abv: "4.0%",
-    price: "$9"
-  },
-  {
-    id: "3",
-    name: "PACIFICO",
-    type: "PILSNER",
-    brewery: "Grupo Modelo",
-    location: "MEX",
-    abv: "4.4%",
-    price: "$9"
-  },
-  {
-    id: "4",
-    name: "STELLA ARTOIS",
-    type: "LAGER",
-    brewery: "Anheuser-Busch",
-    location: "BEL",
-    abv: "5.5%",
-    price: "$9"
-  },
-  {
-    id: "5",
-    name: "OKTOBERFEST",
-    type: "MARZEN",
-    brewery: "DC Brau",
-    location: "DC",
-    abv: "5.5%",
-    price: "$9"
-  },
-  {
-    id: "6",
-    name: "WEEK AWAY",
-    type: "HAZY IPA",
-    brewery: "True Respite",
-    location: "MD",
-    abv: "6.5%",
-    price: "$9"
-  },
-  {
-    id: "7",
-    name: "NORSE",
-    type: "DOUBLE IPA",
-    brewery: "Väsen",
+    name: "KSOB",
+    type: "IPA",
+    brewery: "Lost Rhino",
     location: "VA",
-    abv: "8.0%",
-    price: "$10"
-  },
-  {
-    id: "8",
-    name: "WHITE",
-    type: "WHEAT",
-    brewery: "Allagash",
-    location: "ME",
-    abv: "5.2%",
-    price: "$9"
-  },
-  {
-    id: "9",
-    name: "PUNKIN",
-    type: "PUMPKIN ALE",
-    brewery: "Dogfish Head",
-    location: "DE",
-    abv: "7.0%",
-    price: "$9"
-  },
-  {
-    id: "10",
-    name: "NITRO",
-    type: "MILK STOUT",
-    brewery: "Left Hand",
-    location: "CO",
-    abv: "6.0%",
-    price: "$9"
-  },
-  {
-    id: "11",
-    name: "BALTIMORE BLONDE",
-    type: "LAGER",
-    brewery: "Guinness Open Gate",
-    location: "MD",
-    abv: "5.0%",
-    price: "$9"
-  },
-  {
-    id: "12",
-    name: "EL DORADO",
-    type: "AMBER",
-    brewery: "Guinness Open Gate",
-    location: "MD",
-    abv: "5.0%",
-    price: "$9"
-  },
-  {
-    id: "13",
-    name: "ORIGINAL",
-    type: "DRY CIDER",
-    brewery: "Austin Eastciders",
-    location: "TX",
     abv: "6.8%",
-    price: "$9"
+    price: 9,
+    size: ""
   },
   {
-    id: "14",
-    name: "PARTLY CLOUDY",
-    type: "HAZY IPA",
-    brewery: "Solace",
-    location: "VA",
-    abv: "7.2%",
-    price: "$9"
-  },
-  {
-    id: "15",
-    name: "LUNCH",
-    type: "IPA",
-    brewery: "Maine Beer",
-    location: "ME",
-    abv: "7.0%",
-    price: "$9"
-  },
-  {
-    id: "16",
-    name: "OPTIMAL WIT",
-    type: "WHEAT",
-    brewery: "Port City",
-    location: "VA",
-    abv: "4.9%",
-    price: "$9"
-  },
-  {
-    id: "17",
-    name: "WILD LITTLE THING",
-    type: "SOUR",
-    brewery: "Sierra Nevada",
-    location: "CA",
-    abv: "5.5%",
-    price: "$9"
-  },
-  {
-    id: "18",
-    name: "FEED THE MONKEY",
-    type: "WHEAT",
-    brewery: "Jailbreak",
+    name: "BLACKWING",
+    type: "LAGER NITRO",
+    brewery: "Union",
     location: "MD",
-    abv: "6.0%",
-    price: "$9"
+    abv: "4.8%",
+    price: 9,
+    size: ""
   },
   {
-    id: "19",
-    name: "THE PRECIOUS ONE",
-    type: "IPA",
+    name: "BLUEBERRY LEMON",
+    type: "GOSE",
+    brewery: "Two Roads",
+    location: "CT",
+    abv: "4.8%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "BULLPEN",
+    type: "PILSNER",
     brewery: "Atlas",
     location: "DC",
-    abv: "6.4%",
-    price: "$9"
+    abv: "4.8%",
+    price: 9,
+    size: ""
   },
   {
-    id: "20",
-    name: "JOINT RESOLUTION",
-    type: "HAZY IPA",
-    brewery: "DC Brau",
-    location: "DC",
-    abv: "5.5%",
-    price: "$9"
-  },
-  {
-    id: "21",
     name: "CIDRE BLANC",
     type: "DRY CIDER",
     brewery: "Anxo",
     location: "DC",
     abv: "6.9%",
-    price: "$9"
+    price: 9,
+    size: ""
   },
   {
-    id: "22",
-    name: "LIQUID POEM",
-    type: "DOUBLE IPA",
-    brewery: "Stone",
-    location: "CA",
-    abv: "9.4%",
-    price: "$9"
+    name: "COLD PRO TANGERINE",
+    type: "SOUR",
+    brewery: "Union",
+    location: "MD",
+    abv: "4.3%",
+    price: 9,
+    size: ""
   },
   {
-    id: "23",
+    name: "DEVIL'S ALLEY",
+    type: "IPA",
+    brewery: "7 Locks",
+    location: "MD",
+    abv: "6.7%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "DUCKPIN",
+    type: "PALE ALE",
+    brewery: "Union",
+    location: "MD",
+    abv: "5.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "EL DORADO",
+    type: "AMBER",
+    brewery: "Guinness Open Gate",
+    location: "MD",
+    abv: "5.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "EL DUDERINO",
+    type: "WHITE STOUT",
+    brewery: "Center of the Universe",
+    location: "VA",
+    abv: "6.5%",
+    price: 11,
+    size: ""
+  },
+  {
+    name: "EQUAL MARRIAGE",
+    type: "DARK WHEAT",
+    brewery: "City-State",
+    location: "MD",
+    abv: "5.5%",
+    price: 9,
+    size: ""
+  },
+  {
     name: "FARM FUZZ",
     type: "WHEAT",
     brewery: "Manor Hill",
     location: "MD",
     abv: "4.9%",
-    price: "$9"
+    price: 9,
+    size: ""
   },
   {
-    id: "24",
+    name: "FEED THE MONKEY",
+    type: "WHEAT",
+    brewery: "Jailbreak",
+    location: "MD",
+    abv: "5.6%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "FESTBIER",
+    type: "MÄRZEN",
+    brewery: "Väsen",
+    location: "VA",
+    abv: "5.2%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "GERMAN",
+    type: "PILSNER",
+    brewery: "Calvert Brewing",
+    location: "MD",
+    abv: "5.2%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "GINGERBREAD",
+    type: "PORTER",
+    brewery: "Hardywood",
+    location: "VA",
+    abv: "9.2%",
+    price: 13,
+    size: ""
+  },
+  {
+    name: "GOLDEN WALRUS",
+    type: "WHITE STOUT",
+    brewery: "Väsen",
+    location: "VA",
+    abv: "6.5%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "GOOD GOURD",
+    type: "PUMPKIN ALE",
+    brewery: "Cigar City",
+    location: "FL",
+    abv: "8.8%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "GROOVE IT",
+    type: "SOUR",
+    brewery: "Loan Oak Farm",
+    location: "MD",
+    abv: "7.4%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "GUINNESS BALTIMORE BLONDE",
+    type: "LAGER",
+    brewery: "Guinness Open Gate",
+    location: "MD",
+    abv: "5.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "HEADSPACE",
+    type: "IPA",
+    brewery: "Kindred Spirit",
+    location: "VA",
+    abv: "7.7%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "INTEGRAL",
+    type: "IPA",
+    brewery: "Port City",
+    location: "VA",
+    abv: "7.0%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "IMPERIAL",
+    type: "HAZY DIPA",
+    brewery: "The Veil",
+    location: "VA",
+    abv: "9.0%",
+    price: 13,
+    size: ""
+  },
+  {
+    name: "JOINT RESOLUTION",
+    type: "HAZY IPA",
+    brewery: "DC Brau",
+    location: "DC",
+    abv: "5.5%",
+    price: 9,
+    size: ""
+  },
+  {
     name: "LADIES MAN",
-    type: "APPLE RASPBERRY SOUR",
+    type: "APPLE RASPBERRY CIDER",
     brewery: "Fabbioli Cellars",
     location: "VA",
     abv: "7.0%",
-    price: "$9"
-  },
-]
-
-export const bottles = [
-  {
-    id: "1",
-    name: "MILLER LITE",
-    type: "LAGER",
-    brewery: "Miller",
-    location: "WI",
-    abv: "4.2%",
-    price: "$5"
+    price: 11,
+    size: ""
   },
   {
-    id: "2",
-    name: "MONOPOLIO CLARA",
-    type: "LAGER",
-    brewery: "DC Brau",
-    location: "MEX",
-    abv: "5.0%",
-    price: "$5"
-  },
-  {
-    id: "3",
-    name: "STATESIDE",
-    type: "HARD SELTZER",
-    brewery: "Black Cherry or Pineapple",
+    name: "LIONSHEAD DELUXE",
+    type: "PILSNER",
+    brewery: "The Lion Brewery",
     location: "PA",
     abv: "4.5%",
-    price: "$9"
+    price: 8,
+    size: ""
   },
   {
-    id: "4",
-    name: "TOPO CHICO",
-    type: "HARD SELTZER",
-    brewery: "mango or strawberry/guava",
-    location: "TX",
-    abv: "4.7%",
-    price: "$6"
+    name: "L'IPA",
+    type: "HAZY IPA",
+    brewery: "Loan Oak Farm",
+    location: "MD",
+    abv: "7.4%",
+    price: 10,
+    size: ""
   },
   {
-    id: "5",
+    name: "LIQUID POEM",
+    type: "DOUBLE IPA",
+    brewery: "Stone",
+    location: "CA",
+    abv: "9.4%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "LONG BLACK VEIL",
+    type: "DARK IPA",
+    brewery: "Port City",
+    location: "VA",
+    abv: "7.5%",
+    price: 11,
+    size: ""
+  },
+  {
+    name: "LUNCH",
+    type: "IPA",
+    brewery: "Maine Beer",
+    location: "ME",
+    abv: "7.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "MILD MANOR'D",
+    type: "AMBER",
+    brewery: "Manor Hill",
+    location: "MD",
+    abv: "5.3%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "MONOPOLIO CLARA",
+    type: "LAGER",
+    brewery: "Cervecería de San Luis",
+    location: "MEX",
+    abv: "5.0%",
+    price: 7,
+    size: ""
+  },
+  {
     name: "NARRAGANSETT",
     type: "LAGER",
     brewery: "Narragansett",
     location: "RI",
     abv: "5.0%",
-    price: "$5"
+    price: 9,
+    size: ""
   },
   {
-    id: "6",
-    name: "PACIFICO",
-    type: "PILSNER",
+    name: "NORSE",
+    type: "DOUBLE IPA",
+    brewery: "Väsen",
+    location: "VA",
+    abv: "8.0%",
+    price: 10,
+    size: ""
+  },
+  {
+    name: "NOT MY JOB",
+    type: "BROWN ALE",
+    brewery: "Midnight Brewery",
+    location: "VA",
+    abv: "5.0%",
+    price: 10
+  },
+  {
+    name: "NITRO",
+    type: "MILK STOUT",
+    brewery: "Left Hand",
+    location: "CO",
+    abv: "6.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "OKTOBERFEST",
+    type: "MARZEN",
+    brewery: "DC Brau",
+    location: "DC",
+    abv: "5.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "OLD TIME",
+    type: "LAGER",
+    brewery: "DC Brau",
+    location: "DC",
+    abv: "4.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "OLD ORIOLE",
+    type: "BOHEMIAN",
+    brewery: "Peabody Heights",
+    location: "MD",
+    abv: "4.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "OPTIMAL WIT",
+    type: "WHEAT",
+    brewery: "Port City",
+    location: "VA",
+    abv: "4.9%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "OPTIMAL WIT",
+    type: "WHEAT",
+    brewery: "Port City",
+    location: "VA",
+    abv: "4.9%",
+    price: 10,
+    size: ""
+  },
+  {
+    name: "ORIGINAL",
+    type: "DRY CIDER",
+    brewery: "Austin Eastciders",
+    location: "TX",
+    abv: "6.8%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "PACÍFICO CLARA",
+    type: "LAGER",
     brewery: "Grupo Modelo",
     location: "MEX",
-    abv: "4.4%",
-    price: "$6"
+    abv: "4.5%",
+    price: 8,
+    size: ""
   },
   {
-    id: "7",
+    name: "PACÍFICO CLARA",
+    type: "LAGER",
+    brewery: "Grupo Modelo",
+    location: "MEX",
+    abv: "4.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "PARTLY CLOUDY",
+    type: "HAZY IPA",
+    brewery: "Solace",
+    location: "VA",
+    abv: "7.2%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "PUNKIN",
+    type: "PUMPKIN ALE",
+    brewery: "Dogfish Head",
+    location: "DE",
+    abv: "7.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "PUMPKINHEAD",
+    type: "PUMPKIN ALE",
+    brewery: "Shipyard Brewing",
+    location: "ME",
+    abv: "4.5%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "THE PRECIOUS ONE",
+    type: "IPA",
+    brewery: "Atlas",
+    location: "DC",
+    abv: "6.4%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "RISE UP",
+    type: "NITRO COFFEE STOUT",
+    brewery: "Evolution",
+    location: "MD",
+    abv: "6.7%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "ROCKVILLE",
+    type: "RED ALE",
+    brewery: "Midnight Brewery",
+    location: "VA",
+    abv: "5.5%",
+    price: 13,
+    size: ""
+  },
+  {
+    name: "SHAD MADNESS",
+    type: "IPA",
+    brewery: "Peabody Heights",
+    location: "MD",
+    abv: "6.0%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "STAY HYDRATED³",
+    type: "IPA",
+    brewery: "The Veil",
+    location: "VA",
+    abv: "6.0%",
+    price: 14,
+    size: ""
+  },
+  {
+    name: "STEADY EDDIE",
+    type: "IPA",
+    brewery: "Union",
+    location: "MD",
+    abv: "4.9%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "STELLA ARTOIS",
+    type: "LAGER",
+    brewery: "Anheuser-Busch",
+    location: "BEL",
+    abv: "5.5%",
+    price: 9,
+    size: "10oz"
+  },
+  {
+    name: "SURRENDER",
+    type: "RyePA",
+    brewery: "7 Locks",
+    location: "MD",
+    abv: "6.2%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "TWO HEARTED",
+    type: "IPA",
+    brewery: "Bell's Brewery",
+    location: "MI",
+    abv: "7.0%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "VIENNA",
+    type: "LAGER",
+    brewery: "Devil's Backbone",
+    location: "VA",
+    abv: "5.2%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "VOLCANO SAUCE",
+    type: "SOUR",
+    brewery: "Aslin",
+    location: "VA",
+    abv: "6.0%",
+    price: 12,
+    size: ""
+  },
+  {
+    name: "WEEK AWAY",
+    type: "HAZY IPA",
+    brewery: "True Respite",
+    location: "MD",
+    abv: "6.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "WHITE",
+    type: "WHEAT",
+    brewery: "Allagash",
+    location: "ME",
+    abv: "5.2%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "WILD LITTLE THING",
+    type: "SOUR",
+    brewery: "Sierra Nevada",
+    location: "CA",
+    abv: "5.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "WYLDCIDE",
+    type: "CIDER",
+    brewery: "Winchester Ciderworks",
+    location: "VA",
+    abv: "6.2%",
+    price: 12,
+    size: ""
+  },
+]
+
+export const bottles = [
+  {
+    name: "BUD LIGHT",
+    type: "LAGER",
+    brewery: "Anheuser-Busch",
+    location: "MO",
+    abv: "4.2%",
+    price: 6,
+    size: ""
+  },
+  {
+    name: "GUINNESS BALTIMORE BLONDE",
+    type: "LAGER",
+    brewery: "Guinness Open Gate",
+    location: "MD",
+    abv: "5.0%",
+    price: 5,
+    size: ""
+  },
+  {
+    name: "GUINNESS BALTIMORE BLONDE",
+    type: "LAGER",
+    brewery: "Guinness Open Gate",
+    location: "MD",
+    abv: "5.0%",
+    price: 8,
+    size: ""
+  },
+  {
+    name: "GUINNESS STOUT",
+    type: "LAGER",
+    brewery: "Guinness Open Gate",
+    location: "MD",
+    abv: "4.2%",
+    price: 8,
+    size: ""
+  },
+  {
     name: "HEINEKEN",
     type: "NON-ALCOHOLIC",
     brewery: "Heineken",
     location: "NLD",
     abv: "0.0",
-    price: "$6"
+    price: 9,
+    size: ""
   },
   {
-    id: "8",
-    name: "BALTIMORE BLONDE",
+    name: "HIGH NOON",
+    type: "HARD SELTZER",
+    brewery: "Variety",
+    location: "",
+    abv: "4.5%",
+    price: 8,
+    size: ""
+  },
+  {
+    name: "NARRAGANSETT",
     type: "LAGER",
-    brewery: "Guinness Open Gate",
-    location: "MD",
+    brewery: "Narragansett",
+    location: "RI",
     abv: "5.0%",
-    price: "$6"
+    price: 5,
+    size: ""
+  },
+  {
+    name: "NON-ALCOHOLIC",
+    type: "LAGER",
+    brewery: "Heineken",
+    location: "NLD",
+    abv: "0.0%",
+    price: 6,
+    size: ""
+  },
+  {
+    name: "MILLER LITE",
+    type: "LAGER",
+    brewery: "Miller",
+    location: "WI",
+    abv: "4.2%",
+    price: 5,
+    size: ""
+  },
+  {
+    name: "MILLER LITE",
+    type: "LAGER",
+    brewery: "Miller",
+    location: "WI",
+    abv: "4.2%",
+    price: 6,
+    size: ""
+  },
+  {
+    name: "MODELO ESPECIAL",
+    type: "LAGER",
+    brewery: "Grupo Modelo",
+    location: "MEX",
+    abv: "5.0%",
+    price: 7,
+    size: ""
+  },
+  {
+    name: "MONOPOLIO CLARA",
+    type: "LAGER",
+    brewery: "Cervecería de San Luis",
+    location: "MEX",
+    abv: "5.0%",
+    price: 5,
+    size: ""
+  },
+  {
+    name: "PERONI",
+    type: "DORTMUNDER LAGER",
+    brewery: "Heineken",
+    location: "ITA",
+    abv: "5.0%",
+    price: 8,
+    size: ""
+  },
+  {
+    name: "PACÍFICO CLARA",
+    type: "LAGER",
+    brewery: "Grupo Modelo",
+    location: "MEX",
+    abv: "4.5%",
+    price: 6,
+    size: ""
+  },
+  {
+    name: "ROTATING",
+    type: "HARD SELTZER",
+    brewery: "",
+    location: "",
+    abv: "",
+    price: 8,
+    size: ""
+  },
+  {
+    name: "RUN WILD",
+    type: "IPA",
+    brewery: "Athletic Brewing",
+    location: "CT",
+    abv: "0.0%",
+    price: 7,
+    size: ""
+  },
+  {
+    name: "SILENT NEIGHBOR",
+    type: "STOUT",
+    brewery: "Atlas",
+    location: "DC",
+    abv: "6.7%",
+    price: 8,
+    size: ""
+  },
+  {
+    name: "STATESIDE",
+    type: "HARD SELTZER",
+    brewery: "Black Cherry or Pineapple",
+    location: "PA",
+    abv: "4.5%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "TOPO CHICO",
+    type: "HARD SELTZER",
+    brewery: "mango or strawberry/guava",
+    location: "TX",
+    abv: "4.7%",
+    price: 9,
+    size: ""
+  },
+  {
+    name: "UNFILTERED",
+    type: "CIDER",
+    brewery: "Downeast Cider House",
+    location: "MA",
+    abv: "5.3%",
+    price: 8,
+    size: ""
+  },
+  {
+    name: "UPSIDE DAWN",
+    type: "STOUT",
+    brewery: "Athletic Brewing",
+    location: "CT",
+    abv: "0.0%",
+    price: 7,
+    size: ""
   },
 ]
-
-export const gridOrderImage = (props) => (
-  <div>
-    <img
-      className="rounded-xl h-20 md:ml-3"
-      src={props.ProductImage}
-      alt="order-item"
-    />
-  </div>
-);
-
-export const gridOrderStatus = (props) => (
-  <button
-    type="button"
-    style={{ background: props.StatusBg }}
-    className="text-white py-1 px-2 capitalize rounded-2xl text-md"
-  >
-    {props.Status}
-  </button>
-);
-
 
 export const links = [
   {
@@ -814,15 +1461,11 @@ export const links = [
     ],
   },
   {
-    title: 'Menus',
+    title: 'Editors',
     links: [
       {
         name: 'features',
         icon: <MdStars />,
-      },
-      {
-        name: 'events',
-        icon: <GiPartyPopper />,
       },
       {
         name: 'oysters',
@@ -849,6 +1492,10 @@ export const links = [
         icon: <MdBrunchDining />,
       },
       {
+        name: 'events',
+        icon: <GiPartyPopper />,
+      },
+      {
         name: 'catering',
         icon: <GiChefToque />,
       },
@@ -871,24 +1518,6 @@ export const links = [
         icon: <IoMdSchool />,
       },
     ],
-  },
-];
-
-export const chatData = [
-  {
-    message: 'New message received',
-    desc: 'John sent you new message',
-    time: '11:56 AM',
-  },
-  {
-    message: 'New message received',
-    desc: 'John sent you new message',
-    time: '4:39 AM',
-  },
-  {
-    message: 'Completed menu update',
-    desc: 'Print new menu',
-    time: '1:12 AM',
   },
 ];
 
@@ -957,25 +1586,25 @@ export const themeColors = [
 
 export const userProfileData = [
   {
-    icon: <MdOutlineSettingsApplications />,
+    icon: <RiSettings5Line />,
     title: 'My Profile',
     desc: 'Account Settings',
     iconColor: '#1B2E3D',
-    iconBg: '#E5FAFB',
+    iconBg: '#D3D3D3',
   },
   {
-    icon: <BsMailbox />,
+    icon: <RiMailLine />,
     title: 'My Inbox',
     desc: 'Messages & Emails',
     iconColor: '#1B2E3D',
-    iconBg: '#E5FAFB',
+    iconBg: '#D3D3D3',
   },
   {
     icon: <RiTodoLine />,
     title: 'My Tasks',
     desc: 'To-do List and Edit Requests',
     iconColor: '#1B2E3D',
-    iconBg: '#E5FAFB',
+    iconBg: '#D3D3D3',
   },
 ];
 
@@ -984,397 +1613,192 @@ export const scheduleData = [
     Id: 1,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-10T04:00:00.000Z',
-    EndTime: '2021-01-10T05:30:00.000Z',
+    StartTime: '2023-01-10T04:00:00.000Z',
+    EndTime: '2023-01-10T05:30:00.000Z',
     CategoryColor: '#1aaa55',
   },
   {
     Id: 2,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-11T06:30:00.000Z',
-    EndTime: '2021-01-11T08:30:00.000Z',
+    StartTime: '2023-01-11T06:30:00.000Z',
+    EndTime: '2023-01-11T08:30:00.000Z',
     CategoryColor: '#357cd2',
   },
   {
     Id: 3,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-12T04:00:00.000Z',
-    EndTime: '2021-01-12T05:30:00.000Z',
+    StartTime: '2023-01-12T04:00:00.000Z',
+    EndTime: '2023-01-12T05:30:00.000Z',
     CategoryColor: '#7fa900',
   },
   {
     Id: 4,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-13T07:30:00.000Z',
-    EndTime: '2021-01-13T09:00:00.000Z',
+    StartTime: '2023-01-13T07:30:00.000Z',
+    EndTime: '2023-01-13T09:00:00.000Z',
     CategoryColor: '#ea7a57',
   },
   {
     Id: 5,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-14T06:30:00.000Z',
-    EndTime: '2021-01-14T08:30:00.000Z',
+    StartTime: '2023-01-14T06:30:00.000Z',
+    EndTime: '2023-01-14T08:30:00.000Z',
     CategoryColor: '#00bdae',
   },
   {
     Id: 6,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-14T04:00:00.000Z',
-    EndTime: '2021-01-14T05:30:00.000Z',
+    StartTime: '2023-01-14T04:00:00.000Z',
+    EndTime: '2023-01-14T05:30:00.000Z',
     CategoryColor: '#f57f17',
   },
   {
     Id: 7,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-15T05:30:00.000Z',
-    EndTime: '2021-01-15T07:00:00.000Z',
+    StartTime: '2023-01-15T05:30:00.000Z',
+    EndTime: '2023-01-15T07:00:00.000Z',
     CategoryColor: '#1aaa55',
   },
   {
     Id: 8,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-16T03:30:00.000Z',
-    EndTime: '2021-01-16T04:30:00.000Z',
+    StartTime: '2023-01-16T03:30:00.000Z',
+    EndTime: '2023-01-16T04:30:00.000Z',
     CategoryColor: '#357cd2',
   },
   {
     Id: 9,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-18T05:30:00.000Z',
-    EndTime: '2021-01-18T07:30:00.000Z',
+    StartTime: '2023-01-18T05:30:00.000Z',
+    EndTime: '2023-01-18T07:30:00.000Z',
     CategoryColor: '#7fa900',
   },
   {
     Id: 10,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-20T05:30:00.000Z',
-    EndTime: '2021-01-20T07:30:00.000Z',
+    StartTime: '2023-01-20T05:30:00.000Z',
+    EndTime: '2023-01-20T07:30:00.000Z',
     CategoryColor: '#ea7a57',
   },
   {
     Id: 11,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-21T04:00:00.000Z',
-    EndTime: '2021-01-21T05:30:00.000Z',
+    StartTime: '2023-01-21T04:00:00.000Z',
+    EndTime: '2023-01-21T05:30:00.000Z',
     CategoryColor: '#00bdae',
   },
   {
     Id: 12,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-08T04:30:00.000Z',
-    EndTime: '2021-01-08T06:00:00.000Z',
+    StartTime: '2023-01-08T04:30:00.000Z',
+    EndTime: '2023-01-08T06:00:00.000Z',
     CategoryColor: '#f57f17',
   },
   {
     Id: 13,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-06T05:00:00.000Z',
-    EndTime: '2021-01-06T07:00:00.000Z',
+    StartTime: '2023-01-06T05:00:00.000Z',
+    EndTime: '2023-01-06T07:00:00.000Z',
     CategoryColor: '#1aaa55',
   },
   {
     Id: 14,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-05T04:30:00.000Z',
-    EndTime: '2021-01-05T06:00:00.000Z',
+    StartTime: '2023-01-05T04:30:00.000Z',
+    EndTime: '2023-01-05T06:00:00.000Z',
     CategoryColor: '#357cd2',
   },
   {
     Id: 15,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-19T04:00:00.000Z',
-    EndTime: '2021-01-19T05:30:00.000Z',
+    StartTime: '2023-01-19T04:00:00.000Z',
+    EndTime: '2023-01-19T05:30:00.000Z',
     CategoryColor: '#7fa900',
   },
   {
     Id: 16,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-22T05:30:00.000Z',
-    EndTime: '2021-01-22T07:30:00.000Z',
+    StartTime: '2023-01-22T05:30:00.000Z',
+    EndTime: '2023-01-22T07:30:00.000Z',
     CategoryColor: '#ea7a57',
   },
   {
     Id: 17,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-11T00:00:00.000Z',
-    EndTime: '2021-01-11T02:00:00.000Z',
+    StartTime: '2023-01-11T00:00:00.000Z',
+    EndTime: '2023-01-11T02:00:00.000Z',
     CategoryColor: '#00bdae',
   },
   {
     Id: 18,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-11T11:30:00.000Z',
-    EndTime: '2021-01-11T13:00:00.000Z',
+    StartTime: '2023-01-11T11:30:00.000Z',
+    EndTime: '2023-01-11T13:00:00.000Z',
     CategoryColor: '#f57f17',
   },
   {
     Id: 19,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-14T00:30:00.000Z',
-    EndTime: '2021-01-14T02:00:00.000Z',
+    StartTime: '2023-01-14T00:30:00.000Z',
+    EndTime: '2023-01-14T02:00:00.000Z',
     CategoryColor: '#7fa900',
   },
   {
     Id: 20,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-14T10:30:00.000Z',
-    EndTime: '2021-01-14T12:30:00.000Z',
+    StartTime: '2023-01-14T10:30:00.000Z',
+    EndTime: '2023-01-14T12:30:00.000Z',
     CategoryColor: '#ea7a57',
   },
   {
     Id: 21,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-10T08:30:00.000Z',
-    EndTime: '2021-01-10T10:30:00.000Z',
+    StartTime: '2023-01-10T08:30:00.000Z',
+    EndTime: '2023-01-10T10:30:00.000Z',
     CategoryColor: '#ea7a57',
   },
   {
     Id: 22,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-12T09:00:00.000Z',
-    EndTime: '2021-01-12T10:30:00.000Z',
+    StartTime: '2023-01-12T09:00:00.000Z',
+    EndTime: '2023-01-12T10:30:00.000Z',
     CategoryColor: '#00bdae',
   },
   {
     Id: 23,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-15T09:00:00.000Z',
-    EndTime: '2021-01-15T10:30:00.000Z',
+    StartTime: '2023-01-15T09:00:00.000Z',
+    EndTime: '2023-01-15T10:30:00.000Z',
     CategoryColor: '#ea7a57',
   },
   {
     Id: 24,
     Subject: '',
     Location: '',
-    StartTime: '2021-01-16T07:00:00.000Z',
-    EndTime: '2021-01-16T09:00:00.000Z',
+    StartTime: '2023-01-16T07:00:00.000Z',
+    EndTime: '2023-01-16T09:00:00.000Z',
     CategoryColor: '#7fa900',
   },
-];
-
-export const dropdownData = [
-  {
-    Id: '1',
-    Time: 'March 2023',
-  },
-  {
-    Id: '2',
-    Time: 'April 2023',
-  }, {
-    Id: '3',
-    Time: 'May 2023',
-  },
-];
-
-export const contextMenuItems = [
-  'AutoFit',
-  'AutoFitAll',
-  'SortAscending',
-  'SortDescending',
-  'Copy',
-  'Edit',
-  'Delete',
-  'Save',
-  'Cancel',
-  'PdfExport',
-  'ExcelExport',
-  'CsvExport',
-  'FirstPage',
-  'PrevPage',
-  'LastPage',
-  'NextPage',
-];
-
-export const kanbanData = [
-  {
-    Id: '1',
-    Title: 'KSOB Oyster',
-    Status: 'onMenu',
-    Summary: 'Chincoteague, MD',
-    Type: 'Story',
-    Priority: 'Low',
-    Tags: 'Analyze,Customer',
-    Estimate: 3.5,
-    Assignee: 'Nancy Davloio',
-    RankId: 1,
-    Color: '#02897B',
-    ClassName: 'e-story, e-low, e-nancy-davloio',
-  },
-  {
-    Id: '2',
-    Title: 'Barstool',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Improvement',
-    Priority: 'Normal',
-    Tags: 'Improvement',
-    Estimate: 6,
-    Assignee: 'Andrew Fuller',
-    RankId: 1,
-    Color: '#673AB8',
-    ClassName: 'e-improvement, e-normal, e-andrew-fuller',
-  },
-  {
-    Id: '3',
-    Title: 'Blackberry',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Others',
-    Priority: 'Critical',
-    Tags: 'Meeting',
-    Estimate: 5.5,
-    Assignee: 'Janet Leverling',
-    RankId: 2,
-    Color: '#1F88E5',
-    ClassName: 'e-others, e-critical, e-janet-leverling',
-  },
-  {
-    Id: '4',
-    Title: 'Raspberry Point',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Bug',
-    Priority: 'Critical',
-    Tags: 'IE',
-    Estimate: 2.5,
-    Assignee: 'Janet Leverling',
-    RankId: 2,
-    Color: '#E64A19',
-    ClassName: 'e-bug, e-release, e-janet-leverling',
-  },
-  {
-    Id: '5',
-    Title: 'Cape May Salts',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Bug',
-    Priority: 'Low',
-    Tags: 'Customer',
-    Estimate: '3.5',
-    Assignee: 'Steven walker',
-    RankId: 1,
-    Color: '#E64A19',
-    ClassName: 'e-bug, e-low, e-steven-walker',
-  },
-  {
-    Id: '6',
-    Title: 'Cotuit Bay',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Improvement',
-    Priority: 'Low',
-    Tags: 'Validation',
-    Estimate: 1.5,
-    Assignee: 'Robert King',
-    RankId: 1,
-    Color: '#673AB8',
-    ClassName: 'e-improvement, e-low, e-robert-king',
-  },
-  {
-    Id: '7',
-    Title: 'Salt Shaker',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Bug',
-    Priority: 'Critical',
-    Tags: 'Fix,Safari',
-    Estimate: 1.5,
-    Assignee: 'Nancy Davloio',
-    RankId: 2,
-    Color: '#E64A19',
-    ClassName: 'e-bug, e-release, e-nancy-davloio',
-  },
-  {
-    Id: '8',
-    Title: 'Wellfleet',
-    Status: 'offMenu',
-    Summary: 'Cape Cod, MA',
-    Type: 'Story',
-    Priority: 'Low',
-    Tags: 'Review,IE',
-    Estimate: 5.5,
-    Assignee: 'Margaret hamilt',
-    RankId: 3,
-    Color: '#02897B',
-    ClassName: 'e-story, e-low, e-margaret-hamilt',
-  },
-  {
-    Id: '9',
-    Title: 'Queen\'s Cup',
-    Status: 'offMenu',
-    Summary: 'PEI , Canada',
-    Type: 'Story',
-    Priority: 'High',
-    Tags: 'Validation,Fix',
-    Estimate: 1,
-    Assignee: 'Steven walker',
-    RankId: 1,
-    Color: '#02897B',
-    ClassName: 'e-story, e-high, e-steven-walker',
-  },
-  {
-    Id: '10',
-    Title: 'Sweet Jesus',
-    Status: 'offMenu',
-    Summary: 'Chesapeake Bay , MD',
-    Type: 'Story',
-    Priority: 'High',
-    Tags: 'Database,SQL',
-    Estimate: 5.5,
-    Assignee: 'Margaret hamilt',
-    RankId: 4,
-    Color: '#02897B',
-    ClassName: 'e-story, e-high, e-margaret-hamilt',
-  },
-  {
-    Id: '11',
-    Title: 'Wild Ass Pony',
-    Status: 'offMenu',
-    Summary: 'Assateague Island, MD',
-    Priority: 'Critical',
-    Type: 'Bug',
-    Tags: 'Database,Sql2008',
-    Estimate: 2.5,
-    Assignee: 'Janet Leverling',
-    RankId: 4,
-    Color: '#E64A19',
-    ClassName: 'e-bug, e-critical, e-janet-leverling',
-  },
-  {
-    Id: '12',
-    Title: 'Coromandel',
-    Status: 'offMenu',
-    Summary: 'Coromandel Peninsula, NZL',
-    Type: 'Story',
-    Priority: 'Normal',
-    Tags: 'Databinding',
-    Estimate: '3.5',
-    Assignee: 'Janet Leverling',
-    RankId: 4,
-    Color: '#02897B',
-    ClassName: 'e-story, e-normal, e-janet-leverling',
-  },
-
 ];

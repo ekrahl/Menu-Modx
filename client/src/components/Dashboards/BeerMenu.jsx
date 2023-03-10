@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 import { toPng } from 'html-to-image'
 
-const BeerMenu = (props) => {
+const BeerMenu = ({ downloadLink, img, alt, path }) => {
     const update = moment().subtract(1, 'days').calendar();
     const ref = useRef(null);
 
@@ -16,7 +16,7 @@ const BeerMenu = (props) => {
         toPng(ref.current, { cacheBust: true, pixelRatio: 10, width: 384, height: 576 })
             .then((dataUrl) => {
                 const link = document.createElement('a')
-                link.download = props.downloadLink
+                link.download = downloadLink
                 link.href = dataUrl
                 link.click()
             })
@@ -30,16 +30,16 @@ const BeerMenu = (props) => {
         <div className="w-full mt-1">
             <ContainerHeader title="Beer Menu" />
             <div className="border-b border-gray-600">
-                <img src={props.beerImg} alt="" ref={ref} />
+                <img src={img} alt={alt} title={alt} ref={ref} />
             </div>
             <div style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                 <p className="text-sm text-gray-500 text-center p-2">last updated: {update}</p>
                 <div
                     className="flex flex-wrap lg:flex-nowrap justify-center space-x-2 text-gray-400 border-b border-gray-600 rounded-b-xl p-4">
-                    <Link to={props.beerEditPath}>
+                    <DownloadBtn type="button" onClick={onButtonClick} />
+                    <Link to={path}>
                         <EditBtn />
                     </Link>
-                    <DownloadBtn type="button" onClick={onButtonClick} />
                 </div>
             </div>
         </div>

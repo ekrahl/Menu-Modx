@@ -1,14 +1,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { useStateContext } from '../../../contexts/ContextProvider'
 import { images } from '../../../data'
 import { draft, bottles } from '../../../data/dummy'
-import { AddBeer, LocationHeader, ContainerHeader } from '../../../components'
+import { AddBeer, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, BeerCatalogBtn } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
-import { FaDownload, FaEdit, FaTrash } from 'react-icons/fa'
-import { BiAddToQueue } from 'react-icons/bi'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
-var node = document.getElementById('leesburgBeerMenu')
+var node = document.getElementById('menu')
 
 htmlToImage.toPng(node)
     .then(function (dataUrl) {
@@ -21,7 +19,6 @@ htmlToImage.toPng(node)
     });
 
 const LeesburgBeerEditor = () => {
-    const { currentColor, currentMode } = useStateContext();
 
     const ref = useRef(null);
 
@@ -33,7 +30,7 @@ const LeesburgBeerEditor = () => {
         toPng(ref.current, { cacheBust: true, pixelRatio: 10, width: 384, height: 576 })
             .then((dataUrl) => {
                 const link = document.createElement('a')
-                link.download = "leesburg-beer-menu.png"
+                link.download = "beer_menu_leesburg.png"
                 link.href = dataUrl
                 link.click()
             })
@@ -42,41 +39,49 @@ const LeesburgBeerEditor = () => {
             })
     }, [])
 
-    const [draftList, setDraftList] = useState(
-        [
-            {
-                id: "1",
-                name: "KSOB",
-                type: "IPA",
-                brewery: "Lost Rhino",
-
-                location: "VA",
-                abv: "6.8%",
-                price: "$9"
-            },
-        ]
-    )
-
-    const [beerObj, setBeerObj] = useState({});
+    const [draftList, setDraftList] = useState([])
+    const [bottleList, setBottleList] = useState([])
+    const [bottleObj, setBottleObj] = useState({});
+    const [draftObj, setDraftObj] = useState({});
 
     const isFirstRun = useRef(true);
+
     useEffect(() => {
         if (isFirstRun.current) {
             isFirstRun.current = false;
             return;
         }
-        if (draftList.includes(beerObj)) {
+        if (draftList.includes(draftObj)) {
             return;
         }
-        if (draftList.length > 20) {
+        if (draftList.length + bottleList.length > 24) {
             return;
         }
-        setDraftList(current => [...current, beerObj])
-    }, [beerObj])
+        setDraftList(current => [...current, draftObj])
+    }, [draftObj])
 
-    const handleDelete = (index) => {
+    useEffect(() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        }
+        if (bottleList.includes(bottleObj)) {
+            return;
+        }
+        if (draftList.length + bottleList.length > 24) {
+            return
+        }
+        setBottleList(current => [...current, bottleObj])
+    }, [bottleObj])
+
+    const handleDraftDelete = (index) => {
         const newList = draftList.filter((beer, i) => i !== index);
         setDraftList(newList);
+    };
+
+    const handleBottleDelete = (index) => {
+        const newList = bottleList.filter((beer, i) => i !== index);
+        setBottleList(newList);
     };
 
     return (
@@ -87,89 +92,69 @@ const LeesburgBeerEditor = () => {
                     <div className="flex flex-wrap justify-center">
                         <div>
                             <ContainerHeader title="Build Beer Menu" />
-                            <div className="w-384 h-576 relative z-1" ref={ref} id="leesburgBeerMenu">
-                                <img src={images.beer_menu_template} alt="" className="absolute z-2" />
-                                <div className="text-center pt-12">
-                                    {draftList.map((beer, index) => (
-                                        <div key={beer.id} className="relative z-3 font-semibold">
-                                            <div className="flex justify-center">
-                                                <div className="w-300 cursor-pointer" onClick={() => { handleDelete(index) }}>
-                                                    <p style={{
-                                                        fontFamily: 'montserrat',
-                                                        fontWeight: '700',
-                                                        fontSize: '12px',
-                                                        color: '#182E3D',
-                                                        lineHeight: '14px'
-                                                    }}>{beer.name}<span style={{ color: '#8A5C36' }}> {beer.type}</span> {beer.price}</p>
-                                                    <p style={{
-                                                        fontFamily: 'montserrat',
-                                                        fontWeight: '700',
-                                                        fontSize: '10px',
-                                                        color: '#182E3D',
-                                                        lineHeight: '10px'
-                                                    }}>{beer.brewery} • {beer.location} • {beer.abv}</p>
-                                                    <p style={{
-                                                        fontFamily: 'montserrat',
-                                                        fontWeight: '600',
-                                                        fontSize: '10px',
-                                                        paddingBottom: '4px'
-                                                    }}>{beer.description}</p>
+                            <div className="w-384 h-576 relative z-1" ref={ref} id="menu">
+                                <img src={images.beer_menu_template} alt="beer menu template" className="absolute z-2" />
+                                <div className="flex flex-col justify-between text-center pt-9 h-full pb-6 max-h-576">
+                                    {draftList.map((beer, index) => {
+                                        if (Object.keys(beer).length !== 0) {
+                                            return (
+                                                <div key={beer.index} className="relative z-3 font-semibold">
+                                                    <div className="flex justify-center">
+                                                        <div
+                                                            className="w-275 cursor-pointer"
+                                                            onClick={() => { handleDraftDelete(index) }}
+                                                            style={{ fontFamily: 'montserrat', fontWeight: '700', color: '#182E3D', }}>
+                                                            <p style={{ fontSize: '12px', lineHeight: '13px' }}
+                                                            >{beer.name}<span style={{ color: '#8A5C36' }}> {beer.type}</span> ${beer.price}</p>
+                                                            <p style={{ fontSize: '10px', lineHeight: '10px' }}
+                                                            >{beer.brewery} • {beer.location} • {beer.abv}</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    ))}
+                                            )
+                                        }
+                                    })}
+                                    <div className="relative w-72 mx-auto my-1"><img src={images.bottles} alt="Cans & Bottles Divider" /></div>
+                                    {bottleList.map((beer, index) => {
+                                        if (Object.keys(beer).length !== 0) {
+                                            return (
+                                                <div key={beer.index} className="relative z-3 font-semibold">
+                                                    <div className="flex justify-center">
+                                                        <div
+                                                            className="w-275 cursor-pointer"
+                                                            onClick={() => { handleBottleDelete(index) }}
+                                                            style={{ fontFamily: 'montserrat', fontWeight: '700', color: '#182E3D', }}>
+                                                            <p style={{ fontSize: '12px', lineHeight: '13px' }}
+                                                            >{beer.name}<span style={{ color: '#8A5C36' }}> {beer.type}</span> ${beer.price}</p>
+                                                            <p style={{ fontSize: '10px', lineHeight: '10px' }}
+                                                            >{beer.brewery} • {beer.location} • {beer.abv}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+                                    })}
                                 </div>
                             </div>
                             <div
                                 className="flex justify-center dark:text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                <button
-                                    className="flex justify-center font-semibold rounded-md border border-gray-600 w-20 p-2 m-2"
-                                    onClick={onButtonClick}
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}><FaDownload /></button>
-                                <button
-                                    className="flex justify-center font-semibold rounded-md border border-gray-600 w-20 p-2 m-2"
-                                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}><BiAddToQueue /></button>
+                                <DownloadBtn onClick={onButtonClick} />
+                                <AddToQueueBtn />
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-wrap justify-center mx-3">
-                        <div>
-                            <ContainerHeader title="Catalog" />
+                    <div className="flex flex-wrap justify-center mx-1">
+                        <div className="w-full">
+                            <ContainerHeader title="Draft Catalog" />
                             <div
-                                className="h-250 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
+                                className="h-300 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2 mb-1"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                <p className="text-xl dark:text-gray-200 font-semibold pb-2 pt-2 text-center">Draft Beer</p>
                                 {draft.map((beer, index) => (
                                     <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
-                                        <div
-                                            className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }}
-                                            onClick={() => { setBeerObj(beer) }}>
-                                            <div className="w-60 flex justify-center">
-                                                <p>{beer.name}</p>
-                                            </div>
-                                        </div>
+                                        <BeerCatalogBtn onClick={() => { setDraftObj(beer) }} name={beer.name} type={beer.type} price={beer.price} brewery={beer.brewery} />
                                         <button type="button" onClick="" >
-                                            <FaEdit size="1.5rem" />
-                                        </button>
-                                        <button type="button" onClick="" >
-                                            <FaTrash size="1.2rem" />
-                                        </button>
-                                    </div>
-                                ))}
-                                <p className="text-xl dark:text-gray-200 font-semibold pb-2 pt-2 text-center">Bottled Beer</p>
-                                {bottles.map((beer, index) => (
-                                    <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
-                                        <div
-                                            className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
-                                            style={{ backgroundImage: `linear-gradient(to top, #191919, #1b2d3e)` }} onClick={() => { setBeerObj(beer) }}>
-                                            <div className="w-60 flex justify-center">
-                                                <p>{beer.name}</p>
-                                            </div>
-                                        </div>
-                                        <button type="button" onClick="" >
-                                            <FaEdit size="1.5rem" />
+                                            <FaEdit size="1.2rem" />
                                         </button>
                                         <button type="button" onClick="" >
                                             <FaTrash size="1.2rem" />
@@ -177,9 +162,25 @@ const LeesburgBeerEditor = () => {
                                     </div>
                                 ))}
                             </div>
-                            <AddBeer />
+                            <ContainerHeader title="Cans & Bottles Catalog" />
+                            <div
+                                className="h-300 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
+                                style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
+                                {bottles.map((beer, index) => (
+                                    <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
+                                        <BeerCatalogBtn onClick={() => { setBottleObj(beer) }} name={beer.name} type={beer.type} price={beer.price} brewery={beer.brewery} />
+                                        <button type="button" onClick="" >
+                                            <FaEdit size="1.2rem" />
+                                        </button>
+                                        <button type="button" onClick="" >
+                                            <FaTrash size="1.2rem" />
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
+                    <AddBeer />
                 </div>
 
             </div>

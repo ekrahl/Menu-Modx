@@ -1,24 +1,37 @@
-import { useStateContext } from '../../contexts/ContextProvider'
-import { ContainerHeader } from '../'
-import { FaDownload } from 'react-icons/fa'
+import { useCallback, useRef } from 'react'
+import { ContainerHeader, DownloadBtn } from '../'
+import { toPng } from 'html-to-image'
 
-const CurrentMenu = (props) => {
-    const { currentColor, currentMode } = useStateContext();
+const CurrentMenu = ({ downloadLink, img, title }) => {
+
+    const ref = useRef(null);
+
+    const onButtonClick = useCallback(() => {
+        if (ref.current === null) {
+            return
+        }
+
+        toPng(ref.current, { cacheBust: true, pixelRatio: 10, width: 384, height: 576 })
+            .then((dataUrl) => {
+                const link = document.createElement('a')
+                link.download = downloadLink
+                link.href = dataUrl
+                link.click()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
 
     return (
         <>
-            <div className="md:max-w-500 m-1">
-                <ContainerHeader title={props.title}/>
-                <img className="border-b border-gray-600" src={props.img} alt="" title={props.imgTitle} />
+            <div className="md:max-w-500">
+                <ContainerHeader title={title} />
+                <img className="border-b border-gray-600" src={img} ref={ref} alt={title} title={title} />
                 <div
-                    className="flex flex-wrap lg:flex-nowrap justify-center space-x-2 text-gray-400 border-b border-gray-600 rounded-b-xl p-4"
+                    className="flex flex-wrap lg:flex-nowrap justify-center space-x-2 text-gray-400 border-b border-gray-600 rounded-b-xl p-1"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                    <button
-                        type="button"
-                        onClick=""
-                        className="sm:text-lg xl:text-2xl border border-gray-600 rounded-md px-12 py-2"
-                        style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}
-                        title="Download"><FaDownload /></button>
+                    <DownloadBtn onClick={onButtonClick} />
                 </div>
             </div>
         </>

@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
-import { FaRegUserCircle } from 'react-icons/fa';
-import { AiOutlineMenu } from 'react-icons/ai';
-// import { BsFillChatLeftFill } from 'react-icons/bs';
-// import { RiNotification3Fill } from 'react-icons/ri';
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
+import { useEffect } from 'react'
+import { FaRegUserCircle } from 'react-icons/fa'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { MdKeyboardArrowDown } from 'react-icons/md'
+import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { UserProfile } from '.';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useStateContext } from '../contexts/ContextProvider'
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -49,13 +46,11 @@ const Navbar = () => {
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative" >
       <div className="flex">
-        <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
+        <NavButton title="Menu" customFunc={handleActiveMenu} color="#fff" icon={<AiOutlineMenu />} />
         <h1 className="font-semibold text-14 dark:text-gray-200 pt-3 pl-2" >King Street Oyster Bar</h1>
       </div>
     
       <div className="flex">
-        {/* <NavButton title="Chat" dotColor="rgb(254, 201, 15)" customFunc={() => handleClick('chat')} color={currentColor} icon={<BsFillChatLeftFill />} />
-        <NavButton title="Notification" dotColor="rgb(254, 201, 15)" customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Fill />} /> */}
       
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
@@ -72,8 +67,6 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {/* {isClicked.chat && (<Chat />)}
-        {isClicked.notification && (<Notification />)} */}
         {isClicked.userProfile && (<UserProfile />)}
       </div>
     </div>

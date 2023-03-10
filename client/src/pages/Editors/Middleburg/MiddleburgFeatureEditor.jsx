@@ -1,14 +1,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useStateContext } from '../../../contexts/ContextProvider'
-import { ContainerHeader, LocationHeader, AddFeatureItem } from '../../../components'
+import { ContainerHeader, LocationHeader, AddFeature, DownloadBtn, AddToQueueBtn, CatalogBtn, FoodFeatureCatalogBtn } from '../../../components'
 import { images } from '../../../data'
 import { foodFeatures, drinkFeatures } from '../../../data/dummy'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
-import { FaDownload, FaEdit, FaTrash } from 'react-icons/fa'
-import { BiAddToQueue } from 'react-icons/bi'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
-var node = document.getElementById('middleburgFeatureMenu')
+var node = document.getElementById('menu')
 
 htmlToImage.toPng(node)
   .then((dataUrl) => {
@@ -21,7 +20,7 @@ htmlToImage.toPng(node)
   });
 
 const MiddleburgFeatureEditor = () => {
-  const { currentColor, currentMode } = useStateContext();
+  const { currentColor } = useStateContext();
   const gradientColor = { backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }
 
   const ref = useRef(null);
@@ -48,7 +47,7 @@ const MiddleburgFeatureEditor = () => {
   const [featureObj, setFeatureObj] = useState({});
 
   const isFirstRun = useRef(true);
-  
+
   useEffect(() => {
     if (isFirstRun.current) {
       isFirstRun.current = false;
@@ -75,7 +74,7 @@ const MiddleburgFeatureEditor = () => {
         <div className="flex flex-wrap justify-center">
           <div>
             <ContainerHeader title="Build Features Menu" />
-            <div className="w-384 h-576 relative z-1" ref={ref} id="middleburgFeatureMenu">
+            <div className="w-384 h-576 relative z-1" ref={ref} id="menu">
               <img src={images.feature_menu_template} alt="feature menu template" className="absolute z-2" />
               <div className="pt-16">
                 {feature.map((feat, index) => (
@@ -148,15 +147,8 @@ const MiddleburgFeatureEditor = () => {
             <div
               className="flex justify-center dark:text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-              <button
-                className="flex justify-center font-semibold rounded-md border border-gray-600 w-20 p-2 m-2"
-                onClick={onButtonClick}
-                style={gradientColor}
-                title="Download"><FaDownload /></button>
-              <button
-                className="flex justify-center font-semibold rounded-md border border-gray-600 w-20 p-2 m-2"
-                style={gradientColor}
-                title="Add to Queue"><BiAddToQueue /></button>
+              <DownloadBtn onClick={onButtonClick} />
+              <AddToQueueBtn />
             </div>
 
           </div>
@@ -171,14 +163,7 @@ const MiddleburgFeatureEditor = () => {
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {foodFeatures.map((feat) => (
                 <div key={feat.id} className="flex justify-center text-gray-200 gap-3">
-                  <div
-                    className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
-                    style={gradientColor}
-                    onClick={() => { setFeatureObj(feat) }}>
-                    <div className="w-60 flex justify-center">
-                      <p className="">{feat.title}</p>
-                    </div>
-                  </div>
+                  <FoodFeatureCatalogBtn onClick={() => { setFeatureObj(feat) }} title={feat.title} subtitle={feat.subtitle} />
                   <button type="button" onClick="" >
                     <FaEdit size="1.2rem" />
                   </button>
@@ -197,14 +182,7 @@ const MiddleburgFeatureEditor = () => {
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {drinkFeatures.map((feat) => (
                 <div key={feat.id} className="flex justify-center text-gray-200 gap-3">
-                  <div
-                    className="flex font-semibold border border-gray-400 rounded-2xl m-1 p-2 cursor-pointer"
-                    style={gradientColor}
-                    onClick={() => { setFeatureObj(feat) }}>
-                    <div className="w-60 flex justify-center">
-                      <p className="">{feat.title}</p>
-                    </div>
-                  </div>
+                  <CatalogBtn onClick={() => { setFeatureObj(feat) }} info={feat.title} />
                   <button type="button" onClick="" >
                     <FaEdit size="1.2rem" />
                   </button>
@@ -216,7 +194,7 @@ const MiddleburgFeatureEditor = () => {
             </div>
           </div>
 
-          <AddFeatureItem />
+          <AddFeature />
 
         </div>
       </div>

@@ -1,15 +1,13 @@
-import { useStateContext } from '../../contexts/ContextProvider'
 import { ContainerHeader } from '../'
 import { FaEdit, FaDownload, FaTrash } from 'react-icons/fa'
 
 const RecentMenus = (props) => {
-    const { currentColor, currentMode } = useStateContext();
 
     return (
-        <div className="mt-2">
+        <div className="mt-1">
             <ContainerHeader title="Recent"/>
             <div
-                className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2 overflow-auto h-300"
+                className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2 overflow-auto h-165"
                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
 
                 <div className="flex justify-center border border-gray-200 rounded-xl p-4 gap-6 mb-2">
@@ -28,9 +26,9 @@ const RecentMenus = (props) => {
                     <div className="flex justify-center items-center">
                         <div className="text-gray-200">
                             <p className="font-semibold">Released:</p>
-                            <p className="text-sm mb-2">11/30/22</p>
+                            <p className="text-sm mb-2">1/30/23</p>
                             <p className="font-semibold">Created:</p>
-                            <p className="text-sm">11/30/22</p>
+                            <p className="text-sm">1/30/23</p>
                         </div>
                     </div>
                 </div>
@@ -51,9 +49,9 @@ const RecentMenus = (props) => {
                     <div className="flex justify-center items-center">
                         <div className="text-gray-200">
                             <p className="font-semibold">Released:</p>
-                            <p className="text-sm mb-2">11/30/22</p>
+                            <p className="text-sm mb-2">1/30/23</p>
                             <p className="font-semibold">Created:</p>
-                            <p className="text-sm">11/30/22</p>
+                            <p className="text-sm">1/30/23</p>
                         </div>
                     </div>
                 </div>

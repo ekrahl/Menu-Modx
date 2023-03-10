@@ -2,7 +2,7 @@ import { ContainerHeader } from '../'
 import { BsFillPeopleFill, BsFillTelephoneFill, BsClockFill, BsFillGeoAltFill, BsFillPersonLinesFill } from 'react-icons/bs'
 import { events } from '../../data/dummy'
 
-const Events = (props) => {
+const Events = ({ location }) => {
 
     return (
         <div className="flex flex-col">
@@ -43,7 +43,7 @@ const Events = (props) => {
                 <ContainerHeader title="Upcoming Events" />
                 <div className="max-h-225 overflow-auto">
                     {events.slice(1).map((event) => {
-                        if (event.location === props.location) {
+                        if (event.location === location) {
                             return (
                                 <div key={event.id} className="text-gray-200 border-b border-gray-600 rounded-b-xl p-2"
                                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>

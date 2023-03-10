@@ -13,7 +13,7 @@ const NomaDashboard = () => {
             <div className="flex w-full">
               <Features
                 id={3}
-                featureEditPath={'/nomafeatureeditor'} />
+                path={'/nomafeatureeditor'} />
             </div>
             <div className='w-full'>
               <Events
@@ -24,32 +24,41 @@ const NomaDashboard = () => {
           <div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <OysterMenu
-                oysterImg={menus[2].oysterMenu}
-                oysterEditPath='/nomaoystereditor'
+                img={menus[2].oysterMenu}
+                alt="NoMa Oyster Menu"
+                path='/nomaoystereditor'
                 downloadLink='noma-oyster-menu.png'
               />
               <BeerMenu
-                beerImg={menus[2].beerMenu}
-                beerEditPath='/nomabeereditor'
+                img={menus[2].beerMenu}
+                alt="NoMa Beer Menu"
+                path='/nomabeereditor'
                 downloadLink='noma-beer-menu.png'
               />
               <HappyHourMenu
-                hhImg={menus[2].happyHourMenu}
-                hhEditPath='/nomahheditor'
+                img={menus[2].happyHourMenu}
+                alt="NoMa Happy Hour Menu"
+                path='/nomahappyhoureditor'
                 downloadLink='noma-happyhour-menu.png'
               />
             </div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-1">
               <DinnerMenu
-                dinnerMenu={menus[2].dinnerMenu}
+                img={menus[2].dinnerMenu}
+                alt="NoMa Dinner Menu"
+                path='/nomadinnereditor'
                 downloadLink='noma-dinner-menu.png'
               />
               <CocktailMenu
-                cocktailMenu={menus[2].cocktailMenu}
+                img={menus[2].cocktailMenu}
+                alt="NoMa Cocktail Menu"
+                path='/nomacocktaileditor'
                 downloadLink='noma-cocktail-menu.png'
               />
               <BrunchMenu
-                brunchMenu={menus[2].brunchMenu}
+                img={menus[2].brunchMenu}
+                alt="NoMa Brunch Menu"
+                path='/nomabruncheditor'
                 downloadLink='noma-brunch-menu.png'
               />
             </div>
