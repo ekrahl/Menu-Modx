@@ -3,7 +3,7 @@ import { ContainerHeader, DownloadBtn, EditBtn } from '../'
 import { toPng } from 'html-to-image'
 import { Link } from 'react-router-dom'
 
-const CurrentMenu = ({ downloadLink, img, headerTitle, imgTitle, path }) => {
+const CurrentMenuEditor = ({ downloadLink, img, headerTitle, imgTitle }) => {
 
     const ref = useRef(null);
 
@@ -26,20 +26,17 @@ const CurrentMenu = ({ downloadLink, img, headerTitle, imgTitle, path }) => {
 
     return (
         <>
-            <div className="md:max-w-300">
+            <div className="md:min-w-275 md:max-w-384">
                 <ContainerHeader title={headerTitle} />
-                <img className="md:hover:scale-175 md:hover:-translate-y-20 md:hover:duration-1000 border-b border-gray-600" src={img} ref={ref} alt={imgTitle} title={imgTitle} loading="lazy"/>
+                <img className="md:hover:scale-125 md:hover:-translate-x-10 md:hover:duration-1000 border-b border-gray-600" src={img} ref={ref} alt={imgTitle} title={imgTitle} loading="lazy"/>
                 <div
-                    className="flex flex-wrap lg:flex-nowrap justify-center text-gray-400 border-b border-gray-600 rounded-b-xl p-3"
+                    className="flex flex-wrap lg:flex-nowrap justify-center text-gray-400 border-b border-gray-600 rounded-b-xl p-2"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                     <DownloadBtn onClick={onButtonClick} />
-                    <Link to={path}>
-                        <EditBtn />
-                    </Link>
                 </div>
             </div>
         </>
     )
 }
 
-export default CurrentMenu
+export default CurrentMenuEditor

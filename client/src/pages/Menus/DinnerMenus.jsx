@@ -12,38 +12,38 @@ const DinnerMenus = () => {
             <div className="md:max-w-500 w-full">
               <CurrentMenu
                 img={images.leesburg_dinner_menu}
-                title="Leesburg Dinner Menu"
-                downloadLink='leesburg-dinner-menu.png' />
-              <CreateNewMenuBtn path={"/leesburgdinnereditor"} />
-              <MenuQueue img={images.leesburg_dinner_menu} />
-              <RecentMenus img={images.leesburg_dinner_menu} />
+                headerTitle="Leesburg"
+                imgTitle="Leesburg Dinner Menu"
+                downloadLink='leesburg-dinner-menu.png'
+                path={"/leesburgdinnereditor"} />
+
             </div>
             <div className="md:max-w-500 w-full">
               <CurrentMenu
                 img={images.middleburg_dinner_menu}
-                title="Middleburg Dinner Menu"
-                downloadLink='middleburg-dinner-menu.png' />
-              <CreateNewMenuBtn path={"/middleburgdinnereditor"} />
-              <MenuQueue img={images.middleburg_dinner_menu} />
-              <RecentMenus img={images.middleburg_dinner_menu} />
+                headerTitle="Middleburg"
+                imgTitle="Middleburg Dinner Menu"
+                downloadLink='middleburg-dinner-menu.png'
+                path={"/middleburgdinnereditor"} />
+
             </div>
             <div className="md:max-w-500 w-full">
               <CurrentMenu
                 img={images.noma_dinner_menu}
-                title="NoMa Dinner Menu"
-                downloadLink='noma-dinner-menu.png' />
-              <CreateNewMenuBtn path={"/nomadinnereditor"} />
-              <MenuQueue img={images.noma_dinner_menu} />
-              <RecentMenus img={images.noma_dinner_menu} />
+                headerTitle="NoMa"
+                imgTitle="NoMa Dinner Menu"
+                downloadLink='noma-dinner-menu.png'
+                path={"/nomadinnereditor"} />
+
             </div>
             <div className="md:max-w-500 w-full">
               <CurrentMenu
                 img={images.potomac_dinner_menu}
-                title="Potomac Dinner Menu"
-                downloadLink='potomac-dinner-menu.png' />
-              <CreateNewMenuBtn path={"/potomacdinnereditor"} />
-              <MenuQueue img={images.potomac_dinner_menu} />
-              <RecentMenus img={images.potomac_dinner_menu} />
+                headerTitle="Potomac"
+                imgTitle="Potomac Dinner Menu"
+                downloadLink='potomac-dinner-menu.png'
+                path={"/potomacdinnereditor"} />
+
             </div>
           </div>
         </div>

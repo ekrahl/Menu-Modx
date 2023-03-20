@@ -8,7 +8,7 @@ const AddHappyHour = () => {
                 className="h-200 text-gray-200 border-b border-gray-600 rounded-b-xl"
                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                 <form onSubmit="" className="mt-2">
-                    <div className="flex justify-center m-2 py-2">
+                    <div className="flex justify-center m-2 py-1">
                         <div className="flex">
                             <input
                                 className="rounded-md"
@@ -71,7 +71,7 @@ const AddHappyHour = () => {
                     </div>
                 </form>
                 <div className="flex justify-center">
-                    <AddItemBtn />
+                    <AddItemBtn title="Add Item"/>
                 </div>
             </div>
         </div>

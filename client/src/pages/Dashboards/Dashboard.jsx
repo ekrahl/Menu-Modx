@@ -19,7 +19,7 @@ const Dashboard = () => {
             <div className="flex flex-col items-center justify-center text-gray-200 bg-veggieprep bg-cover rounded-xl w-full border-b border-gray-600 py-12">
               <p className="font-bold text-2xl text-center bg-half-transparent rounded-xl p-2 m-4 text-(-90deg)">DAILY FEATURES</p>
               <Link
-                to="/featuresmain"
+                to="/features"
                 className="flex items-center text-lg font-semibold px-2 rounded-lg bg-half-transparent"
               >View Menus<BsChevronDoubleRight className='ml-2' /></Link>
             </div>
@@ -28,36 +28,41 @@ const Dashboard = () => {
                 <Link to={location.path}>
                   <ContainerHeader title={location.title} />
                 </Link>
-                {foodFeatures.map((feat) => {
-                  if (feat.location_id === location.id) {
-                    return (
-                      <div
-                        className="border-b border-gray-600 pb-2"
-                        style={containerColor}>
-                        <img className="p-3" src={feat.img} alt="fish img" />
-                        <div className="md:h-28">
-                          <p className="font-semibold text-gray-300 pl-4">{feat.title}</p>
-                          <p className="text-sm text-gray-400 px-4">{feat.ingredients}</p>
+                <div className="md:hover:scale-150 hover:duration-1000">
+
+                  {foodFeatures.map((feat) => {
+                    if (feat.location_id === location.id) {
+                      return (
+                        <div
+                          className="border-b border-gray-600 pb-2"
+                          style={containerColor}>
+                          <img className="p-3" src={feat.img} alt="fish img" />
+                          <div className="md:h-28">
+                            <p className="font-semibold text-gray-300 pl-4">{feat.title}</p>
+                            <p className="text-sm text-gray-400 px-4">{feat.ingredients}</p>
+                          </div>
                         </div>
-                      </div>
-                    )
-                  }
-                })}
-                {drinkFeatures.map((feat) => {
-                  if (feat.location_id === location.id) {
-                    return (
-                      <div
-                        className="border-b border-gray-600 rounded-b-xl pb-2"
-                        style={containerColor}>
-                        <img className="p-3" src={feat.img} alt="fish img" />
-                        <div className="md:h-28">
-                          <p className="font-semibold text-gray-300 pl-4">{feat.title}</p>
-                          <p className="text-sm text-gray-400 px-4">{feat.ingredients}</p>
+                      )
+                    }
+                  })}
+                </div>
+                <div className="md:hover:scale-150 hover:duration-1000">
+                  {drinkFeatures.map((feat) => {
+                    if (feat.location_id === location.id) {
+                      return (
+                        <div
+                          className="border-b border-gray-600 rounded-b-xl pb-2"
+                          style={containerColor}>
+                          <img className="p-3" src={feat.img} alt="fish img" />
+                          <div className="md:h-28">
+                            <p className="font-semibold text-gray-300 pl-4">{feat.title}</p>
+                            <p className="text-sm text-gray-400 px-4">{feat.ingredients}</p>
+                          </div>
                         </div>
-                      </div>
-                    )
-                  }
-                })}
+                      )
+                    }
+                  })}
+                </div>
               </div>
             ))}
           </div>

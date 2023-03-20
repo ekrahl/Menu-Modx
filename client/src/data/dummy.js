@@ -513,158 +513,165 @@ export const events = [
 
 export const oysters = [
   {
-    name: "KSOB OYSTER*",
+    name: "KSOB OYSTER",
     location: "Chincoteague, VA",
     size: "(sm/md)",
-    description: "clean brine with a mild, earthy finish",
-    icon: <GiOyster />
+    desc: "clean brine with a mild, earthy finish",
+    price: 2
   },
   {
-    name: "BARSTOOL*",
+    name: "38° NORTH",
+    location: "Chesapeake, VA",
+    size: "(md/lg)",
+    desc: "meaty, bold and briny",
+    price: 2
+  },
+  {
+    name: "BARSTOOL",
     location: "PEI, Canada",
     size: "(sm/md)",
-    description: "briny goodness with a sweet clean finish",
-    icon: <GiOyster />
+    desc: "briny goodness with a sweet clean finish",
+    price: 2
   },
   {
-    name: "BLACKBERRY*",
+    name: "BLACKBERRY",
     location: "Chincoteague",
     size: "(md)",
-    description: "meaty, mild sweetness, balanced brine finish",
-    icon: <GiOyster />
+    desc: "meaty, mild sweetness, balanced brine finish",
+    price: 2
   },
   {
-    name: "BLUE POINT*",
+    name: "BLUE POINT",
     location: "Westport, CT",
     size: "(sm/md)",
-    description: "plump, light brine with a sweet finish",
-    icon: <GiOyster />
+    desc: "plump, light brine with a sweet finish",
+    price: 2
   },
   {
-    name: "CAPE MAY SALTS*",
+    name: "CAPE MAY SALT",
     location: "Delaware Bay, NJ",
     size: "(md/lg)",
-    description: "plump oyster with mild brine and sweet finish",
-    icon: <GiOyster />
+    desc: "plump oyster with mild brine and sweet finish",
+    price: 2
   },
   {
-    name: "COTUIT*",
+    name: "COTUIT",
     location: "Cotuit Bay, MA",
     size: "(sm/md)",
-    description: "clean flavor, briny with a sweet finish",
-    icon: <GiOyster />
+    desc: "clean flavor, briny with a sweet finish",
+    price: 2
   },
   {
-    name: "COROMANDEL*  $3",
+    name: "COROMANDEL",
     location: "Coromandel Peninsula, NZ",
     size: "(md/lg)",
-    description: "rich, buttery, slight cucumber finish",
-    icon: <GiOyster />
+    desc: "rich, buttery, slight cucumber finish",
+    price: 3
   },
   {
-    name: "GREAT WHITE*",
+    name: "GREAT WHITE",
     location: "Cape Cod, MA",
     size: "(md)",
-    description: "high salinity, creamy texture, strong mineral finish",
-    icon: <GiOyster />
+    desc: "high salinity, creamy texture, strong mineral finish",
+    price: 2
   },
   {
-    name: "FAT BABY*",
+    name: "FAT BABY",
     location: "Long Island, NY",
     size: "(md)",
-    description: "plump, light brine with a sweet finish",
-    icon: <GiOyster />
+    desc: "plump, light brine with a sweet finish",
+    price: 2
   },
   {
-    name: "FOXLEY*",
+    name: "FOXLEY",
     location: "PEI, Canada",
     size: "(sm/md)",
-    description: "plump, light brine with a sweet finish",
-    icon: <GiOyster />
+    desc: "plump, light brine with a sweet finish",
+    price: 2
   },
   {
-    name: "LITTLE BEACHES*",
+    name: "LITTLE BEACHES",
     location: "Chesapeake Bay, VA",
     size: "(sm)",
-    description: "great salt and brine, hints of mint and cucumber",
-    icon: <GiOyster />
+    desc: "great salt and brine, hints of mint and cucumber",
+    price: 2
   },
   {
-    name: "MOONDANCER*",
+    name: "MOONDANCER",
     location: "Damariscotta, ME",
     size: "(md)",
-    description: "briny start with a sweet finish",
-    icon: <GiOyster />
+    desc: "briny start with a sweet finish",
+    price: 2
   },
   {
-    name: "QUEENS CUP*",
+    name: "QUEENS CUP",
     location: "PEI, Canada",
     size: "(sm)",
-    description: "plump, silky, light brine, earthy mineral finish",
-    icon: <GiOyster />
+    desc: "plump, silky, light brine, earthy mineral finish",
+    price: 2
   },
   {
-    name: "RASPBERRY POINT*",
+    name: "RASPBERRY POINT",
     location: "PEI, Canada",
     size: "(sm)",
-    description: "high brininess, clean flavor with a sweet finish",
-    icon: <GiOyster />
+    desc: "high brininess, clean flavor with a sweet finish",
+    price: 2
   },
   {
-    name: "SALT SHAKER*",
+    name: "SALT SHAKER",
     location: "Chincoteague, MD",
     size: "(sm/md)",
-    description: "full-bodied with a salt-brine finish",
-    icon: <GiOyster />
+    desc: "full-bodied with a salt-brine finish",
+    price: 2
   },
   {
-    name: "SALTY SALLY*",
+    name: "SALTY SALLY",
     location: "Chincoteague, VA",
     size: "(md)",
-    description: "plump with a strong briny finish",
-    icon: <GiOyster />
+    desc: "plump with a strong briny finish",
+    price: 2
   },
   {
-    name: "STORMY BAY*",
+    name: "STORMY BAY",
     location: "Delaware Bay, DE",
     size: "(md)",
-    description: "full-bodied with a salt-brine finish",
-    icon: <GiOyster />
+    desc: "full-bodied with a salt-brine finish",
+    price: 2
   },
   {
-    name: "SWEET ISLAND KISS*",
+    name: "SWEET ISLAND KISS",
     location: "PEI, Canada",
     size: "(sm)",
-    description: "salty punch with a grassy but crisp, fresh finish",
-    icon: <GiOyster />
+    desc: "salty punch with a grassy but crisp, fresh finish",
+    price: 2
   },
   {
-    name: "SWEET JESUS*",
+    name: "SWEET JESUS",
     location: "Chincoteague",
     size: "(sm/md)",
-    description: "milder oyster with a clean and sweet finish",
-    icon: <GiOyster />
+    desc: "milder oyster with a clean and sweet finish",
+    price: 2
   },
   {
-    name: "TANGIER ISLAND*",
+    name: "TANGIER ISLAND",
     location: "Chesapeake Bay, VA",
     size: "(sm/md)",
-    description: "firm, meaty texture, medium brine, elemental finish",
-    icon: <GiOyster />
+    desc: "firm, meaty texture, medium brine, elemental finish",
+    price: 2
   },
   {
-    name: "WATCH HILL*",
+    name: "WATCH HILL",
     location: "Westerly, RI",
     size: "(sm)",
-    description: "full-bodied, mild salinity, sweet and buttery",
-    icon: <GiOyster />
+    desc: "full-bodied, mild salinity, sweet and buttery",
+    price: 2
   },
   {
-    name: "WELLFLEET*",
+    name: "WELLFLEET",
     location: "Cape Cod, MA",
     size: "(sm)",
-    description: "sharp brine with plump meat and a seaweed finish",
-    icon: <GiOyster />
+    desc: "sharp brine with plump meat and a seaweed finish",
+    price: 2
   },
 ]
 

@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { images } from '../../../data'
+import axios from 'axios'
 import { oysters } from '../../../data/dummy'
-import { AddOyster, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn } from '../../../components'
+import { images } from '../../../data'
+import { AddOyster, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn, CurrentMenuEditor } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaEdit, FaTrash } from 'react-icons/fa'
@@ -18,7 +19,41 @@ htmlToImage.toPng(node)
         console.error('oops, something went wrong!', error);
     });
 
+function capitalize(s) {
+    return s[0].toUpperCase() + s.slice(1);
+}
+
+function Pricing({ name, price }) {
+    if (price >= 3) {
+        return <p style={{
+            fontWeight: '700',
+            fontSize: '12px',
+            color: '#8A5C36',
+            lineHeight: '12px'
+        }}>{name.toUpperCase() + '*'} ${price}</p>
+    } return <p style={{
+        fontWeight: '700',
+        fontSize: '12px',
+        color: '#8A5C36',
+        lineHeight: '12px'
+    }}>{name.toUpperCase() + '*'}</p>
+}
+
 const NomaOysterEditor = () => {
+    // const [oysters, setOysters] = useState([])
+    // const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URL })
+
+    // useEffect(() => {
+    //     const fetchAllOysters = async () => {
+    //         try {
+    //             const res = await axiosInstance.get("http://localhost:8800/oysters")
+    //             setOysters(res.data)
+    //         } catch (err) {
+    //             console.log(err)
+    //         }
+    //     }
+    //     fetchAllOysters()
+    // }, [oysters])
 
     const ref = useRef(null);
 
@@ -39,18 +74,7 @@ const NomaOysterEditor = () => {
             })
     }, [])
 
-    const [oysterList, setOysterList] = useState(
-        [
-            {
-                id: 1,
-                name: "KSOB OYSTER*",
-                location: "Chincoteague, VA",
-                size: "(sm/md)",
-                description: "clean brine with a mild, earthy finish",
-            },
-        ]
-    )
-
+    const [oysterList, setOysterList] = useState([])
     const [oysterObj, setOysterObj] = useState({});
 
     const isFirstRun = useRef(true);
@@ -74,17 +98,33 @@ const NomaOysterEditor = () => {
         setOysterList(newList);
     };
 
+    // const handleCatalogDelete = async (id) => {
+    //     try {
+    //         await axiosInstance.delete("http://localhost:8800/oysters/" + id)
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+
     return (
         <>
             <div className="mt-24 md:mt-4">
                 <LocationHeader location={"NOMA"} />
                 <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
+                    <div className="mx-1">
+                        <CurrentMenuEditor
+                            img={images.oyster_menu_noma}
+                            headerTitle="Current"
+                            imgTitle="Noma Oyster Menu"
+                            downloadLink='oyster_menu_noma.png'
+                        />
+                    </div>
                     <div className="flex flex-wrap justify-center">
                         <div>
                             <ContainerHeader title="Build Oyster Menu" />
-                            <div className="w-384 h-576 relative z-1" ref={ref} id="menu">
-                                <img src={images.oyster_menu_template} alt="oyster menu template" className="absolute z-2" />
-                                <div className="flex flex-col justify-between text-center pt-16 h-full pb-12 max-h-576">
+                            <div className="w-384 h-576 relative" ref={ref} id="menu">
+                                <img src={images.oyster_menu_template} alt="oyster menu template" className="absolute" />
+                                <div className="flex flex-col justify-between text-center pt-16 h-full pb-10 max-h-576">
                                     {oysterList.map((oyster, index) => {
                                         if (Object.keys(oyster).length !== 0) {
                                             return (
@@ -93,23 +133,21 @@ const NomaOysterEditor = () => {
                                                         className="w-275 cursor-pointer"
                                                         onClick={() => { handleDelete(index) }}
                                                         style={{ fontFamily: 'montserrat', }}>
-                                                        <p style={{
-                                                            fontWeight: '700',
-                                                            fontSize: '12px',
-                                                            color: '#8A5C36',
-                                                            lineHeight: '12px'
-                                                        }}>{oyster.name}</p>
+                                                        <Pricing name={oyster.name} price={oyster.price} />
+
                                                         <p style={{
                                                             fontWeight: '700',
                                                             fontSize: '10px',
                                                             color: '#182E3D',
                                                             lineHeight: '10px'
-                                                        }}>{oyster.location} • {oyster.size}</p>
+                                                        }}>{capitalize(oyster.location)} • {'(' + oyster.size + ')'}</p>
+
                                                         <p style={{
                                                             fontWeight: '600',
                                                             fontSize: '10px',
                                                             lineHeight: '10px'
-                                                        }}>{oyster.description}</p>
+                                                        }}>{oyster.desc}</p>
+
                                                     </div>
                                                 </div>
                                             )
@@ -125,20 +163,20 @@ const NomaOysterEditor = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-wrap justify-center mx-3">
+                    <div className="flex flex-wrap justify-center mx-1">
                         <div>
                             <ContainerHeader title="Catalog" />
                             <div
                                 className="h-270 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
-                                {oysters.map((oyster, index) => (
-                                    <div key={oyster.id} className="flex justify-center text-gray-200 gap-3">
-                                        <CatalogBtn onClick={() => { setOysterObj(oyster) }} info={oyster.name} />
+                                {oysters.map(oyster => (
+                                    <div key={oyster.id} className="flex justify-center text-gray-200 gap-4">
+                                        <CatalogBtn onClick={() => { setOysterObj(oyster) }} info={oyster.name.toUpperCase()} />
                                         <button type="button" onClick="" >
                                             <FaEdit size="1.2rem" />
                                         </button>
-                                        <button type="button" onClick="" >
-                                            <FaTrash size="1.2rem" />
+                                        <button >
+                                            <FaTrash size="0.8rem" />
                                         </button>
                                     </div>
                                 ))}
@@ -146,7 +184,6 @@ const NomaOysterEditor = () => {
                             <AddOyster />
                         </div>
                     </div>
-
                 </div>
             </div>
         </>

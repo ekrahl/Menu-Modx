@@ -22,7 +22,7 @@ const Sidebar = () => {
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
-            <Link to="/main" onClick={handleCloseSideBar} className="items-center gap-3 ml-2 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+            <Link to="/main" onClick={handleCloseSideBar} className="items-center gap-3 ml-2 mt-4 flex text-xl font-semibold tracking-tight dark:text-white text-slate-900">
               <BiFoodMenu /> <span>MenuModx</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
@@ -40,7 +40,7 @@ const Sidebar = () => {
           <div className="">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
+                <p className="font-semibold text-gray-600 dark:text-gray-400 m-3 mt-4 uppercase">
                   {item.title}
                 </p>
                 {item.links.map((link) => (
@@ -50,6 +50,7 @@ const Sidebar = () => {
                     onClick={handleCloseSideBar}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : '',
+                      fontWeight: '500'
                     })}
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
                   >

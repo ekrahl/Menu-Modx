@@ -8,8 +8,10 @@ const CreateNewMenuBtn = ({ path }) => {
     return (
         <div className="my-1">
             <Link to={path}>
-                <p className="flex items-center justify-center font-semibold text-lg text-gray-200 border-b border-gray-600 rounded-xl p-4"
-                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}><FaEdit className='mr-2'/> CREATE NEW MENU</p>
+                <button
+                    type="button"
+                    className="w-full flex items-center justify-center font-semibold text-lg text-gray-200 border-b border-gray-600 hover:shadow-2xl rounded-xl p-4"
+                    style={{ backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }}><FaEdit className='mr-2' /> CREATE MENU</button>
 
             </Link>
         </div>

@@ -11,6 +11,7 @@ module.exports = {
         12: '12px',
         14: '14px',
       },
+
       backgroundColor: {
         'main-bg': '#FAFBFB',
         'main-dark-bg': '#121212',
@@ -26,6 +27,7 @@ module.exports = {
         color: 'rgba(0, 0, 0, 0.1)',
       },
       scale: {
+        '150': '1.50',
         '175': '1.75',
         '200': '2.00',
       },
@@ -80,6 +82,8 @@ module.exports = {
         225: '225px',
         250: '250px',
         270: '270px',
+        275: '275px',
+        286: '286px',
         288: '288px',
         300: '300px',
         350: '350px',
@@ -110,6 +114,7 @@ module.exports = {
         200: '200px',
         225: '225px',
         250: '250px',
+        275: '275px',
         576: '576px'
       },
       minWidth: {
@@ -118,6 +123,7 @@ module.exports = {
         150: '150px',
         250: '250px',
         200: '200px',
+        275: '275px',
         300: '300px',
         375: '675px',
         400: '400px',
@@ -191,7 +197,7 @@ module.exports = {
         'dinner':
           "url('./data/images/headers/dinner.jpg')",
         'beer':
-          "url('./data/images/headers/beer.jpg')",
+          "url('./data/images/headers/beer2.jpg')",
         'hh':
           "url('./data/images/headers/ksobfood.jpg')",
       },

@@ -17,7 +17,9 @@ export { default as LogoHeader } from './Headers/LogoHeader'
 
 // ***EDITOR COMPONENTS***
 export { default as AddOyster } from './Editors/Oyster/AddOyster'
-export { default as AddBeer } from './Editors/Beer/AddBeer'
+export { default as EditOyster } from './Editors/Oyster/EditOyster'
+export { default as AddDraftBeer } from './Editors/Beer/AddDraftBeer'
+export { default as AddBottledBeer } from './Editors/Beer/AddBottledBeer'
 export { default as AddFeature } from './Editors/Feature/AddFeature'
 export { default as AddHappyHour } from './Editors/HappyHour/AddHappyHour'
 
@@ -33,6 +35,7 @@ export { default as BrunchMenu } from './Dashboards/BrunchMenu'
 
 // ***MENU VIEWS***
 export { default as CurrentMenu } from './MenuViews/CurrentMenu'
+export { default as CurrentMenuEditor } from './MenuViews/CurrentMenuEditor'
 export { default as MenuQueue } from './MenuViews/MenuQueue'
 export { default as RecentMenus } from './MenuViews/RecentMenus'
 export { default as CreateNewMenuBtn } from './MenuViews/CreateNewMenuBtn'
@@ -46,3 +49,4 @@ export { default as UserProfile } from './Accounts/UserProfile'
 export { default as ScrollButton } from './ScrollTop/ScrollButton'
 export { default as Signup } from './Signup/Signup'
 export { default as Login } from './Login/Login'
+export { default as Popup } from './Popup'

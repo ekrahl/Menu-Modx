@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import axios from 'axios'
 import { images } from '../../../data'
 import { draft, bottles } from '../../../data/dummy'
-import { AddBeer, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, BeerCatalogBtn } from '../../../components'
+import { AddDraftBeer, AddBottledBeer, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, BeerCatalogBtn, CurrentMenuEditor } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaEdit, FaTrash } from 'react-icons/fa'
@@ -19,6 +20,20 @@ htmlToImage.toPng(node)
     });
 
 const NomaBeerEditor = () => {
+
+    // const [draftBeer, setDraftBeer] = useState([])
+
+    // useEffect(() => {
+    //     const fetchAllDraftBeer = async () => {
+    //         try {
+    //             const res = await axios.get("http://localhost:8800/draftbeer")
+    //             setDraftBeer(res.data)
+    //         } catch (err) {
+    //             console.log(err)
+    //         }
+    //     }
+    //     fetchAllDraftBeer()
+    // }, [draftBeer])
 
     const ref = useRef(null);
 
@@ -68,7 +83,6 @@ const NomaBeerEditor = () => {
         if (bottleList.includes(bottleObj)) {
             return;
         }
-
         if (draftList.length + bottleList.length > 24) {
             return
         }
@@ -85,11 +99,27 @@ const NomaBeerEditor = () => {
         setBottleList(newList);
     };
 
+    // const handleCatalogDraftDelete = async (id) => {
+    //     try {
+    //         await axios.delete("http://localhost:8800/draftbeer/" + id)
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+
     return (
         <>
             <div className="mt-24 md:mt-4">
                 <LocationHeader location={"NOMA"} />
                 <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
+                    <div className="mx-1">
+                        <CurrentMenuEditor
+                            img={images.beer_menu_noma}
+                            headerTitle="Current"
+                            imgTitle="NoMa Beer Menu"
+                            downloadLink="beer_menu_noma.png"
+                        />
+                    </div>
                     <div className="flex flex-wrap justify-center">
                         <div>
                             <ContainerHeader title="Build Beer Menu" />
@@ -149,7 +179,7 @@ const NomaBeerEditor = () => {
                         <div className="w-full">
                             <ContainerHeader title="Draft Catalog" />
                             <div
-                                className="h-300 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2 mb-1"
+                                className="h-286 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2 mb-1"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 {draft.map((beer, index) => (
                                     <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
@@ -157,7 +187,7 @@ const NomaBeerEditor = () => {
                                         <button type="button" onClick="" >
                                             <FaEdit size="1.2rem" />
                                         </button>
-                                        <button type="button" onClick="" >
+                                        <button type="button" >
                                             <FaTrash size="1.2rem" />
                                         </button>
                                     </div>
@@ -165,7 +195,7 @@ const NomaBeerEditor = () => {
                             </div>
                             <ContainerHeader title="Cans & Bottles Catalog" />
                             <div
-                                className="h-300 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
+                                className="h-286 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 {bottles.map((beer, index) => (
                                     <div key={beer.id} className="flex justify-center text-gray-200 gap-3">
@@ -181,7 +211,10 @@ const NomaBeerEditor = () => {
                             </div>
                         </div>
                     </div>
-                    <AddBeer />
+                    <div>
+                        <AddDraftBeer/>
+                        <AddBottledBeer/>
+                    </div>
                 </div>
 
             </div>

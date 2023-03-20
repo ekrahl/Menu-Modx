@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { useStateContext } from '../../../contexts/ContextProvider'
 import { ContainerHeader, LocationHeader, AddFeature, DownloadBtn, AddToQueueBtn, CatalogBtn, FoodFeatureCatalogBtn } from '../../../components'
 import { images } from '../../../data'
 import { foodFeatures, drinkFeatures } from '../../../data/dummy'
@@ -20,8 +19,6 @@ htmlToImage.toPng(node)
   });
 
 const MiddleburgFeatureEditor = () => {
-  const { currentColor } = useStateContext();
-  const gradientColor = { backgroundImage: `linear-gradient(to top, #191919, ${currentColor})` }
 
   const ref = useRef(null);
 
