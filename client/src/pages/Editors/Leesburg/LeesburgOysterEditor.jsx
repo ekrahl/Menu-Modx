@@ -39,6 +39,10 @@ function Pricing({ name, price }) {
     }}>{name.toUpperCase() + '*'}</p>
 }
 
+function buttonClick(element) {
+    element.classList.toggle('active')
+}
+
 const LeesburgOysterEditor = () => {
     // const [oysters, setOysters] = useState([])
     // const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URL })
@@ -171,14 +175,17 @@ const LeesburgOysterEditor = () => {
                                 className="h-270 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-6 py-2"
                                 style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
                                 {oysters.map(oyster => (
-                                    <div key={oyster.id} className="flex justify-center text-gray-200 gap-4">
-                                        <CatalogBtn onClick={() => { setOysterObj(oyster) }} info={oyster.name.toUpperCase()} />
+                                    <div key={oyster.id} className="flex justify-center gap-4">
+
+                                        <CatalogBtn onClick={() => { setOysterObj(oyster); buttonClick(this) }} info={oyster.name.toUpperCase()} />
+
                                         <button type="button" onClick="" >
                                             <FaEdit size="1.2rem" />
                                         </button>
                                         <button >
                                             <FaTrash size="0.8rem" />
                                         </button>
+
                                     </div>
                                 ))}
                             </div>

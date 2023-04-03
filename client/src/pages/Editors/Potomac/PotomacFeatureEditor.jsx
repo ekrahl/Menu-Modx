@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { ContainerHeader, LocationHeader, AddFeature, DownloadBtn, AddToQueueBtn, CatalogBtn, FoodFeatureCatalogBtn } from '../../../components'
+import { ContainerHeader, LocationHeader, AddFeature, DownloadBtn, AddToQueueBtn, CatalogBtn, FoodFeatureCatalogBtn, CurrentMenuEditor } from '../../../components'
 import { images } from '../../../data'
 import { foodFeatures, drinkFeatures } from '../../../data/dummy'
 import * as htmlToImage from 'html-to-image'
@@ -68,6 +68,14 @@ const PotomacFeatureEditor = () => {
     <div className="mt-24 md:mt-4">
       <LocationHeader location={"POTOMAC"} />
       <div className="flex flex-wrap md:flex-nowrap justify-center mt-6 gap-1">
+        <div className="mx-1">
+          <CurrentMenuEditor
+            img={images.menu_features_potomac}
+            headerTitle="Current"
+            imgTitle="Potomac Features Menu"
+            downloadLink="potomac-feature-menu.png"
+          />
+        </div>
         <div className="flex flex-wrap justify-center">
           <div>
             <ContainerHeader title="Build Features Menu" />
@@ -152,11 +160,11 @@ const PotomacFeatureEditor = () => {
 
         </div>
 
-        <div className="mx-3 w-full md:max-w-384">
+        <div className="mx-1 w-full md:max-w-384">
           <div className="">
             <ContainerHeader title="Food Catalog" />
             <div
-              className="h-200 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
+              className="h-284 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {foodFeatures.map((feat) => (
                 <div key={feat.id} className="flex justify-center text-gray-200 gap-3">
@@ -175,7 +183,7 @@ const PotomacFeatureEditor = () => {
           <div className="mt-2">
             <ContainerHeader title="Beverage Catalog" />
             <div
-              className="h-200 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
+              className="h-284 overflow-auto text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
               style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>
               {drinkFeatures.map((feat) => (
                 <div key={feat.id} className="flex justify-center text-gray-200 gap-3">
@@ -190,8 +198,8 @@ const PotomacFeatureEditor = () => {
               ))}
             </div>
           </div>
-          <AddFeature />
         </div>
+        <AddFeature />
       </div>
     </div>
   )

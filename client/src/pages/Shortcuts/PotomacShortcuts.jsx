@@ -5,9 +5,9 @@ const PotomacShortcuts = () => {
 
     return (
         <>
-            <div className="mx-3 md:mx-28 mt-24 md:mt-6">
+            <div className="mx-3 md:mx-28 mt-24 md:mt-4">
                 <LocationHeader location={"POTOMAC"} />
-                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl lg:text-3xl text-gray-200 mt-6 tracking-wider">
+                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl lg:text-3xl text-white mt-6 tracking-wider">
                     <div className="md:flex-1">
                         <Link to="/potomacdashboard">
                             <div className="flex justify-center bg-potomac bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-20 m-1" >
@@ -16,7 +16,7 @@ const PotomacShortcuts = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl text-gray-200 tracking-wider">
+                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl text-white tracking-wider">
                     <div className="md:w-1/2">
                         <Link to="/potomacfeatureeditor">
                             <div className="flex justify-center bg-specials bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1" >

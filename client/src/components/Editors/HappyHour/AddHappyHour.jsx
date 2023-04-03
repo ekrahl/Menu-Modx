@@ -46,7 +46,7 @@ const AddHappyHour = () => {
                             value=""
                             type="text"
                             name="title"
-                            placeholder="Cocktail Title"
+                            placeholder="Title"
                         />
                     </div>
                     <div className="flex justify-center mx-4 mt-2">
@@ -56,7 +56,7 @@ const AddHappyHour = () => {
                             value=""
                             type="text"
                             name="subTitle"
-                            placeholder="Cocktail Subtitle"
+                            placeholder="Subtitle"
                         />
                     </div>
                     <div className="flex justify-center mx-4 mt-2">

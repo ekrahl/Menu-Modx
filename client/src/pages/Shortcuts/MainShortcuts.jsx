@@ -5,8 +5,8 @@ const Main = () => {
     return (
         <>
             <LogoHeader />
-            <div className="mx-3 md:mx-28 mt-6">
-                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl lg:text-3xl text-gray-200 tracking-wider">
+            <div className="mx-3 md:mx-28 mt-4">
+                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl lg:text-3xl text-white tracking-wider">
                     <div className="md:flex-1">
                         <Link to="/dashboard">
                             <div className="flex justify-center bg-logo2 bg-contain bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1">
@@ -15,7 +15,7 @@ const Main = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl lg:text-3xl text-gray-200 tracking-wider">
+                <div className="md:flex md:flex-wrap md:justify-center font-semibold text-2xl lg:text-3xl text-white tracking-wider">
                     <div className="md:w-1/2">
                         <Link to="/leesburg">
                             <div className="flex justify-center bg-leesburg bg-cover bg-center border border-gray-400 rounded-xl py-12 md:py-16 m-1">

@@ -4,7 +4,7 @@ const AddFeature = () => {
 
     return (
 
-        <div className="flex flex-col text-gray-200 mt-2">
+        <div className="flex flex-col text-gray-200">
             <ContainerHeader title="Add Item to Catalog" />
             <div
                 className="text-gray-200 border-b border-gray-600 rounded-b-xl px-2 py-2"
@@ -78,7 +78,7 @@ const AddFeature = () => {
                     </div>
                 </form>
                 <div className="flex justify-center">
-                    <AddItemBtn />
+                    <AddItemBtn title="Add Item"/>
                 </div>
             </div>
         </div>

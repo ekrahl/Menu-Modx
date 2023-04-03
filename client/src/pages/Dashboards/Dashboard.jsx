@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { locations, foodFeatures, drinkFeatures, events, menus } from '../../data/dummy'
 import { BsClockFill, BsFillPeopleFill, BsFillTelephoneFill, BsFillGeoAltFill, BsFillPersonLinesFill, BsChevronDoubleRight } from 'react-icons/bs'
@@ -8,6 +9,10 @@ import { Carousel } from 'react-responsive-carousel'
 
 const Dashboard = () => {
   const containerColor = { backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }
+  const [effect, setEffect] = useState(false)
+  function toggleEnlarge() {
+    setEffect(!effect)
+  }
 
   return (
     <>
@@ -28,8 +33,7 @@ const Dashboard = () => {
                 <Link to={location.path}>
                   <ContainerHeader title={location.title} />
                 </Link>
-                <div className="md:hover:scale-150 hover:duration-1000">
-
+                <div>
                   {foodFeatures.map((feat) => {
                     if (feat.location_id === location.id) {
                       return (
@@ -46,7 +50,7 @@ const Dashboard = () => {
                     }
                   })}
                 </div>
-                <div className="md:hover:scale-150 hover:duration-1000">
+                <div>
                   {drinkFeatures.map((feat) => {
                     if (feat.location_id === location.id) {
                       return (

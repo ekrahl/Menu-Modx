@@ -1,11 +1,19 @@
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { ContainerHeader, DownloadBtn, EditBtn } from '../'
 import { toPng } from 'html-to-image'
 import { Link } from 'react-router-dom'
 
+
+
 const CurrentMenu = ({ downloadLink, img, headerTitle, imgTitle, path }) => {
 
     const ref = useRef(null);
+
+    const [effect, setEffect] = useState(false)
+
+    function toggleEffect() {
+        setEffect(!effect)
+    }
 
     const onButtonClick = useCallback(() => {
         if (ref.current === null) {
@@ -28,7 +36,14 @@ const CurrentMenu = ({ downloadLink, img, headerTitle, imgTitle, path }) => {
         <>
             <div className="md:max-w-300">
                 <ContainerHeader title={headerTitle} />
-                <img className="md:hover:scale-175 md:hover:-translate-y-20 md:hover:duration-1000 border-b border-gray-600" src={img} ref={ref} alt={imgTitle} title={imgTitle} loading="lazy"/>
+                <img
+                    className={`${effect && "animate-enlarge175"} border-b border-gray-600 hover:cursor-pointer`}
+                    onClick={toggleEffect}
+                    src={img}
+                    ref={ref}
+                    alt={imgTitle}
+                    title={imgTitle}
+                    loading="lazy" />
                 <div
                     className="flex flex-wrap lg:flex-nowrap justify-center text-gray-400 border-b border-gray-600 rounded-b-xl p-3"
                     style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f` }}>

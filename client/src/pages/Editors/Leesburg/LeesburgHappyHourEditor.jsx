@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { images } from '../../../data'
 import { cocktails, beerWine, food, rules } from '../../../data/dummy'
-import { AddHappyHour, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn } from '../../../components'
+import { AddHappyHour, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn, CurrentMenuEditor } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaEdit, FaTrash } from 'react-icons/fa'
@@ -112,6 +112,14 @@ const LeesburgHappyHourEditor = () => {
       <div className="mt-24 md:mt-4">
         <LocationHeader location={"LEESBURG"} />
         <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
+          <div className="mx-1">
+            <CurrentMenuEditor
+              img={images.happy_hour_menu_leesburg}
+              headerTitle="Current"
+              imgTitle="Leesburg Happy Hour Menu"
+              downloadLink="happy_hour_menu_leesburg.png"
+            />
+          </div>
           <div className="flex flex-wrap justify-center">
             <div className="">
               <ContainerHeader title="Build Happy Hour Menu" />
@@ -196,54 +204,54 @@ const LeesburgHappyHourEditor = () => {
 
           {/* ***CATALOGS*** */}
           <div className="flex flex-col w-full md:w-400 mx-1 md:mx-0">
-              <ContainerHeader title="Cocktail Catalog" />
-              <div
-                className="h-200 overflow-scroll text-gray-200 border-b border-gray-600 rounded-b-xl px-6 pt-1 mb-1"
-                style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f)` }}>
-                {cocktails.map((cocktail, index) => (
-                  <div key={cocktail.id} className="flex justify-center text-gray-200 gap-3">
-                    <CatalogBtn onClick={() => { setCocktailObj(cocktail) }} info={cocktail.title} />
-                    <button type="button" onClick="" >
-                      <FaEdit size="1.2rem" />
-                    </button>
-                    <button type="button" onClick="" >
-                      <FaTrash size="1.2rem" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-              <ContainerHeader title="Beer & Wine Catalog" />
-              <div
-                className="h-100 overflow-scroll text-gray-200 border-b border-gray-600 rounded-b-xl px-6 pt-1 mb-1"
-                style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f)` }}>
-                {beerWine.map((beerWine, index) => (
-                  <div key={beerWine.id} className="flex justify-center text-gray-200 gap-3">
-                    <CatalogBtn onClick={() => { setBeerWineObj(beerWine) }} info={beerWine.title} />
-                    <button type="button" onClick="" >
-                      <FaEdit size="1.2rem" />
-                    </button>
-                    <button type="button" onClick="" >
-                      <FaTrash size="1.2rem" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-              <ContainerHeader title="Food Catalog" />
-              <div
-                className="h-200 overflow-scroll text-gray-200 border-b border-gray-600 rounded-b-xl px-6 pt-1"
-                style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f)` }}>
-                {food.map((food, index) => (
-                  <div key={food.id} className="flex justify-center text-gray-200 gap-3">
-                    <CatalogBtn onClick={() => { setFoodObj(food) }} info={food.title} />
-                    <button type="button" onClick="" >
-                      <FaEdit size="1.2rem" />
-                    </button>
-                    <button type="button" onClick="" >
-                      <FaTrash size="1.2rem" />
-                    </button>
-                  </div>
-                ))}
-              </div>
+            <ContainerHeader title="Cocktail Catalog" />
+            <div
+              className="h-200 overflow-scroll text-gray-200 border-b border-gray-600 rounded-b-xl px-6 pt-1 mb-1"
+              style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f)` }}>
+              {cocktails.map((cocktail, index) => (
+                <div key={cocktail.id} className="flex justify-center text-gray-200 gap-3">
+                  <CatalogBtn onClick={() => { setCocktailObj(cocktail) }} info={cocktail.title} />
+                  <button type="button" onClick="" >
+                    <FaEdit size="1.2rem" />
+                  </button>
+                  <button type="button" onClick="" >
+                    <FaTrash size="1.2rem" />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <ContainerHeader title="Beer & Wine Catalog" />
+            <div
+              className="h-100 overflow-scroll text-gray-200 border-b border-gray-600 rounded-b-xl px-6 pt-1 mb-1"
+              style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f)` }}>
+              {beerWine.map((beerWine, index) => (
+                <div key={beerWine.id} className="flex justify-center text-gray-200 gap-3">
+                  <CatalogBtn onClick={() => { setBeerWineObj(beerWine) }} info={beerWine.title} />
+                  <button type="button" onClick="" >
+                    <FaEdit size="1.2rem" />
+                  </button>
+                  <button type="button" onClick="" >
+                    <FaTrash size="1.2rem" />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <ContainerHeader title="Food Catalog" />
+            <div
+              className="h-200 overflow-scroll text-gray-200 border-b border-gray-600 rounded-b-xl px-6 pt-1"
+              style={{ backgroundImage: `linear-gradient(to top, #191919, #2f2f2f)` }}>
+              {food.map((food, index) => (
+                <div key={food.id} className="flex justify-center text-gray-200 gap-3">
+                  <CatalogBtn onClick={() => { setFoodObj(food) }} info={food.title} />
+                  <button type="button" onClick="" >
+                    <FaEdit size="1.2rem" />
+                  </button>
+                  <button type="button" onClick="" >
+                    <FaTrash size="1.2rem" />
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
           <AddHappyHour />
         </div>

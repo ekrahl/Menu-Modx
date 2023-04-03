@@ -72,9 +72,8 @@ import dc3 from './images/headers/dc3.jpg'
 import pdr from './images/headers/pdr.jpg'
 import ksobfood from './images/headers/ksobfood.jpg'
 import shuckit from './images/headers/shuckit.jpg'
-import veggieprep from './images/headers/veggieprep.jpg'
 import oyster from './images/headers/oyster-image.png'
-import oysterCard from './images/headers/oysterCard.png'
+import oysterCard from './images/headers/oysterCard.jpg'
 
 // coming soon
 import comingSoonImg from './images/comingSoon/coming-soon-img.jpg'
@@ -173,6 +172,5 @@ export default {
     taiOneOn,
     taybaybay,
     tikitac,
-    veggieprep,
     weddingmenu,
 }

@@ -7,6 +7,26 @@ module.exports = {
       body: ['Montserrat', 'sans-serif'],
     },
     extend: {
+      keyframes: {
+        enlarge125: {
+          "0%, 100%": { transform: "scale(1.25) translateX(-40px)" }
+        },
+        enlarge150: {
+          "0%, 100%": { transform: "scale(1.50)" }
+        },
+        enlarge175: {
+          "0%, 100%": { transform: "scale(1.75)" }
+        },
+        enlarge400: {
+          "0%, 100%": { transform: "scale(4)" }
+        }
+      },
+      animation: {
+        enlarge125: "enlarge125 30s ease-in",
+        enlarge150: "enlarge150 30s ease-in",
+        enlarge175: "enlarge175 30s ease-in",
+        enlarge400: "enlarge400 30s ease-in"
+      },
       fontSize: {
         12: '12px',
         14: '14px',
@@ -83,6 +103,7 @@ module.exports = {
         250: '250px',
         270: '270px',
         275: '275px',
+        284: '284px',
         286: '286px',
         288: '288px',
         300: '300px',
@@ -160,12 +181,11 @@ module.exports = {
         1800: '1800px',
         2000: '2000px',
       },
-
       backgroundImage: {
         'logo':
           "url('./data/images/headers/logo.png')",
         'logo2':
-          "url('./data/images/headers/oysterCard.png')",
+          "url('./data/images/headers/oysterCard.jpg')",
         'oyster':
           "url('./data/images/headers/oyster-image.png')",
         'oysters2':

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { images } from '../../../data'
 import { cocktails, beerWine, food, rules } from '../../../data/dummy'
-import { AddHappyHour, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn } from '../../../components'
+import { AddHappyHour, LocationHeader, ContainerHeader, DownloadBtn, AddToQueueBtn, CatalogBtn, CurrentMenuEditor } from '../../../components'
 import * as htmlToImage from 'html-to-image'
 import { toPng } from 'html-to-image'
 import { FaEdit, FaTrash } from 'react-icons/fa'
@@ -112,6 +112,14 @@ const MiddleburgHappyHourEditor = () => {
       <div className="mt-24 md:mt-4">
         <LocationHeader location={"MIDDLEBURG"} />
         <div className="flex flex-wrap lg:flex-nowrap justify-center mt-6 gap-1">
+          <div className="mx-1">
+            <CurrentMenuEditor
+              img={images.happy_hour_menu_middleburg}
+              headerTitle="Current"
+              imgTitle="Middleburg Happy Hour Menu"
+              downloadLink="happy_hour_menu_middleburg.png"
+            />
+          </div>
           <div className="flex flex-wrap justify-center">
             <div className="">
               <ContainerHeader title="Build Happy Hour Menu" />
